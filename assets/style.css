@@ -52,6 +52,23 @@ body {
   flex-direction: column;
 }
 
+/* --- CORREÇÕES OBRIGATÓRIAS BUG 3: FORMATAÇÃO DE TEXTO --- */
+.game-text {
+  font-family: 'MedievalSharp', serif;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .inventory-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .character-name {
+    font-size: 1.2rem;
+  }
+}
+
 /* --- ESTILOS DA TELA DE CRIAÇÃO E PERSONALIZAÇÃO DO PERSONAGEM (#creation-screen) --- */
 .creation-layout {
   display: flex;

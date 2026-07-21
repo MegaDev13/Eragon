@@ -127,7 +127,18 @@ class EconomyManager {
     }
 
     window.inventoryManager.gold -= totalPrice;
-    window.inventoryManager.addItem(itemId, count);
+    if (tmpl.type === "arma" || tmpl.id?.startsWith("w_")) {
+      window.inventoryManager.addWeapon(itemId);
+    } else if (tmpl.type === "armadura" || tmpl.id?.startsWith("a_")) {
+      window.inventoryManager.addArmor(itemId);
+    } else {
+      window.inventoryManager.addItem(itemId, count);
+    }
+
+    // Bug 2 Fix: Persistir instantaneamente no banco de dados e atualizar UI em tempo real
+    if (window.saveManager) {
+      window.saveManager.autoSave();
+    }
     if (window.ui) {
       window.ui.playSound("gold");
       window.ui.updateAllPanels();
