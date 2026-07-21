@@ -1,0 +1,133 @@
+{
+  "schools": [
+    {
+      "id": "school_fire",
+      "name": "Escola do Fogo e Brasa",
+      "element": "Fogo",
+      "description": "Magia ofensiva bruta. Alta destruição em área, mas gera fadiga térmica rápida se não controlada por Domínio Elemental.",
+      "spells": [
+        { "id": "spell_fireball", "name": "Bola de Fogo Rúnica", "cost": 15, "fatigue": 12, "damage": 45, "corruption": 0, "masteryReq": 1, "desc": "Dispara uma esfera incandescente que explode ao impacto." },
+        { "id": "spell_fire_shield", "name": "Manto de Escamas Incandescentes", "cost": 20, "fatigue": 15, "damage": 0, "defenseBonus": 25, "corruption": 0, "masteryReq": 2, "desc": "Envolve o corpo em chamas puras, queimando atacantes e reduzindo dano físico." },
+        { "id": "spell_inferno", "name": "Tempestade de Cinzas Solar", "cost": 45, "fatigue": 35, "damage": 110, "corruption": 2, "masteryReq": 3, "desc": "Incinera o campo de batalha inteiro com a ira do sol de Solgard." },
+        { "id": "spell_meteor_shower", "name": "Chuva de Meteoros de Solgard", "cost": 75, "fatigue": 50, "damage": 210, "corruption": 5, "masteryReq": 4, "desc": "Convoca fragmentos em chamas do espaço astral para desintegrar o adversário e suas defesas." }
+      ]
+    },
+    {
+      "id": "school_water",
+      "name": "Escola da Água e Gelo",
+      "element": "Água",
+      "description": "Manipulação de fluxos e congelamento. Reduz a velocidade e esquiva dos inimigos enquanto resfria a fadiga do conjurador.",
+      "spells": [
+        { "id": "spell_ice_lance", "name": "Lança de Gelo Perfurante", "cost": 12, "fatigue": 10, "damage": 38, "corruption": 0, "masteryReq": 1, "desc": "Arremessa um estilhaço congelado de alta pressão." },
+        { "id": "spell_frost_nova", "name": "Explosão Congelante do Norte", "cost": 28, "fatigue": 22, "damage": 65, "slowEnemy": true, "corruption": 0, "masteryReq": 2, "desc": "Congela o solo, imobilizando adversários por um turno." },
+        { "id": "spell_absolute_zero", "name": "Zero Absoluto de Val-Drak", "cost": 60, "fatigue": 40, "damage": 160, "freezeBoss": true, "corruption": 0, "masteryReq": 4, "desc": "Congela as moléculas do ar, paralisando até titãs e chefes por completo na rodada de combate." }
+      ]
+    },
+    {
+      "id": "school_earth",
+      "name": "Escola da Terra e Basalto",
+      "element": "Terra",
+      "description": "A mais estável e defensiva das escolas arcanas. Cria barreiras impenetráveis e ergue pilares rochosos do chão.",
+      "spells": [
+        { "id": "spell_stone_wall", "name": "Muralha de Obsidiana", "cost": 18, "fatigue": 14, "defenseBonus": 40, "corruption": 0, "masteryReq": 1, "desc": "Ergue uma barreira de pedra para bloquear ataques pesados." },
+        { "id": "spell_earthquake", "name": "Fenda Tectônica", "cost": 40, "fatigue": 30, "damage": 95, "corruption": 0, "masteryReq": 3, "desc": "Rachaduras profundas engolem as fileiras inimigas." },
+        { "id": "spell_obsidian_cataclysm", "name": "Cataclismo de Cristal e Basalto", "cost": 70, "fatigue": 48, "damage": 185, "defenseBonus": 60, "corruption": 0, "masteryReq": 4, "desc": "Ergue fortalezas de obsidiana que causam esmagamento maciço e tornam o jogador quase invulnerável." }
+      ]
+    },
+    {
+      "id": "school_air",
+      "name": "Escola do Ar e Trovão",
+      "element": "Ar",
+      "description": "Magia de alta velocidade e relâmpagos cortantes. Sincroniza perfeitamente com dragões de tempestade.",
+      "spells": [
+        { "id": "spell_wind_haste", "name": "Asas de Zephyr", "cost": 15, "fatigue": 10, "speedBonus": 30, "corruption": 0, "masteryReq": 1, "desc": "Concede agilidade sobrenatural e iniciativa imediata." },
+        { "id": "spell_chain_lightning", "name": "Corrente de Relâmpago", "cost": 22, "fatigue": 18, "damage": 55, "chainBonus": true, "corruption": 0, "masteryReq": 2, "desc": "Dispara um raio que salta entre múltiplos alvos." },
+        { "id": "spell_thunder_tempest", "name": "Tempestade de Trovões de Zephyr", "cost": 65, "fatigue": 42, "damage": 175, "chainBonus": true, "corruption": 0, "masteryReq": 4, "desc": "Eletrocuta o inimigo repetidamente com relâmpagos supersônicos." }
+      ]
+    },
+    {
+      "id": "school_light",
+      "name": "Escola da Luz Solar",
+      "element": "Luz",
+      "description": "Magia de purificação e cura celestial. Cega inimigos das sombras e restaura a saúde do cavaleiro.",
+      "spells": [
+        { "id": "spell_solar_heal", "name": "Toque da Alvorada", "cost": 20, "fatigue": 15, "healAmount": 50, "corruption": -5, "masteryReq": 1, "desc": "Restaura HP instantaneamente e purifica traços de corrupção." },
+        { "id": "spell_holy_ray", "name": "Raio de Purificação Solar", "cost": 30, "fatigue": 25, "damage": 75, "bonusVsShadow": true, "corruption": 0, "masteryReq": 2, "desc": "Feixe concentrado de luz que cega e desintegra mortos-vivos." },
+        { "id": "spell_celestial_judgment", "name": "Julgamento Solar de Aethel", "cost": 70, "fatigue": 45, "damage": 190, "healAmount": 80, "corruption": -20, "masteryReq": 4, "desc": "Um pilar de luz divina desce do céu, incinerando feras corrompidas e curando o cavaleiro em +80 HP." }
+      ]
+    },
+    {
+      "id": "school_shadow",
+      "name": "Escola das Sombras e Ocultismo",
+      "element": "Sombras",
+      "description": "Magia furtiva de ilusão e terror mental. Drena a vontade dos oponentes mas acumula corrupção arcana.",
+      "spells": [
+        { "id": "spell_shadow_blade", "name": "Lâmina da Escuridão", "cost": 15, "fatigue": 12, "damage": 50, "corruption": 3, "masteryReq": 1, "desc": "Corta a psique e o corpo do inimigo com sombras condensadas." },
+        { "id": "spell_terror_veil", "name": "Véu do Pesadelo Sombrio", "cost": 25, "fatigue": 20, "terrorEffect": true, "corruption": 5, "masteryReq": 2, "desc": "Espalha alucinações apavorantes, reduzindo a moral inimiga a zero." },
+        { "id": "spell_abyssal_rift", "name": "Fenda do Abismo Primordial", "cost": 65, "fatigue": 45, "damage": 195, "corruption": 12, "masteryReq": 4, "desc": "Rasga o tecido da realidade com fendas escuras que causam dano mental e físico irrecuperável." }
+      ]
+    },
+    {
+      "id": "school_nature",
+      "name": "Escola da Natureza Druídica",
+      "element": "Natureza",
+      "description": "A magia de Lúmen. Convocação de vinhas prisioeiras, venenos naturais e cura simbiótica.",
+      "spells": [
+        { "id": "spell_entangle", "name": "Raízes Prisioneiras de Lúmen", "cost": 16, "fatigue": 12, "damage": 25, "imprison": true, "corruption": 0, "masteryReq": 1, "desc": "Prende as pernas do inimigo com raízes grossas e espinhosas." },
+        { "id": "spell_life_bloom", "name": "Regeneração Simbiótica", "cost": 25, "fatigue": 18, "healOverTime": 60, "corruption": 0, "masteryReq": 2, "desc": "Cura contínua que restaura vitalidade ao longo da batalha." },
+        { "id": "spell_forest_titan_wrath", "name": "Ira dos Titãs da Floresta", "cost": 65, "fatigue": 40, "damage": 165, "healAmount": 65, "imprison": true, "corruption": 0, "masteryReq": 4, "desc": "As árvores milenares de Lúmen ganham vida para esmagar os inimigos enquanto curam seu cavaleiro." }
+      ]
+    },
+    {
+      "id": "school_blood",
+      "name": "Escola Proibida de Sangue",
+      "element": "Sangue",
+      "description": "A mais perigosa das artes arcanas. Sacrifica a própria saúde para liberar poder avassalador.",
+      "spells": [
+        { "id": "spell_blood_boil", "name": "Fervura Hemorrágica", "cost": 10, "hpCost": 25, "fatigue": 15, "damage": 90, "corruption": 8, "masteryReq": 1, "desc": "Sacrifica 25 de HP para ferver o sangue do adversário, causando dano crítico devastador." },
+        { "id": "spell_vampiric_drain", "name": "Exaurir Alma e Sangue", "cost": 20, "fatigue": 20, "damage": 65, "lifesteal": true, "corruption": 10, "masteryReq": 2, "desc": "Drena a força vital do alvo e cura o conjurador, mas mancha a alma de corrupção negra." },
+        { "id": "spell_blood_pact_supremacy", "name": "Pacto de Sangue do Terceiro Círculo", "cost": 30, "hpCost": 60, "fatigue": 45, "damage": 260, "corruption": 25, "masteryReq": 4, "desc": "Sacrifica 60 HP para desfechar a maldição suprema de sangue, causando o maior dano em alvo único de toda Aethelgard." }
+      ]
+    },
+    {
+      "id": "school_spirit",
+      "name": "Escola Espiritual e Ancestral",
+      "element": "Espiritual",
+      "description": "Comunicação com o plano etéreo. Concede intuição infalível, proteção contra possessões e bênçãos dos heróis do passado.",
+      "spells": [
+        { "id": "spell_spirit_shield", "name": "Manto dos Reis Ancestrais", "cost": 20, "fatigue": 15, "defenseBonus": 35, "magicDefenseBonus": 50, "corruption": 0, "masteryReq": 1, "desc": "Proteção espectral máxima contra feitiços hostis e terror." },
+        { "id": "spell_ancestral_hero_blessing", "name": "Bênção Divina de Aethel", "cost": 50, "fatigue": 35, "healAmount": 120, "defenseBonus": 80, "corruption": -15, "masteryReq": 4, "desc": "Convoca os espíritos dos reis fundadores para proteger seu corpo, concedendo +80 Defesa e curando +120 HP." }
+      ]
+    },
+    {
+      "id": "school_time",
+      "name": "Escola Temporal do Relógio Rúnico",
+      "element": "Temporal",
+      "description": "A rara magia de distorção do tempo. Permite alterar o fluxo dos turnos em combate e reverter danos sofridos.",
+      "spells": [
+        { "id": "spell_time_stop", "name": "Dilatação Temporal de Aether", "cost": 40, "fatigue": 35, "extraTurn": true, "corruption": 4, "masteryReq": 3, "desc": "Pára o tempo por alguns segundos, concedendo uma rodada extra imediata ao jogador." },
+        { "id": "spell_temporal_reversal", "name": "Reversão Temporal do Relógio Rúnico", "cost": 75, "fatigue": 50, "healAmount": 180, "extraTurn": true, "corruption": 8, "masteryReq": 4, "desc": "Rebobina o tempo de batalha, restaurando todo o HP perdido nos últimos turnos e concedendo turno extra." }
+      ]
+    },
+    {
+      "id": "school_runic",
+      "name": "Escola Rúnica de Forja",
+      "element": "Rúnica",
+      "description": "Gravação de glifos mágicos em armas brancas e escudos, amplificando o combate corpo a corpo com força elemental.",
+      "spells": [
+        { "id": "spell_rune_weapon", "name": "Encantar Lâmina com Runa Ancestral", "cost": 18, "fatigue": 12, "weaponBonusDamage": 35, "corruption": 0, "masteryReq": 1, "desc": "Aumenta drasticamente o dano físico e mágico da sua arma equipada durante o combate." },
+        { "id": "spell_runic_apotheosis_forge", "name": "Runa da Apoteose de Aço-Dragão", "cost": 60, "fatigue": 40, "weaponBonusDamage": 110, "defenseBonus": 50, "corruption": 0, "masteryReq": 4, "desc": "Grava runas divinas em toda a sua armadura e lâmina, transformando seus ataques físicos em tempestades destrutivas." }
+      ]
+    },
+    {
+      "id": "school_summon",
+      "name": "Escola de Invocação do Abismo",
+      "element": "Invocação",
+      "description": "Abertura de fendas espaciais para convocar golens, familiares arcanos ou elementais para lutar ao seu lado.",
+      "spells": [
+        { "id": "spell_summon_golem", "name": "Convocar Golem de Obsidiana", "cost": 35, "fatigue": 28, "summonHelper": "Golem de Obsidiana", "corruption": 2, "masteryReq": 2, "desc": "Invoca um guardião de pedra pesada que absorve ataques destinados a você." },
+        { "id": "spell_summon_spectral_dragon", "name": "Invocação do Dragão Espectral de Khaz", "cost": 80, "fatigue": 55, "damage": 220, "summonHelper": "Dragão Espectral", "corruption": 10, "masteryReq": 4, "desc": "Convoca o fantasma de um dragão ancestral que ataca ferozmente o inimigo e permanece defendendo seu cavaleiro." }
+      ]
+    }
+  ]
+}

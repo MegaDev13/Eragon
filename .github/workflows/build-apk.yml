@@ -1,0 +1,59 @@
+name: Gerar APK Android e Auto-Deploy no GitHub Pages
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout do Repositório
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Configurar Node.js (Versão 24 LTS)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: 📦 Instalar Dependências e Capacitor CLI
+        run: |
+          npm install
+          npx cap sync android || echo "Pasta android não inicializada localmente, criando projeto Android nativo..."
+          if [ ! -d "android" ]; then
+            npx cap add android
+          fi
+          npx cap sync android
+
+      - name: ☕ Configurar JDK 17 para Android Build
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'gradle'
+
+      - name: 🔨 Compilar APK Android Debug (Gradle)
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug
+
+      - name: 📤 Publicar APK Gerado como Arquivo (Artifact v4) do GitHub
+        uses: actions/upload-artifact@v4
+        with:
+          name: Aethelgard-RPG-Android-APK
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 90
+
+      - name: 🌐 Deploy Automático para GitHub Pages (Servidor de Atualizações Live)
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: .

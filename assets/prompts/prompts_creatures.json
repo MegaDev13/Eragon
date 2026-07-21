@@ -1,0 +1,60 @@
+{
+  "project": "Crônica de Aethelgard: O Destino das Cinzas",
+  "art_style_master_guidelines": "High fantasy bestiary creature illustration, detailed anatomical painting, dramatic combat lighting, dark fantasy RPG card art aesthetic.",
+  "creatures": [
+    {
+      "id": "mercenary_raiders",
+      "name": "Capitão Mercenário Renegado",
+      "filename": "assets/creatures/mercenary_raiders.jpg",
+      "resolution": "2048x2048",
+      "aspect_ratio": "1:1",
+      "composition": "Battle-hardened mercenary captain in battered iron plate armor over chainmail. He wields a heavy notched greatsword with both hands, shouting battle orders amidst smoke and burning village debris.",
+      "lighting": "Harsh orange fire glow from burning structures casting dramatic shadows across scratched iron armor."
+    },
+    {
+      "id": "shadow_wolf",
+      "name": "Lobo-Sombrio de Lúmen",
+      "filename": "assets/creatures/shadow_wolf.jpg",
+      "resolution": "2048x2048",
+      "aspect_ratio": "1:1",
+      "composition": "Enormous corrupted wolf creature crouching low on a mossy boulder inside a dark forest. Its fur is pitch black with faint violet mist smoking from its shoulders, and double glowing yellow eyes crouch ready to pounce.",
+      "lighting": "Moonlight rim lighting along its black fur with eerie violet mist contrast."
+    },
+    {
+      "id": "obsidian_gargoyle",
+      "name": "Gárgula de Obsidiana de Aethel-Khaz",
+      "filename": "assets/creatures/obsidian_gargoyle.jpg",
+      "resolution": "2048x2048",
+      "aspect_ratio": "1:1",
+      "composition": "Massive stone gargoyle sentinel awakening inside underground ruins. Carved from dark obsidian with glowing crimson runes etched into its chest and stone wings unfurling.",
+      "lighting": "Deep cavern darkness pierced by intense crimson runic light glowing from within the stone seams."
+    },
+    {
+      "id": "renegade_sorcerer",
+      "name": "Feiticeiro Renegado da Magia de Sangue",
+      "filename": "assets/creatures/renegade_sorcerer.jpg",
+      "resolution": "2048x2048",
+      "aspect_ratio": "1:1",
+      "composition": "A corrupted dark sorcerer levitating slightly above swamp waters. He wears ragged crimson and black robes, holding an ornate bone staff while glowing liquid blood magic spirals around his outstretched hand.",
+      "lighting": "Eerie red and violet magical glow illuminating his hollow cheeks and dark robes."
+    },
+    {
+      "id": "iron_titan",
+      "name": "Titã de Ferro e Aço-Dragão",
+      "filename": "assets/creatures/iron_titan.jpg",
+      "resolution": "2048x2048",
+      "aspect_ratio": "1:1",
+      "composition": "Colossal mechanical and alchemical golem towering over desert sands. Built from heavy bronze and iron plates with smokestacks venting alchemical fire from its shoulders and glowing orange pistons.",
+      "lighting": "Harsh desert sunlight reflecting off burnished bronze combined with internal furnace glow."
+    },
+    {
+      "id": "wyvern_savage",
+      "name": "Wyvern das Sombras Selvagem",
+      "filename": "assets/creatures/wyvern_savage.jpg",
+      "resolution": "2048x2048",
+      "aspect_ratio": "1:1",
+      "composition": "A ferocious two-legged winged wyvern diving from snowy mountain crags. Its scales are dark slate grey with venomous green barbs along its tail and razor-sharp talons extended.",
+      "lighting": "Alpine sunlight breaking through mist, highlighting the sharp texture of its leathery wings."
+    }
+  ]
+}

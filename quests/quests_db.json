@@ -1,0 +1,148 @@
+{
+  "quests": [
+    {
+      "id": "q_alden_caravan",
+      "title": "A Caravana de Grãos do Norte",
+      "giver": "Alden o Mercador ou Kaelen do Corvo",
+      "locationReq": "loc_eldoria",
+      "status": "available",
+      "description": "Uma pesada caravana da Guilda Áurea carregando grãos e ouro imperial atravessará a estrada do norte esta noite.",
+      "objectives": ["Decidir o destino da caravana na estrada do Vale das Cinzas"],
+      "choices": [
+        {
+          "text": "Proteger a caravana de Alden dos bandidos da estrada (+Honra, +Ouro, -15 HP)",
+          "effects": {
+            "gold": 80,
+            "xp": 60,
+            "hidden": { "honra": 15, "lealdade": 10, "altruismo": 5 },
+            "flags": { "flag_mercador_alden_faliu": false, "flag_rei_confia": true },
+            "rep": { "reino_eldor": 10, "guild_aurea": 15 }
+          },
+          "consequence": { "delayDays": 10, "title": "Estabilidade em Eldor", "desc": "Os celeiros de Eldor estão fartos graças à caravana salva. O preço da ração permanece estável." }
+        },
+        {
+          "text": "Roubar a caravana para si e deixar os guardas amarrados (+300 Ouro, mas iniciará a cadeia da falência)",
+          "effects": {
+            "gold": 300,
+            "xp": 80,
+            "hidden": { "ganancia": 25, "crueldade": 10, "honra": -25 },
+            "flags": { "flag_roubou_caravana_real": true },
+            "rep": { "guild_corvo": 20, "guild_aurea": -30, "reino_eldor": -15 },
+            "triggerSpecialChain": "merchant_robbery"
+          }
+        },
+        {
+          "text": "Interceptar as carroças e distribuir os grãos gratuitamente aos camponeses pobres (+Altruísmo extremo, mas Alden faliu)",
+          "effects": {
+            "gold": 0,
+            "xp": 100,
+            "hidden": { "altruismo": 30, "compaixão": 25, "honra": 10 },
+            "flags": { "flag_salvou_camponeses": true, "flag_mercador_alden_faliu": true },
+            "rep": { "reino_eldor": -10, "guild_aurea": -40 }
+          },
+          "consequence": { "delayDays": 15, "title": "O Herói das Aldeias", "desc": "Os camponeses reverenciam seu nome. A revolta armada contra o palácio perde força porque o povo não passa fome!" }
+        }
+      ]
+    },
+    {
+      "id": "q_dragon_nest",
+      "title": "O Ovo no Pico dos Dragões",
+      "giver": "Pacto das Asas de Escama",
+      "locationReq": "loc_picos_dragao",
+      "status": "available",
+      "description": "Um ovo raro de Dragão das Sombras foi encontrado em uma caverna instável dos Picos Nevados, cobiçado tanto por magos quanto por mercenários.",
+      "objectives": ["Resgatar o ovo ou vendê-lo ao Império de Solgard"],
+      "choices": [
+        {
+          "text": "Entregar o ovo ao Santuário Flutuante das Asas de Escama (+Vínculo, +Reputação Sagrada)",
+          "effects": {
+            "gold": 50,
+            "xp": 120,
+            "dragonBond": 25,
+            "hidden": { "altruismo": 10, "lealdade": 20 },
+            "flags": { "flag_pacto_dragao_antigo": true },
+            "rep": { "guild_escama": 30 }
+          }
+        },
+        {
+          "text": "Vender o ovo aos alquimistas imperiais de Solgard (+450 Ouro, mas escravizarão o filhote)",
+          "effects": {
+            "gold": 450,
+            "xp": 80,
+            "dragonBond": -40,
+            "hidden": { "ganancia": 35, "crueldade": 25, "compaixão": -30 },
+            "flags": { "flag_dragao_vendido_solgard": true },
+            "rep": { "imperio_solgard": 25, "guild_escama": -60 }
+          },
+          "consequence": { "delayDays": 40, "title": "A Besta Alquímica de Solgard", "desc": "O Império de Solgard transformou o filhote em uma máquina de guerra alquímica, usando-o na invasão do norte." }
+        }
+      ]
+    },
+    {
+      "id": "q_khaz_secret",
+      "title": "O Segredo do Obelisco de Aethel-Khaz",
+      "giver": "Arquimago Thalor",
+      "locationReq": "loc_ruinas_khaz",
+      "status": "available",
+      "description": "Nas profundezas de Aethel-Khaz, um obelisco rúnico vibra com energia escura. Ele contém os registros proibidos da Era das Cinzas.",
+      "objectives": ["Decifrar as runas ou destruir o obelisco para sempre"],
+      "choices": [
+        {
+          "text": "Decifrar e absorver o conhecimento proibido (+3 Pontos de Habilidade, +20 Corrupção Arcana)",
+          "effects": {
+            "skillPoints": 3,
+            "xp": 150,
+            "corruption": 20,
+            "hidden": { "curiosidade": 30, "ambicao": 20 },
+            "flags": { "flag_segredo_reliquia_sombria": true, "flag_explorou_ruinas_khaz": true },
+            "rep": { "guild_valen": 20 }
+          }
+        },
+        {
+          "text": "Destruir o obelisco com seu martelo ou magia pura para que o mal nunca retorne (+Honra e Pureza)",
+          "effects": {
+            "gold": 0,
+            "xp": 100,
+            "corruption": -15,
+            "hidden": { "honra": 25, "moralidade": 25 },
+            "flags": { "flag_explorou_ruinas_khaz": true, "flag_obelisco_destruido": true },
+            "rep": { "guild_valen": -15, "reino_eldor": 15 }
+          }
+        }
+      ]
+    },
+    {
+      "id": "q_peasant_revolt",
+      "title": "A Fúria diante dos Portões Real",
+      "giver": "Rainha Lyra ou Líder Rebelde Vane",
+      "locationReq": "loc_eldoria",
+      "reqFlags": { "flag_revolta_camponesa": true },
+      "status": "locked",
+      "description": "Milhares de camponeses famintos e armados cercam os portões de pedra do Palácio de Eldor. A Rainha Lyra ordena a carga da Lâmina de Ferro, enquanto Vane pede sua ajuda para derrubar o trono.",
+      "objectives": ["Escolher de qual lado lutar no momento do confronto fatal"],
+      "choices": [
+        {
+          "text": "Liderar a carga dos Lâminas de Ferro ao lado da Capitã Vespera para salvar a Rainha Lyra (+1000 Ouro, -20% HP do povo)",
+          "effects": {
+            "gold": 1000,
+            "xp": 200,
+            "hidden": { "lealdade": 30, "crueldade": 20, "altruismo": -30 },
+            "flags": { "flag_revolta_camponesa": false, "flag_rainha_lyra_viva": true, "flag_rei_confia": true },
+            "rep": { "reino_eldor": 50, "guild_ferro": 40 }
+          }
+        },
+        {
+          "text": "Abrir os portões por dentro e ajudar Vane a derrubar a nobreza corrupta (+Revolução vitoriosa, mas inicia o caos)",
+          "effects": {
+            "gold": 200,
+            "xp": 250,
+            "hidden": { "altruismo": 20, "ambicao": 30, "honra": -15 },
+            "flags": { "flag_rainha_lyra_viva": false, "governante_eldor": "Rei Vane o Usurpador" },
+            "rep": { "reino_eldor": -60, "guild_corvo": 40 }
+          },
+          "consequence": { "delayDays": 15, "title": "Invasão de Solgard", "desc": "Aproveitando a queda da Rainha Lyra, o Imperador Kaelen VII declara a Grande Guerra do Norte para anexar Eldor." }
+        }
+      ]
+    }
+  ]
+}

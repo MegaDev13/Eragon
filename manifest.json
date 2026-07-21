@@ -1,0 +1,22 @@
+{
+  "name": "Crônica de Aethelgard: O Destino das Cinzas",
+  "short_name": "Aethelgard RPG",
+  "description": "RPG Narrativo de Escolhas, Consequências, Dragões e Geopolítica Medieval (100% Offline e Auto-Atualizável)",
+  "start_url": "./index.html",
+  "display": "fullscreen",
+  "orientation": "any",
+  "background_color": "#111318",
+  "theme_color": "#151820",
+  "icons": [
+    {
+      "src": "assets/guilds/crest_escama.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "assets/guilds/crest_escama.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

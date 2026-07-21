@@ -1,0 +1,115 @@
+{
+  "archetypes": [
+    {
+      "id": "tree_swordsman",
+      "name": "Maestria do Espadachim",
+      "category": "combate",
+      "description": "Perfeição no manejo de espadas longas, duplas e katanas. Focado em precisão cortante e contra-ataques fluídos.",
+      "skills": [
+        { "id": "sk_sword_1", "name": "Corte da Fenda Rápida", "cost": 1, "desc": "Aumenta em +15% a velocidade e dano com qualquer espada equipada.", "unlocked": false },
+        { "id": "sk_sword_2", "name": "Estocada no Ponto Vital", "cost": 2, "reqSkill": "sk_sword_1", "desc": "Acertos críticos causam sangramento contínuo no adversário (+15 dano por turno).", "unlocked": false },
+        { "id": "sk_sword_3", "name": "Postura do Contra-Ataque de Prata", "cost": 3, "reqSkill": "sk_sword_2", "desc": "Ao defender com sucesso em combate, você desfere imediatamente um contra-ataque sem gastar turno.", "unlocked": false }
+      ]
+    },
+    {
+      "id": "tree_knight",
+      "name": "Maestria do Cavaleiro e Escudo",
+      "category": "combate",
+      "description": "A muralha defensiva de Aethelgard. Absorção de dano pesado e proteção inabalável para companheiros.",
+      "skills": [
+        { "id": "sk_knight_1", "name": "Baluarte de Ferro", "cost": 1, "desc": "Aumenta a Defesa Física Base em +20 e reduz o dano contundente em 25%.", "unlocked": false },
+        { "id": "sk_knight_2", "name": "Slam do Escudo Pesado", "cost": 2, "reqSkill": "sk_knight_1", "desc": "Permite usar o escudo para atordoar inimigos pesados, quebrando sua iniciativa.", "unlocked": false }
+      ]
+    },
+    {
+      "id": "tree_berserker",
+      "name": "Maestria do Berserker",
+      "category": "combate",
+      "description": "A fúria indomável dos machados e martelos pesados. Quanto menor sua vida, mais devastador se torna seu golpe.",
+      "skills": [
+        { "id": "sk_berserk_1", "name": "Fúria de Sangue", "cost": 1, "desc": "Quando seu HP estiver abaixo de 50%, seu dano com machados e martelos aumenta em +40%.", "unlocked": false },
+        { "id": "sk_berserk_2", "name": "Golpe Quebra-Crânios", "cost": 2, "reqSkill": "sk_berserk_1", "desc": "Inmune a atordoamento em combate e ignora 50% da defesa física do oponente.", "unlocked": false }
+      ]
+    },
+    {
+      "id": "tree_hunter",
+      "name": "Maestria do Caçador e Sobrevivência",
+      "category": "exploração",
+      "description": "Perícia nas florestas e pântanos. Reduz o consumo de rações em viagem e rastrea feras raras.",
+      "skills": [
+        { "id": "sk_hunt_1", "name": "Rastreador de Lúmen", "cost": 1, "desc": "O consumo de rações ao viajar entre regiões é reduzido à metade e evita emboscadas no pântano.", "unlocked": false },
+        { "id": "sk_hunt_2", "name": "Conhecedor de Bestas", "cost": 2, "reqSkill": "sk_hunt_1", "desc": "Aumenta o dano contra monstros, gárgulas e feras selvagens em +30%.", "unlocked": false }
+      ]
+    },
+    {
+      "id": "tree_archer",
+      "name": "Maestria do Arqueiro e Besta",
+      "category": "combate",
+      "description": "Atiradores de elite capazes de eliminar alvos antes que eles entrem no alcance de combate corpo a corpo.",
+      "skills": [
+        { "id": "sk_arch_1", "name": "Mirar na Brecha da Armadura", "cost": 1, "desc": "Aumenta a Precisão em +20 e a chance de acerto crítico à distância em +15%.", "unlocked": false },
+        { "id": "sk_arch_2", "name": "Chuva de Setas Alquímicas", "cost": 2, "reqSkill": "sk_arch_1", "desc": "Dispara três setas rápidas no mesmo turno, atingindo múltiplos alvos ou concentrando no chefe.", "unlocked": false }
+      ]
+    },
+    {
+      "id": "tree_assassin",
+      "name": "Maestria do Assassino Sombrio",
+      "category": "furtividade",
+      "description": "A arte da adaga e do veneno da Irmandade do Corvo. Acertos silenciosos nas sombras.",
+      "skills": [
+        { "id": "sk_ass_1", "name": "Passo de Sombra Silencioso", "cost": 1, "desc": "Aumenta o atributo Furtividade em +5 e desbloqueia opções de invasão silenciosa em eventos.", "unlocked": false },
+        { "id": "sk_ass_2", "name": "Golpe de Misericórdia (Crítico letal)", "cost": 2, "reqSkill": "sk_ass_1", "desc": "Ataques surpresa com adagas causam 300% de dano crítico inicial contra alvos desprevenidos.", "unlocked": false }
+      ]
+    },
+    {
+      "id": "tree_sorcerer",
+      "name": "Maestria do Feiticeiro Arcano",
+      "category": "magia",
+      "description": "Conhecimento profundo das energias arcanas de Aether e Valen. Reduz custos de canalização e fadiga.",
+      "skills": [
+        { "id": "sk_sorc_1", "name": "Canalização Eficiente", "cost": 1, "desc": "Reduz o custo de Vontade/Mana de todos os feitiços em 20%.", "unlocked": false },
+        { "id": "sk_sorc_2", "name": "Mente de Aether (Sem Sobrecarga)", "cost": 2, "reqSkill": "sk_sorc_1", "desc": "Aumenta a taxa de recuperação diária de fadiga mágica em +40% e elimina a chance de sobrecarga.", "unlocked": false }
+      ]
+    },
+    {
+      "id": "tree_druid",
+      "name": "Maestria do Druida da Natureza",
+      "category": "magia",
+      "description": "A comunhão com a seiva verde de Lúmen. Regeneração passiva e controle de raízes em combate.",
+      "skills": [
+        { "id": "sk_druid_1", "name": "Bênção da Seiva", "cost": 1, "desc": "Restaura 10 de HP automaticamente no início de cada rodada de combate.", "unlocked": false },
+        { "id": "sk_druid_2", "name": "Ira da Floresta", "cost": 2, "reqSkill": "sk_druid_1", "desc": "Magias de Natureza causam +35% de dano e prendem inimigos por 2 turnos.", "unlocked": false }
+      ]
+    },
+    {
+      "id": "tree_merchant",
+      "name": "Maestria do Mercador Áureo",
+      "category": "economia",
+      "description": "Negociação fina, monopólio de rotas e extorsão comercial com as guildas áureas.",
+      "skills": [
+        { "id": "sk_merch_1", "name": "Lábia de Ouro do Sultanato", "cost": 1, "desc": "Concede um desconto imediato de 25% na compra de itens e aumenta o valor de venda das mercadorias em 30%.", "unlocked": false },
+        { "id": "sk_merch_2", "name": "Investidor de Caravana", "cost": 2, "reqSkill": "sk_merch_1", "desc": "Gera uma renda passiva diária de +15 ouro do comércio internacional.", "unlocked": false }
+      ]
+    },
+    {
+      "id": "tree_diplomat",
+      "name": "Maestria do Diplomata Real",
+      "category": "política",
+      "description": "A arte de governar pela palavra, fechar tratados e manipular reis sem derramar sangue.",
+      "skills": [
+        { "id": "sk_dip_1", "name": "Palavra da Coroa", "cost": 1, "desc": "Aumenta o Carisma e Liderança em +4. Desbloqueia opções pacíficas de negociação em quase todas as guerras e missões.", "unlocked": false },
+        { "id": "sk_dip_2", "name": "Pacto de Não-Agressão", "cost": 2, "reqSkill": "sk_dip_1", "desc": "Guardas reais e exércitos hostis pensam duas vezes antes de atacá-lo em territórios inimigos.", "unlocked": false }
+      ]
+    },
+    {
+      "id": "tree_dragon_tamer",
+      "name": "Maestria do Domador de Dragões",
+      "category": "dragões",
+      "description": "O laço sagrado das Asas de Escama. Otimiza o humor, combate e evolução do seu dragão companheiro.",
+      "skills": [
+        { "id": "sk_drak_1", "name": "Voz do Titã Ancestral", "cost": 1, "desc": "O vínculo diário com o dragão aumenta o dobro mais rápido e o custo de fadiga do voo é zerado.", "unlocked": false },
+        { "id": "sk_drak_2", "name": "Sincronia de Escamas de Fogo", "cost": 2, "reqSkill": "sk_drak_1", "desc": "Seu dragão ataca com 50% mais força e defende seu cavaleiro de feitiços mortais.", "unlocked": false }
+      ]
+    }
+  ]
+}

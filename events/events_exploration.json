@@ -1,0 +1,160 @@
+{
+  "events": [
+    {
+      "id": "event_ancient_shrine",
+      "title": "O Altar Prateado de Aether",
+      "description": "Em meio às cinzas e pedras partidas, um antigo altar de mármore branco emana uma suave ressonância rúnica. Inscrições ancestrais pedem um tributo de sangue ou magia para revelar seu segredo.",
+      "requirements": {
+        "location": "loc_vale_cinzas"
+      },
+      "choices": [
+        {
+          "text": "Sacrificar 25 do seu próprio HP sobre o altar de pedra (+1 Ponto de Atributo, +10 Corrupção)",
+          "effects": {
+            "hp": -25,
+            "attrPoints": 1,
+            "corruption": 10,
+            "hidden": { "coragem": 10, "curiosidade": 15 },
+            "flags": { "flag_tributo_sangue_aether": true }
+          }
+        },
+        {
+          "text": "Canalizar sua Vontade Arcana para harmonizar as runas sem derramar sangue (+80 XP, +10 Afinidade Mágica)",
+          "effects": {
+            "willpower": -40,
+            "xp": 80,
+            "attrMod": { "key": "afinidadeMagica", "delta": 2 },
+            "hidden": { "curiosidade": 10, "sabedoria": 5 },
+            "flags": { "flag_altar_aether_purificado": true }
+          }
+        },
+        {
+          "text": "Afastar-se sem perturbar o sono dos deuses antigos (Nenhum efeito)",
+          "effects": {
+            "hidden": { "coragem": -2 }
+          }
+        }
+      ]
+    },
+    {
+      "id": "event_lost_merchant_desert",
+      "title": "O Mercador Perdido de Solgard",
+      "description": "Nas dunas escaldantes de obsidiana, um caixeiro-viajante do Sindicato Áureo rasteja ao lado de um camelo morto por desidratação. Ele implora por um cantil de água e ração.",
+      "requirements": {
+        "location": "loc_deserto_solgard"
+      },
+      "choices": [
+        {
+          "text": "Compartilhar suas rações e água (+50 XP, +25 Reputação Áurea, -2 Rações)",
+          "reqItems": { "ration_food": 2 },
+          "effects": {
+            "xp": 50,
+            "items": { "ration_food": -2 },
+            "hidden": { "altruismo": 15, "compaixão": 15 },
+            "rep": { "guild_aurea": 25 },
+            "flags": { "flag_salvou_mercador_deserto": true }
+          },
+          "consequence": { "delayDays": 14, "title": "O Agradecimento de Harun", "desc": "O mercador salvo era sobrinho do Sultão de Aramis. Você recebeu um crédito especial nas lojas da guilda áurea." }
+        },
+        {
+          "text": "Cobrar 120 moedas de ouro pelas duas rações (+120 Ouro, +Ganância, -Compaixão)",
+          "reqItems": { "ration_food": 2 },
+          "effects": {
+            "gold": 120,
+            "items": { "ration_food": -2 },
+            "hidden": { "ganancia": 25, "compaixão": -15 }
+          }
+        },
+        {
+          "text": "Saquear os alforjes do camelo morto enquanto o mercador agoniza (+60 Ouro, +Gema Rúnica, +Crueldade)",
+          "effects": {
+            "gold": 60,
+            "items": { "mat_obsidian_crystal": 1 },
+            "hidden": { "crueldade": 25, "ganancia": 20, "honra": -25 },
+            "flags": { "flag_deixou_mercador_morrer": true }
+          }
+        }
+      ]
+    },
+    {
+      "id": "event_dragon_migration",
+      "title": "O Voo dos Dragões da Tempestade",
+      "description": "As nuvens se abrem nos picos nevados e dezenas de dragões selvagens cortam o céu em uma migração ancestral. Seu dragão olha para as nuvens rugindo, sentindo o chamado de seus irmãos.",
+      "requirements": {
+        "dragon": true
+      },
+      "choices": [
+        {
+          "text": "Permitir que seu dragão voe com eles por algumas horas para fortalecer seus laços selvagens (+15 Humor, +10 Vínculo, +50 XP)",
+          "effects": {
+            "xp": 50,
+            "dragonMood": 15,
+            "dragonBond": 10,
+            "hidden": { "empatia": 10, "compaixão": 10 }
+          }
+        },
+        {
+          "text": "Segurar as rédeas e ordenar que permaneça no chão ao seu lado (+10 Disciplina/Dano, mas -15 Humor do dragão)",
+          "effects": {
+            "dragonMood": -15,
+            "hidden": { "orgulho": 10, "impulsividade": -5 }
+          }
+        }
+      ]
+    },
+    {
+      "id": "event_moss_altar_druid",
+      "title": "A Árvore-Coração de Lúmen",
+      "description": "No centro mais profundo da Floresta de Lúmen, a Árvore-Coração goteja uma seiva verde fosforescente com propriedades curativas miraculosas, mas feitiços druídicos testam a intenção dos que se aproximam.",
+      "requirements": {
+        "location": "loc_floresta_lumen"
+      },
+      "choices": [
+        {
+          "text": "Coletar a seiva com reverência e oração druídica (+1 Elixir Draconiano, +10 HP máx, +Reputação Natureza)",
+          "effects": {
+            "items": { "dragon_elixir": 1 },
+            "attrMod": { "key": "constituicao", "delta": 1 },
+            "hidden": { "altruismo": 10, "sabedoria": 10 }
+          }
+        },
+        {
+          "text": "Cortar um galho da Árvore-Coração para vender madeira mágica (+250 Ouro, -Reputação Druídica, Feras atacam)",
+          "effects": {
+            "gold": 250,
+            "hidden": { "ganancia": 30, "crueldade": 15 },
+            "rep": { "reino_eldor": -15 },
+            "combatTrigger": "shadow_wolf"
+          }
+        }
+      ]
+    },
+    {
+      "id": "event_dwarven_chest_khaz",
+      "title": "O Cofre Selado dos Reis Anões",
+      "description": "Em uma câmara colapsada das ruínas de Aethel-Khaz, um cofre de ferro forjado pesado com 7 fechaduras rúnicas emana um calor intenso.",
+      "requirements": {
+        "location": "loc_ruinas_khaz"
+      },
+      "choices": [
+        {
+          "text": "Forçar a abertura com martelo ou força bruta (Risco de explosão rúnica: -35 HP, mas chance de espólio)",
+          "effects": {
+            "hp": -35,
+            "gold": 220,
+            "items": { "mat_obsidian_crystal": 2 },
+            "hidden": { "coragem": 15, "impulsividade": 15 }
+          }
+        },
+        {
+          "text": "Decifrar o código rúnico dos anões usando Inteligência e Sabedoria (+280 Ouro, +Gema de Obsidiana, sem dano)",
+          "effects": {
+            "gold": 280,
+            "items": { "mat_obsidian_crystal": 3 },
+            "hidden": { "curiosidade": 20, "sabedoria": 15 }
+          }
+        }
+      ]
+    }
+  ]
+}

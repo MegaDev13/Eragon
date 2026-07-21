@@ -1,0 +1,110 @@
+{
+  "project": "Crônica de Aethelgard: O Destino das Cinzas",
+  "art_style_master_guidelines": "Semi-realistic digital oil painting, cinematic fantasy art, Masterpiece AAA RPG concept art, hyper-detailed textures, atmospheric volumetric lighting, rich shadows, aged oil canvas aesthetic, NO pixel art, NO anime style, NO cartoon elements, NO cheap AI artifacts.",
+  "backgrounds": [
+    {
+      "id": "bg_title_screen",
+      "filename": "assets/backgrounds/title_bg.jpg",
+      "resolution": "3840x2160",
+      "aspect_ratio": "16:9",
+      "composition": "Wide panoramic cinematic vista of Aethelgard at twilight. In the foreground, an ancient stone cliff overlooking a misty valley where campfires flicker. In the midground, dark pine forests and ancient gothic ruins with glowing silver rifts. In the background, majestic snow-capped mountains and a colossal fantasy castle perched on a crag under a massive silver moon and swirling purple-gold nebulae. A majestic golden-scaled dragon flies through the mist with embers trailing behind.",
+      "lighting": "Cinematic twilight, volumetric moonlight rays filtering through mist, warm orange campfire glow casting dramatic highlights on foreground stones.",
+      "color_palette": ["Charcoal black (#111318)", "Deep indigo blue (#1a2333)", "Aged gold (#c5a059)", "Ash silver (#cbd5e1)", "Warm amber embers (#f59e0b)"],
+      "details": "Weathered stone carvings on the cliff edge, individual pine needles glowing in moonlight, drifting ash and spark particles, subtle reflection on a distant winding river.",
+      "variations": {
+        "day": "High noon sun breaking through storm clouds, vibrant green valley, golden sunlight reflecting on castle towers.",
+        "winter": "Heavy snowfall, frozen river, frost-covered obelisks, pale blue aurora borealis in the sky."
+      }
+    },
+    {
+      "id": "bg_eldoria_city",
+      "filename": "assets/backgrounds/eldoria_city.jpg",
+      "resolution": "3840x2160",
+      "aspect_ratio": "16:9",
+      "composition": "A bustling medieval feudal capital street lined with high stone and timber-framed buildings, slate roofs, and iron banners of the Crown of Eldor. A grand stone castle fortress rises at the top of the hill. Blacksmith smoke rises into the autumn sky while townspeople, armored knights, and merchant carts navigate the cobblestone plaza.",
+      "lighting": "Warm afternoon golden hour sunlight casting long, rich shadows across cobblestones, glowing torches inside tavern windows.",
+      "color_palette": ["Stone grey (#383f51)", "Dark oak wood (#2c1810)", "Royal crimson (#881337)", "Golden sunlight (#eab308)", "Slate blue (#334155)"],
+      "details": "Intricate ironwork signs above shop doors, weathered stone walls with climbing ivy, armor glinting in the sun, realistic dust and warmth in the air."
+    },
+    {
+      "id": "bg_ash_valley",
+      "filename": "assets/backgrounds/ash_valley.jpg",
+      "resolution": "3840x2160",
+      "aspect_ratio": "16:9",
+      "composition": "A haunting, silent wilderness valley covered in fine silver ash. Shattered ancient monolithic runes and broken obsidian pillars jut from the earth. Eerie glowing silver mist drifts slowly between bare basalt crags under an overcast, brooding sky.",
+      "lighting": "Soft diffused overcast daylight with supernatural cyan and silver luminescence emanating from the fractured obelisks.",
+      "color_palette": ["Silver ash (#94a3b8)", "Obsidian black (#0f172a)", "Ethereal cyan (#06b6d4)", "Muted violet (#4c1d95)", "Charcoal (#1e293b)"],
+      "details": "Intricate glowing runic inscriptions on broken stones, footprints in fine ash, floating silver pollen particles."
+    },
+    {
+      "id": "bg_dragon_peaks",
+      "filename": "assets/backgrounds/dragon_peaks.jpg",
+      "resolution": "3840x2160",
+      "aspect_ratio": "16:9",
+      "composition": "Imposing jagged snow-covered mountain peaks piercing through a sea of thick clouds. On a massive volcanic cliff ledge, a cavernous dragon nest filled with glittering gold coins, gemstones, and charred dragon scales. Steam and thermal vents hiss from fissures in the black rock.",
+      "lighting": "Crisp high-altitude sunlight contrasting against deep blue shadows on the snow and warm orange volcanic glow inside the cavern.",
+      "color_palette": ["Alpine white (#f8fafc)", "Volcanic black (#18181b)", "Molten orange (#ea580c)", "Sky cerulean (#0284c7)", "Gold coin yellow (#facc15)"],
+      "details": "Ice crystals on rocky outcroppings, heat shimmer above volcanic cracks, enormous claw marks etched into granite boulders."
+    },
+    {
+      "id": "bg_lumen_forest",
+      "filename": "assets/backgrounds/lumen_forest.jpg",
+      "resolution": "3840x2160",
+      "aspect_ratio": "16:9",
+      "composition": "An ancient magical druidic forest at twilight. Colossal millenary trees with twisted roots covered in glowing emerald moss and bioluminescent teal fungi. Soft fireflies drift through dense foliage while a crystal-clear forest brook reflects the glowing flora.",
+      "lighting": "Mystical night lighting dominated by bioluminescent emerald and cyan flora, creating enchanting pockets of light in deep shadow.",
+      "color_palette": ["Deep forest moss (#064e3b)", "Bioluminescent emerald (#10b981)", "Teal glow (#14b8a6)", "Dark bark brown (#1c1917)", "Midnight indigo (#1e1b4b)"],
+      "details": "Intricate veins on glowing leaves, dewdrops reflecting cyan light, ancient druidic stone shrines hidden between tree roots."
+    },
+    {
+      "id": "bg_aethel_khaz",
+      "filename": "assets/backgrounds/aethel_khaz.jpg",
+      "resolution": "3840x2160",
+      "aspect_ratio": "16:9",
+      "composition": "A colossal subterranean dwarven ruins complex. Immense stone arches, statues of forgotten warrior kings, and massive brass cogwheels half-submerged in dark water. Crimson runic braziers and lava channels illuminate the cavernous architecture.",
+      "lighting": "Dramatic chiaroscuro with deep underground shadows pierced by molten orange lava and glowing blood-red runes.",
+      "color_palette": ["Deep basalt grey (#27272a)", "Molten crimson (#dc2626)", "Aged brass (#ca8a04)", "Dark water cyan (#164e63)", "Soot black (#09090b)"],
+      "details": "Intricate geometric carvings across archways, steam rising from underground rivers, glowing red crystals in stone sockets."
+    },
+    {
+      "id": "bg_valen_port",
+      "filename": "assets/backgrounds/valen_port.jpg",
+      "resolution": "3840x2160",
+      "aspect_ratio": "16:9",
+      "composition": "A sprawling maritime harbor city along a rocky coast at dusk. Wooden galleons and merchant caravels docked at stone piers lined with spice barrels, lantern-lit taverns, and the towering blue-domed Spire of the Arcane Circle overlooking the sea.",
+      "lighting": "Dusk transition with orange horizon sunset reflecting across calm ocean waters and magical blue beacons lighting up the mage spire.",
+      "color_palette": ["Ocean navy (#0f172a)", "Sunset orange (#f97316)", "Arcane blue (#3b82f6)", "Wet stone (#334155)", "Torch gold (#d97706)"],
+      "details": "Rigging and sails of ships silhouetted against twilight sky, wet cobblestones reflecting lanterns, sea mist rolling into dock alleyways."
+    },
+    {
+      "id": "bg_solgard_desert",
+      "filename": "assets/backgrounds/solgard_desert.jpg",
+      "resolution": "3840x2160",
+      "aspect_ratio": "16:9",
+      "composition": "Endless rolling dunes of dark black obsidian sand stretching under a blistering golden sun. In the distance, towering brass obelisks and the fortress walls of Solgard gleam like mirrors. Alchemical oil towers pump black smoke into the hot horizon.",
+      "lighting": "Intense midday sun creating harsh contrasts, mirage heat haze across the dunes, blinding golden reflections off brass architecture.",
+      "color_palette": ["Obsidian dune black (#1c1917)", "Blistering gold (#eab308)", "Polished bronze (#b45309)", "Scorched terracotta (#7c2d12)", "Sandstorm amber (#f59e0b)"],
+      "details": "Wind-sculpted patterns on dark sand dunes, ancient sun-bleached skeletal ribs of desert leviathans, heat shimmer waves."
+    },
+    {
+      "id": "bg_mage_tower",
+      "filename": "assets/backgrounds/mage_tower.jpg",
+      "resolution": "3840x2160",
+      "aspect_ratio": "16:9",
+      "composition": "The grand sanctum circular hall inside the Arcane Circle Spire. Towering bookcases packed with ancient leather-bound grimimoires rise to a domed ceiling depicting astral constellations. Floating glowing runic spheres and astrolabes orbit above a grand alchemy table covered in scrolls and crystal vials.",
+      "lighting": "Ethereal interior lighting powered by floating blue and violet arcane spheres and candlelight reflecting off polished mahogany tables.",
+      "color_palette": ["Mahogany wood (#3f1d18)", "Astral violet (#6d28d9)", "Arcane sapphire (#2563eb)", "Parchment cream (#fef3c7)", "Gold brass (#d97706)"],
+      "details": "Individual glowing runes hovering above open spellbooks, dust motes caught in shafts of magical light, intricate brass astrolabe gears."
+    },
+    {
+      "id": "bg_campsite",
+      "filename": "assets/backgrounds/campsite.jpg",
+      "resolution": "3840x2160",
+      "aspect_ratio": "16:9",
+      "composition": "An intimate, atmospheric adventurer's campfire resting spot inside a ruined stone archway at night. A roaring campfire crackles in the center, illuminating a bedroll, an open map on a wooden crate, sharpening stones, and a resting dragon curled up nearby with glistening scales under the starlight.",
+      "lighting": "Warm, cozy campfire glow casting rich orange highlights against cool indigo night shadows and distant starlight.",
+      "color_palette": ["Campfire orange (#ea580c)", "Night indigo (#1e1b4b)", "Leather brown (#57301c)", "Stone grey (#475569)", "Ember yellow (#facc15)"],
+      "details": "Sparks and smoke drifting upward, detailed texture of leather armor resting on a log, warm light reflecting off dragon scales."
+    }
+  ]
+}

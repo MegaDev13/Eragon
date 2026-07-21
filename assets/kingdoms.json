@@ -1,0 +1,165 @@
+{
+  "kingdoms": [
+    {
+      "id": "reino_eldor",
+      "name": "Reino de Eldor",
+      "ruler": "Rainha Lyra de Eldor",
+      "politics": "Monarquia Feudal",
+      "economyState": "Próspera",
+      "economyGoldPool": 120000,
+      "armyStrength": 85,
+      "corruption": 25,
+      "religion": "Culto à Luz Solar de Aethel",
+      "technology": "Ferro e Escudos Pesados",
+      "magicLevel": "Baixo (Desconfiança Arcana)",
+      "reputationWithPlayer": 10,
+      "diplomacy": {
+        "imperio_solgard": "Tensão Fronteiriça",
+        "confederacao_valdrak": "Paz e Comércio",
+        "sultanato_aramis": "Acordo Comercial",
+        "teocracia_aethel": "Aliança Sagrada",
+        "grao_ducado_vaelor": "Acordo Comercial",
+        "horda_khaz": "Guerra Defensiva"
+      },
+      "description": "O mais antigo reino feudal das cinzas, sustentado pela agricultura dos vales e pela cavalaria pesada de Eldoria."
+    },
+    {
+      "id": "imperio_solgard",
+      "name": "Império de Solgard",
+      "ruler": "Imperador Kaelen VII",
+      "politics": "Império Militar e Alquímico",
+      "economyState": "Estável",
+      "economyGoldPool": 250000,
+      "armyStrength": 95,
+      "corruption": 40,
+      "religion": "A Ordem da Chama Eterna",
+      "technology": "Pólvora Alquímica e Bestas Mecânicas",
+      "magicLevel": "Médio (Magia de Fogo e Runas)",
+      "reputationWithPlayer": 0,
+      "diplomacy": {
+        "reino_eldor": "Tensão Fronteiriça",
+        "confederacao_valdrak": "Tensão Arrojada",
+        "sultanato_aramis": "Aliança Econômica",
+        "teocracia_aethel": "Tensão Arrojada",
+        "grao_ducado_vaelor": "Tratado de Pólvora",
+        "horda_khaz": "Guerra Total"
+      },
+      "description": "Uma potência imperial implacável nascida no deserto de obsidiana, obcecada por ordem, conquista e armas alquímicas."
+    },
+    {
+      "id": "confederacao_valdrak",
+      "name": "Confederação de Val-Drak",
+      "ruler": "Conselho dos Quatro Picos e Arquimago Thalor",
+      "politics": "Conselho Merito-Arcano",
+      "economyState": "Estável",
+      "economyGoldPool": 90000,
+      "armyStrength": 70,
+      "corruption": 15,
+      "religion": "Veneração aos Dragões e Aether",
+      "technology": "Cristais Flutuantes e Forja Rúnica",
+      "magicLevel": "Supremo (Todas as Escolas Arcanas)",
+      "reputationWithPlayer": 15,
+      "diplomacy": {
+        "reino_eldor": "Paz e Comércio",
+        "imperio_solgard": "Tensão Arrojada",
+        "sultanato_aramis": "Paz e Comércio",
+        "teocracia_aethel": "Guerra Fria Mística",
+        "grao_ducado_vaelor": "Paz e Comércio",
+        "horda_khaz": "Tensão Fronteiriça"
+      },
+      "description": "Cidades livres situadas nas alturas dos picos nevados, onde dragões e magos convivem em simbiose mística."
+    },
+    {
+      "id": "sultanato_aramis",
+      "name": "Sultanato das Areias de Ouro (Aramis)",
+      "ruler": "Sultão Harun Al-Dajir",
+      "politics": "Oligarquia Mercantil",
+      "economyState": "Próspera",
+      "economyGoldPool": 400000,
+      "armyStrength": 60,
+      "corruption": 55,
+      "religion": "O Grande Moeda-Sol",
+      "technology": "Navegação Oceânica e Especiarias",
+      "magicLevel": "Médio (Ilusões e Magia de Sangue Oculta)",
+      "reputationWithPlayer": 5,
+      "diplomacy": {
+        "reino_eldor": "Acordo Comercial",
+        "imperio_solgard": "Aliança Econômica",
+        "confederacao_valdrak": "Paz e Comércio",
+        "teocracia_aethel": "Acordo Comercial",
+        "grao_ducado_vaelor": "Tensão Naval",
+        "horda_khaz": "Tratado de Contrabando"
+      },
+      "description": "O centro nervoso do comércio continental, onde tudo e todos têm um preço em barras de ouro purificado."
+    },
+    {
+      "id": "teocracia_aethel",
+      "name": "Teocracia Solar de Aethel-Lúmen",
+      "ruler": "Oráculo Seraphina a Alta Sacerdotisa",
+      "politics": "Teocracia Dogmática",
+      "economyState": "Estável",
+      "economyGoldPool": 160000,
+      "armyStrength": 80,
+      "corruption": 10,
+      "religion": "A Inquisição da Luz Celestial",
+      "technology": "Armaduras Douradas e Espelhos Solares",
+      "magicLevel": "Alto (Apenas Magia de Luz e Espiritual)",
+      "reputationWithPlayer": 0,
+      "diplomacy": {
+        "reino_eldor": "Aliança Sagrada",
+        "imperio_solgard": "Tensão Arrojada",
+        "confederacao_valdrak": "Guerra Fria Mística",
+        "sultanato_aramis": "Acordo Comercial",
+        "grao_ducado_vaelor": "Paz e Comércio",
+        "horda_khaz": "Cruzada Santa"
+      },
+      "description": "Baluarte sagrado nas montanhas orientais. Seus inquisidores perseguem implacavelmente necromantes e praticantes da Magia de Sangue."
+    },
+    {
+      "id": "grao_ducado_vaelor",
+      "name": "Grão-Ducado de Vaelor (Fardos do Oeste)",
+      "ruler": "Grão-Duque Roderick de Braço de Ferro",
+      "politics": "Militarismo Feudal Costeiro",
+      "economyState": "Estável",
+      "economyGoldPool": 140000,
+      "armyStrength": 88,
+      "corruption": 30,
+      "religion": "Veneração ao Mar e Lâminas",
+      "technology": "Frotas Galeões e Aço Prateado",
+      "magicLevel": "Baixo (Uso Pragmático de Runas)",
+      "reputationWithPlayer": 5,
+      "diplomacy": {
+        "reino_eldor": "Acordo Comercial",
+        "imperio_solgard": "Tratado de Pólvora",
+        "confederacao_valdrak": "Paz e Comércio",
+        "sultanato_aramis": "Tensão Naval",
+        "teocracia_aethel": "Paz e Comércio",
+        "horda_khaz": "Guerra Marítima"
+      },
+      "description": "Potência naval do ocidente. Suas frotas de guerra controlam as saídas oceânicas e exigem pedágio dos navios mercantes."
+    },
+    {
+      "id": "horda_khaz",
+      "name": "Horda Nômade de Khaz-Dûm (Herdeiros do Abismo)",
+      "ruler": "Khã Vorak o Esmaga-Pedras",
+      "politics": "Confederação Nômade de Clãs",
+      "economyState": "Crise",
+      "economyGoldPool": 75000,
+      "armyStrength": 92,
+      "corruption": 5,
+      "religion": "Espíritos da Terra e Feras",
+      "technology": "Machados Pesados e Montarias Selvagens",
+      "magicLevel": "Médio (Xamanismo e Invocação)",
+      "reputationWithPlayer": -5,
+      "diplomacy": {
+        "reino_eldor": "Guerra Defensiva",
+        "imperio_solgard": "Guerra Total",
+        "confederacao_valdrak": "Tensão Fronteiriça",
+        "sultanato_aramis": "Tratado de Contrabando",
+        "teocracia_aethel": "Cruzada Santa",
+        "grao_ducado_vaelor": "Guerra Marítima"
+      },
+      "description": "Clãs guerreiros indomáveis que habitam as fendas subterrâneas e cânions de Aethel-Khaz. Não curvam a cabeça a nenhum rei."
+    }
+  ]
+}
