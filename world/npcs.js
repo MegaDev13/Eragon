@@ -50,6 +50,16 @@ class NPCsManager {
 
     npc.conhece_jogador = true;
 
+    // === INTEGRAÇÃO COM NOVO SISTEMA DE AFINIDADE ===
+    if (window.affinityManager && changes.confia !== undefined) {
+      window.affinityManager.modifyAffinity(npcId, changes.confia * 0.8, reason);
+    }
+
+    // NPC MEMORY: record the interaction
+    if (window.npcRoutineManager) {
+      window.npcRoutineManager.addMemory(npcId, "player_interaction", reason || "Interação com o jogador", changes.confia || 0);
+    }
+
     // Sincronizar com flags para checagem por eventos
     if (window.flagsManager) {
       window.flagsManager.setFlag(`npc_${npc.id}_confia`, npc.confia, `Relação NPC (${reason})`);

@@ -1791,3 +1791,423 @@ body {
   transform: translateX(25px);
   transition: all 0.4s ease;
 }
+
+/* ========================================================
+   🎯 NOVO: DESIGN DE TELA MÓVEL NARRATIVA EXATA (como na imagem)
+   ======================================================== */
+.story-scene-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: calc(100vh - 140px);
+  background: #0f1117;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
+  border: 2px solid #3b4458;
+}
+
+.story-narrative-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #1f242f, #151820);
+  padding: 8px 12px;
+  border-bottom: 2px solid #c5a059;
+  flex-shrink: 0;
+}
+
+.story-narrative-portrait {
+  width: 54px;
+  height: 54px;
+  border-radius: 6px;
+  border: 3px solid #c5a059;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  flex-shrink: 0;
+}
+
+.story-narrative-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-narrative-info {
+  flex: 1;
+  padding-left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.story-narrative-name {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 700;
+  color: #facc15;
+  line-height: 1.1;
+}
+
+.story-narrative-stats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #e0d3a5;
+  font-weight: 600;
+}
+
+.story-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: rgba(0,0,0,0.45);
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 10.5px;
+}
+
+.story-stat.hp { color: #f87171; }
+.story-stat.will { color: #60a5fa; }
+.story-stat.gold { color: #facc15; }
+
+.story-scene-image {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-bottom: 3px solid #3b4458;
+  flex-shrink: 0;
+  display: block;
+}
+
+.story-narrative-text {
+  background: linear-gradient(#fef3c7, #f4e9c8);
+  color: #2c1810;
+  padding: 16px 14px;
+  font-family: 'MedievalSharp', serif;
+  font-size: 14.5px;
+  line-height: 1.65;
+  flex: 1;
+  overflow-y: auto;
+  box-shadow: inset 0 0 15px rgba(120, 53, 15, 0.15);
+}
+
+.story-narrative-text p {
+  margin-bottom: 10px;
+  text-indent: 12px;
+}
+
+.story-narrative-text .dialogue {
+  font-style: italic;
+  border-left: 4px solid #854d0e;
+  padding-left: 10px;
+  margin: 12px 0;
+}
+
+.story-choices-mobile {
+  background: #151820;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+  border-top: 2px solid #3b4458;
+}
+
+.mobile-choice-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(90deg, #fef3c7 0%, #f4e9c8 50%, #fef3c7 100%);
+  color: #2c1810;
+  border: 2px solid #854d0e;
+  border-radius: 6px;
+  padding: 11px 14px;
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+  transition: all 0.15s ease;
+}
+
+.mobile-choice-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(197, 160, 89, 0.5);
+  border-color: #c5a059;
+}
+
+.mobile-choice-btn .choice-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  width: 22px;
+}
+
+.story-narrative-footer {
+  background: #0f1117;
+  padding: 6px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #6b7280;
+  border-top: 1px solid #3b4458;
+  flex-shrink: 0;
+}
+
+.story-narrative-footer .footer-icons {
+  display: flex;
+  gap: 14px;
+  font-size: 16px;
+}
+
+.story-narrative-footer .footer-icons span {
+  cursor: pointer;
+  opacity: .85;
+  transition: .2s;
+}
+
+.story-narrative-footer .footer-icons span:hover {
+  opacity: 1;
+  color: #facc15;
+}
+
+/* MOBILE SPECIFIC ENHANCEMENTS */
+@media (max-width: 768px) {
+  .story-scene-layout {
+    max-height: calc(100vh - 120px);
+    border-radius: 8px;
+    margin: -4px;
+  }
+  
+  .story-scene-image {
+    height: 175px;
+  }
+  
+  .story-narrative-text {
+    font-size: 13.8px;
+    padding: 12px 11px;
+  }
+  
+  .story-narrative-header {
+    padding: 6px 10px;
+  }
+  
+  .story-narrative-portrait {
+    width: 46px;
+    height: 46px;
+  }
+  
+  .story-narrative-name {
+    font-size: 14px;
+  }
+  
+  .mobile-choice-btn {
+    padding: 9px 12px;
+    font-size: 13.5px;
+  }
+}
+
+/* Desktop fallback for story scene */
+@media (min-width: 851px) {
+  .story-scene-layout {
+    max-height: none;
+  }
+}
+
+/* ========================================================
+   📖 DESKTOP BOOK LAYOUT (PC) — OPEN TOME AAA STYLE
+   Matches the "ancient book with left text + right illustration"
+   ======================================================== */
+.story-book-layout {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 30px;
+  background: 
+    linear-gradient(#2c2118 0%, #1a140f 100%),
+    url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22wood%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.02%22 numOctaves=%223%22/%3E%3C/filter%3E%3Crect width=%22300%22 height=%22300%22 filter=%22url(%23wood)%22 opacity=%220.15%22/%3E%3C/svg%3E');
+  background-size: cover;
+  border: 18px solid #3a2a1f;
+  border-image: linear-gradient(#4a3728, #2c2118) 1;
+  box-shadow: 
+    0 25px 80px rgba(0, 0, 0, 0.95),
+    inset 0 0 80px rgba(0, 0, 0, 0.6),
+    0 0 0 12px #221a14;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Book spine and outer frame */
+.story-book-layout::before {
+  content: '';
+  position: absolute;
+  top: 18px; bottom: 18px;
+  left: 50%;
+  width: 18px;
+  background: linear-gradient(
+    to right,
+    #1f1812 0%,
+    #3a2a1f 20%,
+    #1f1812 40%,
+    #3a2a1f 60%,
+    #1f1812 80%,
+    #3a2a1f 100%
+  );
+  transform: translateX(-50%);
+  box-shadow: 0 0 30px rgba(0,0,0,0.9);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Top decorative bar (metal + leather straps) */
+.story-book-layout::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 38px;
+  background: linear-gradient(#3a2a1f, #221a14);
+  border-bottom: 4px solid #4a3728;
+  z-index: 3;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+}
+
+/* Inner open book pages container */
+.story-book-pages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  position: relative;
+  z-index: 5;
+  background: #f4e9c8;
+  box-shadow: inset 0 0 40px rgba(120, 53, 15, 0.25);
+  border: 8px solid #3a2a1f;
+  border-radius: 4px;
+  min-height: 620px;
+  overflow: hidden;
+}
+
+/* LEFT PAGE — TEXT */
+.story-book-left-page {
+  padding: 42px 48px 38px 52px;
+  background: #f4e9c8;
+  color: #2c1810;
+  font-family: 'MedievalSharp', 'Cinzel', serif;
+  font-size: 16.2px;
+  line-height: 1.75;
+  border-right: 6px solid #3a2a1f;
+  position: relative;
+}
+
+.story-book-left-page::before {
+  content: '';
+  position: absolute;
+  top: 20px; bottom: 20px; left: 20px; right: 20px;
+  border: 1px solid #8d6f3f;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.story-book-title {
+  font-family: 'Cinzel', serif;
+  font-size: 27px;
+  color: #3a2a1f;
+  text-align: center;
+  margin-bottom: 18px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #6b4e31;
+  padding-bottom: 10px;
+}
+
+.story-book-text {
+  font-size: 15.8px;
+  text-align: justify;
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 12px;
+}
+
+.story-book-text p {
+  margin-bottom: 15px;
+  text-indent: 22px;
+}
+
+.story-book-text .dialogue {
+  font-style: italic;
+  color: #4a3728;
+  border-left: 4px solid #6b4e31;
+  padding-left: 14px;
+  margin: 18px 0;
+}
+
+/* RIGHT PAGE — ILLUSTRATION */
+.story-book-right-page {
+  position: relative;
+  background: #1f1812;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.story-book-illustration {
+  width: 100%;
+  max-height: 560px;
+  object-fit: contain;
+  border: 8px solid #3a2a1f;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.85);
+  filter: contrast(1.1) saturate(0.7) grayscale(0.15);
+  transition: transform 0.4s ease;
+}
+
+.story-book-right-page:hover .story-book-illustration {
+  transform: scale(1.01);
+}
+
+/* Ornate metal corners */
+.story-book-left-page::after,
+.story-book-right-page::after {
+  content: '';
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, #5c4633, #3a2a1f);
+  border: 3px solid #221a14;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.story-book-left-page::after { top: 12px; left: 12px; }
+.story-book-right-page::after { top: 12px; right: 12px; }
+
+/* Bottom decorative trim */
+.story-book-layout .book-bottom-trim {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 26px;
+  background: linear-gradient(#221a14, #3a2a1f);
+  z-index: 10;
+  border-top: 3px solid #4a3728;
+}
+
+/* Desktop-only: make book wider and more immersive */
+@media (min-width: 1100px) {
+  .story-book-layout {
+    padding: 50px 45px;
+  }
+  .story-book-pages {
+    min-height: 680px;
+  }
+}
+
+/* Make sure mobile narrative styles don't affect desktop book */
+@media (min-width: 851px) {
+  .story-scene-layout {
+    display: none;
+  }
+}

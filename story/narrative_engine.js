@@ -38,6 +38,21 @@ class NarrativeEngine {
     this.currentChapterId = "chap_1_prologue";
     this.currentSceneId = "scene_1_1";
     this.inStoryMode = true;
+
+    // === NOVA PROGRESSÃO: Prólogo Humilde ===
+    // Força início como exilado/refugiado
+    if (window.discoveryManager) {
+      window.discoveryManager.discover('location', 'loc_vale_cinzas', 'Prólogo');
+    }
+    if (window.mapManager) {
+      window.mapManager.currentLocationId = "loc_vale_cinzas";
+    }
+
+    // === CRÔNICA INICIAL ===
+    if (window.chronicleBook) {
+      window.chronicleBook.recordMilestone("discovery", "Acordou sozinho no Vale das Cinzas como exilado", "Prólogo");
+    }
+
     if (window.ui) {
       window.ui.changeTab("story");
       window.ui.playSound("dramatic_chord");

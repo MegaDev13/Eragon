@@ -81,6 +81,18 @@ class CoreEngine {
     if (window.bestiaryManager) window.bestiaryManager.init(data.bestiary_db);
     if (window.companionsManager) window.companionsManager.init();
     if (window.partyManager) window.partyManager.init();
+
+    // NOVOS SISTEMAS DE PROGRESSÃO ORGÂNICA
+    if (window.discoveryManager) window.discoveryManager.init();
+    if (window.affinityManager) window.affinityManager.init();
+    if (window.explorationEngine) window.explorationEngine.init();
+
+    // MUNDO VIVO AUTÔNOMO + ROTINAS + AVENTUREIROS
+    if (window.worldSimulationManager) window.worldSimulationManager.init();
+    if (window.npcRoutineManager) window.npcRoutineManager.init();
+    if (window.adventurersManager) window.adventurersManager.init();
+    if (window.chronicleBook) window.chronicleBook.init();
+
     if (window.combatVFX) window.combatVFX.initCanvas();
   }
 
@@ -121,15 +133,48 @@ class CoreEngine {
   }
 
   startNewCampaign(customOptions = {}) {
-    console.log("[CoreEngine] Iniciando nova campanha da Crônica de Aethelgard...");
+    console.log("[CoreEngine] Iniciando nova campanha da Crônica de Aethelgard... (Progressão Orgânica)");
+
     if (window.DATA_REGISTRY) {
       this.setupManagers(window.DATA_REGISTRY);
     }
+
+    // === NOVA PROGRESSÃO: Início Humilde ===
+    // O jogador começa como um exilado/refugiado sem nada.
+    if (window.discoveryManager) {
+      window.discoveryManager.init(); // Começa com apenas a região inicial
+    }
+    if (window.affinityManager) {
+      window.affinityManager.init();
+    }
+    if (window.explorationEngine) {
+      window.explorationEngine.init();
+    }
+
+    // Começa com kit mínimo
+    if (window.inventoryManager) {
+      window.inventoryManager.gold = 18; // Poucas moedas
+      window.inventoryManager.addItem('ration_food', 3);
+      // arma simples já deve existir no inventário inicial via criação
+    }
+
+    if (window.mapManager) {
+      window.mapManager.currentLocationId = "loc_vale_cinzas"; // Começa no Vale
+      window.mapManager.exploredLocations = ["loc_vale_cinzas"];
+    }
+
+    // Nenhuma guilda, escola ou NPC importante descoberto ainda
+    if (window.flagsManager) {
+      window.flagsManager.setFlag("humble_origin", true, "Início da Jornada");
+      window.flagsManager.setFlag("player_fame", 0, "Início");
+    }
+
     if (customOptions.permadeath && window.flagsManager) {
       window.flagsManager.setFlag("permadeath_active", true, "Criação do Personagem");
     }
+
     if (window.ui) {
-      window.ui.showToast("Nova campanha iniciada com sucesso! Bem-vindo a Aethelgard.", "success");
+      window.ui.showToast("Você acorda no Vale das Cinzas... sem nome, sem aliados, sem fama. Tudo ainda precisa ser conquistado.", "info");
       window.ui.updateAllPanels();
     }
   }

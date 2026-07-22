@@ -1,6 +1,55 @@
 {
   "quests": [
     {
+      "id": "q_humble_first_ration",
+      "title": "O Primeiro Caçador do Vale",
+      "giver": "Alden o Mercador (descoberto no Vale)",
+      "locationReq": "loc_vale_cinzas",
+      "status": "available",
+      "description": "Você está faminto e com poucos recursos. Alden precisa de ajuda para caçar uma lebre selvagem antes que a noite caia. É uma tarefa simples para sobreviver.",
+      "objectives": ["Caçar ou coletar 2 rações de comida no Vale"],
+      "choices": [
+        {
+          "text": "Caçar uma lebre e entregar as carnes para Alden (+20 Ouro, +Afinidade, +5 Reputação local)",
+          "effects": {
+            "gold": 20,
+            "xp": 35,
+            "hidden": { "honra": 8, "altruismo": 10 },
+            "rep": { "reino_eldor": 5 },
+            "flags": { "flag_primeira_caca": true }
+          }
+        },
+        {
+          "text": "Coletar ervas e raízes silvestres e entregar a ele (Missão mais difícil, mas honrada)",
+          "effects": {
+            "gold": 12,
+            "xp": 45,
+            "hidden": { "empatia": 15 },
+            "flags": { "flag_primeira_caca": true }
+          }
+        }
+      ]
+    },
+    {
+      "id": "q_vale_ruins",
+      "title": "As Ruínas Esquecidas do Vale",
+      "giver": "Explorador anônimo / Voz do Vale",
+      "locationReq": "loc_vale_cinzas",
+      "status": "available",
+      "description": "Você encontrou um mapa rudimentar desenhado em pedra. Há ruínas antigas próximas com um tesouro pequeno, mas perigoso.",
+      "objectives": ["Explorar o ponto especial nas ruínas do Vale"],
+      "choices": [
+        {
+          "text": "Explorar as ruínas com cuidado (Descoberta garantida + XP + possível item)",
+          "effects": {
+            "xp": 60,
+            "hidden": { "curiosidade": 20 },
+            "flags": { "flag_explorou_ruinas_vale": true }
+          }
+        }
+      ]
+    },
+    {
       "id": "q_alden_caravan",
       "title": "A Caravana de Grãos do Norte",
       "giver": "Alden o Mercador ou Kaelen do Corvo",

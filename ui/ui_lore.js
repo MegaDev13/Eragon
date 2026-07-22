@@ -157,6 +157,7 @@ class LoreManager {
         <div class="lore-subnav mb-4">
           <button class="action-btn primary small" onclick="window.loreManager.switchSubSection('bestiary')">🐉 Bestiário</button>
           <button class="action-btn small" onclick="window.loreManager.switchSubSection('encyclopedia')">📖 Enciclopédia do Mundo</button>
+          <button class="action-btn small" onclick="window.loreManager.switchSubSection('chronicle')">📜 Livro das Crônicas</button>
           <button class="action-btn small" onclick="window.loreManager.switchSubSection('achievements')">🏆 Conquistas e Medalhas</button>
         </div>
 
@@ -260,7 +261,54 @@ class LoreManager {
     if (target) {
       target.style.display = "block";
       if (window.audioManager) window.audioManager.play("page_turn");
+
+      if (subId === "chronicle") {
+        this.renderChronicleBook();
+      }
     }
+  }
+
+  renderChronicleBook() {
+    const container = document.getElementById("chronicle-content");
+    if (!container || !window.chronicleBook) {
+      if (container) container.innerHTML = "<p>O Livro das Crônicas ainda não tem registros. Comece sua jornada!</p>";
+      return;
+    }
+
+    const chronicle = window.chronicleBook.getFullChronicle();
+    let html = `
+      <div class="ornate-card">
+        <h4>📜 ${chronicle.title}</h4>
+        <p><strong>Protagonista:</strong> ${chronicle.protagonist}</p>
+        <p><strong>Capítulos escritos:</strong> ${chronicle.totalChapters}</p>
+      </div>
+    `;
+
+    chronicle.chapters.forEach((ch, idx) => {
+      html += `
+        <div class="ornate-card mt-3">
+          <h5>${ch.title} <small>(${ch.startedDay})</small></h5>
+          <ul class="mt-2" style="list-style: none; font-size:13px;">
+      `;
+      ch.entries.forEach(entry => {
+        html += `<li><strong>${entry.day}</strong> — ${entry.title} <em>(${entry.source})</em></li>`;
+      });
+      html += `</ul></div>`;
+    });
+
+    // Add discovery log from discoveryManager
+    if (window.discoveryManager) {
+      const log = window.discoveryManager.getKnowledgeJournal();
+      if (log.length > 0) {
+        html += `<div class="ornate-card mt-4"><h5>📚 Diário de Conhecimento (Descobertas)</h5><ul>`;
+        log.slice(0, 8).forEach(e => {
+          html += `<li>${e.discoveredAt}: ${e.type.toUpperCase()} — ${e.id} <small>(${e.source})</small></li>`;
+        });
+        html += `</ul></div>`;
+      }
+    }
+
+    container.innerHTML = html;
   }
 }
 

@@ -49,8 +49,21 @@ class MapManager {
     const current = this.getCurrentLocation();
 
     if (!dest) return false;
+
+    // === NOVA REGRA: Só pode viajar para locais já descobertos ou conectados ===
+    if (window.discoveryManager && !window.discoveryManager.isDiscovered('location', destinationId)) {
+      if (window.ui) window.ui.showToast("Você ainda não descobriu esse destino. Explore mais o mundo.", "warning");
+      return false;
+    }
+
     if (current && !current.connectedTo.includes(destinationId)) {
       if (window.ui) window.ui.showToast("Destino não está conectado diretamente à localização atual.", "error");
+      return false;
+    }
+
+    // === NOVO: Verificação de requisitos de exploração ===
+    if (window.explorationEngine && !window.explorationEngine.canTravelTo(destinationId)) {
+      if (window.ui) window.ui.showToast("Você não possui os recursos ou reputação necessários para viajar até lá.", "warning");
       return false;
     }
 
@@ -94,6 +107,11 @@ class MapManager {
       window.ui.showToast(`Você chegou em: ${dest.name}`, "success");
       window.ui.playSound("travel");
       window.ui.updateAllPanels();
+    }
+
+    // === CRÔNICA ===
+    if (window.chronicleBook) {
+      window.chronicleBook.recordTravel(dest.name);
     }
 
     // Checar se há evento de viagem ou combate por perigo da região

@@ -27,7 +27,15 @@ class SaveManager {
       skills: window.skillsManager ? window.skillsManager.exportData() : {},
       guilds: window.guildsManager ? window.guildsManager.exportData() : {},
       economy: window.economyManager ? window.economyManager.exportData() : {},
-      quests: window.questManager ? window.questManager.exportData() : {}
+      quests: window.questManager ? window.questManager.exportData() : {},
+      // NOVOS SISTEMAS DE MUNDO VIVO
+      discovery: window.discoveryManager ? window.discoveryManager.exportData() : {},
+      affinity: window.affinityManager ? window.affinityManager.exportData() : {},
+      exploration: window.explorationEngine ? window.explorationEngine.exportData() : {},
+      worldSim: window.worldSimulationManager ? window.worldSimulationManager.exportData() : {},
+      npcRoutines: window.npcRoutineManager ? window.npcRoutineManager.exportData() : {},
+      adventurers: window.adventurersManager ? window.adventurersManager.exportData() : {},
+      chronicle: window.chronicleBook ? window.chronicleBook.exportData() : {}
     };
   }
 
@@ -54,6 +62,15 @@ class SaveManager {
     if (window.guildsManager) window.guildsManager.init(null, saveData.guilds);
     if (window.economyManager) window.economyManager.init(saveData.economy);
     if (window.questManager) window.questManager.init(null, saveData.quests);
+
+    // RESTORE MUNDO VIVO
+    if (window.discoveryManager) window.discoveryManager.init(saveData.discovery);
+    if (window.affinityManager) window.affinityManager.init(saveData.affinity);
+    if (window.explorationEngine) window.explorationEngine.init(saveData.exploration);
+    if (window.worldSimulationManager) window.worldSimulationManager.init(saveData.worldSim);
+    if (window.npcRoutineManager) window.npcRoutineManager.init(saveData.npcRoutines);
+    if (window.adventurersManager) window.adventurersManager.init(saveData.adventurers);
+    if (window.chronicleBook) window.chronicleBook.init(saveData.chronicle);
 
     if (window.ui) {
       window.ui.showToast("Jogo carregado com sucesso!", "success");

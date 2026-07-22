@@ -1,0 +1,38 @@
+# Capacitor
+android/
+www/
+capacitor.config.json.bak
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build artifacts
+dist/
+build/
+*.apk
+*.aab
+
+# System
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# GitHub Pages temp
+gh-pages/
+
+# Python / misc (if any)
+__pycache__/
+*.pyc
+*.pyo
+
+# Local saves (optional)
+aethelgard_*.json
+localStorage.json

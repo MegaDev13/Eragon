@@ -147,6 +147,16 @@ class CalendarManager {
       if (window.kingdomsManager) {
         window.kingdomsManager.processWorldSimulation(daysPassed);
       }
+
+      // NOVO: Simulação Global Autônoma do Mundo Vivo
+      if (window.worldSimulationManager) {
+        window.worldSimulationManager.simulateWorld(daysPassed);
+      }
+
+      // Rotinas dos NPCs (mudança de localização)
+      if (window.npcRoutineManager) {
+        window.npcRoutineManager.advanceTime(daysPassed * 24);
+      }
     }
 
     this.syncFlags();

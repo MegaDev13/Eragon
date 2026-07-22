@@ -1,0 +1,2 @@
+# Prevents GitHub Pages from processing files with Jekyll
+# Required for proper static site deployment with many assets and folders

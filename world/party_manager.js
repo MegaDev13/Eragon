@@ -6,7 +6,7 @@
 class PartyManager {
   constructor() {
     this.maxPartySize = 4;
-    this.activePartyIds = ["comp_borin", "comp_vespera"]; // Membros iniciais do grupo
+    this.activePartyIds = []; // Começa sozinho — Party só é conquistada gradualmente
 
     this.roster = {
       comp_borin: {
@@ -169,7 +169,22 @@ class PartyManager {
       return false;
     }
 
+    // === REQUISITO DE AFINIDADE (Progressão Orgânica - Nova Regra) ===
+    if (window.affinityManager && !window.affinityManager.canRecruit(compId)) {
+      const aff = window.affinityManager.getAffinity(compId);
+      if (window.ui) {
+        window.ui.showToast(`${comp.name} ainda não confia o suficiente em você para viajar ao seu lado. (Afinidade: ${aff}/100)`, "warning");
+      }
+      return false;
+    }
+
     this.activePartyIds.push(compId);
+
+    // === LIVRO DAS CRÔNICAS ===
+    if (window.chronicleBook) {
+      window.chronicleBook.recordRecruit(comp.name);
+    }
+
     if (window.ui) {
       window.ui.showToast(`${comp.name} juntou-se à sua Party! (${comp.role})`, "success");
       window.ui.playSound("skill_unlock");

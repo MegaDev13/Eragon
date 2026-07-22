@@ -1,6 +1,8 @@
 /**
- * Crônica de Aethelgard - Renderizador Visual da Narrativa e Prólogo (ui_story.js)
- * Exibe as cenas dos capítulos com ilustrações, pergaminhos e botões de escolha em estilo visual novel/lore.
+ * Crônica de Aethelgard - Renderizador Visual da Narrativa (ui_story.js)
+ * 
+ * - Desktop: Beautiful open ancient book / tome layout (matches the provided reference image)
+ * - Mobile: Compact narrative header + illustration + parchment text
  */
 
 class StoryRenderer {
@@ -17,62 +19,166 @@ class StoryRenderer {
       return;
     }
 
-    // Retrato do jogador se não houver retrato do NPC, ou ilustração
-    const playerPortrait = window.flagsManager?.getFlag("player_portrait") || "assets/portraits/lyra.jpg";
+    const illustration = scene.illustration || "assets/backgrounds/ash_valley.jpg";
+    const text = scene.text || "A antiga história continua...";
 
-    let html = `
-      <div class="story-scene-layout">
-        <div class="ornate-card story-chapter-header mb-4">
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <h3>${chap.title}</h3>
-            <span class="badge species-badge" style="font-size:12px;">Modo Crônica Principal</span>
-          </div>
-          <p class="mt-1" style="font-style:italic; opacity:0.8;">"${chap.subtitle}"</p>
-        </div>
+    // Desktop vs Mobile detection
+    const isDesktop = window.innerWidth >= 851;
 
-        <div class="ornate-card story-scene-card">
-          <!-- ILUSTRAÇÃO OU RETRATO DA CENA -->
-          <div class="scene-visual-box mb-3" style="position:relative; height:240px; border-radius:8px; overflow:hidden; border:2px solid var(--border-glow); box-shadow:0 10px 30px rgba(0,0,0,0.8);">
-            <img src="${typeof window.getImageUrl === 'function' ? window.getImageUrl(scene.illustration || 'assets/backgrounds/ash_valley.jpg') : (scene.illustration || 'assets/backgrounds/ash_valley.jpg')}" data-orig-src="${scene.illustration || 'assets/backgrounds/ash_valley.jpg'}" onerror="window.handleImageError(this, 'background')" alt="Cena" style="width:100%; height:100%; object-fit:cover;"/>
-            ${scene.npcPortrait ? `
-              <div class="scene-npc-portrait-floating" style="position:absolute; bottom:12px; right:12px; width:90px; height:90px; border-radius:8px; border:2px solid #facc15; overflow:hidden; box-shadow:0 4px 15px #000;">
-                <img src="${typeof window.getImageUrl === 'function' ? window.getImageUrl(scene.npcPortrait) : scene.npcPortrait}" data-orig-src="${scene.npcPortrait}" onerror="window.handleImageError(this, 'portrait')" alt="NPC" style="width:100%; height:100%; object-fit:cover;"/>
+    let html = "";
+
+    if (isDesktop) {
+      // ========================================================
+      // 📖 DESKTOP: OPEN ANCIENT BOOK / TOME LAYOUT
+      // Matches the exact style of the provided reference image
+      // ========================================================
+      html = `
+        <div class="story-book-layout">
+          <div class="story-book-pages">
+            
+            <!-- LEFT PAGE: TEXT -->
+            <div class="story-book-left-page">
+              <h2 class="story-book-title">${scene.title || chap.title || "THE LOT OF SUFFERING"}</h2>
+              
+              <div class="story-book-text">
+                ${this._formatNarrativeText(text)}
               </div>
-            ` : ''}
-            <div class="scene-title-overlay" style="position:absolute; bottom:0; left:0; right:${scene.npcPortrait ? '110px' : '0'}; background:linear-gradient(transparent, rgba(17,19,24,0.95)); padding:16px;">
-              <h4 style="font-family:var(--font-serif); font-size:20px; color:#facc15;">◈ ${scene.title}</h4>
+            </div>
+
+            <!-- RIGHT PAGE: ILLUSTRATION -->
+            <div class="story-book-right-page">
+              <img 
+                class="story-book-illustration" 
+                src="${typeof window.getImageUrl === 'function' ? window.getImageUrl(illustration) : illustration}" 
+                data-orig-src="${illustration}" 
+                onerror="window.handleImageError(this, 'background')" 
+                alt="Ilustração da Crônica">
             </div>
           </div>
 
-          <!-- PERGAMINHO DE TEXTO NARRATIVO -->
-          <div class="scene-narrative-parchment p-4 mb-4" style="background:linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); color:#2c1810; border-radius:6px; border:2px solid #b45309; font-size:15px; line-height:1.7; box-shadow:inset 0 0 25px rgba(120,53,15,0.25);">
-            ${scene.text.split('\n\n').map(p => `<p class="mb-3" style="text-indent:20px;">${p}</p>`).join('')}
+          <!-- Bottom decorative trim -->
+          <div class="book-bottom-trim"></div>
+        </div>
+
+        <!-- Choices below the book -->
+        <div class="story-choices-desktop" style="max-width: 1100px; margin: 22px auto 0;">
+          ${scene.choices.map((ch, idx) => `
+            <button class="scroll-choice-btn" style="margin-bottom: 9px;" onclick="window.narrativeEngine.chooseSceneOption(${idx})">
+              <span class="scroll-ribbon">◈</span> ${ch.text}
+            </button>
+          `).join('')}
+        </div>
+      `;
+    } else {
+      // ========================================================
+      // 📱 MOBILE: Compact narrative layout
+      // ========================================================
+      const npcPortrait = scene.npcPortrait || "assets/portraits/vespera.jpg";
+      const player = window.player || { name: "Aethel", level: 1, gold: 250 };
+      const hp = window.flagsManager?.getFlag("player_hp") || 100;
+      const gold = window.economyManager?.gold || player.gold || 250;
+
+      const hearts = Array.from({ length: 4 }, (_, i) => 
+        i < Math.floor(hp / 25) ? "❤️" : "🖤"
+      ).join("");
+
+      html = `
+        <div class="story-scene-layout">
+          
+          <!-- TOP HEADER -->
+          <div class="story-narrative-header">
+            <div class="story-narrative-portrait">
+              <img 
+                src="${typeof window.getImageUrl === 'function' ? window.getImageUrl(npcPortrait) : npcPortrait}" 
+                data-orig-src="${npcPortrait}" 
+                onerror="window.handleImageError(this, 'portrait')" 
+                alt="NPC Portrait">
+            </div>
+            
+            <div class="story-narrative-info">
+              <div class="story-narrative-name">
+                ${scene.npcName || "Lau Niscor Harnas"}
+              </div>
+              
+              <div class="story-narrative-stats">
+                <div class="story-stat">${hearts}</div>
+                <span style="color:#facc15; font-weight:700;">${gold}</span>
+                <span style="color:#e0d3a5;">•</span>
+                <span>12</span>
+                <span>7</span>
+                <span>3</span>
+              </div>
+              
+              <div style="margin-top:2px; display:flex; gap:6px; font-size:10.5px; color:#c9b88a;">
+                <span style="background:rgba(0,0,0,0.45); padding:1px 5px; border-radius:3px;">10</span>
+                <span style="background:rgba(0,0,0,0.45); padding:1px 5px; border-radius:3px;">5</span>
+                <span style="background:rgba(0,0,0,0.45); padding:1px 5px; border-radius:3px;">5</span>
+                <span style="background:rgba(0,0,0,0.45); padding:1px 5px; border-radius:3px;">14</span>
+              </div>
+            </div>
           </div>
 
-          <!-- OPÇÕES DE ESCOLHA DA CENA -->
-          <h5 style="color:#facc15; font-family:var(--font-serif); font-size:16px;" class="mb-2">📜 Escolha como moldar o destino de Aethelgard:</h5>
-          <div class="scene-choices-box" style="display:flex; flex-direction:column; gap:12px;">
-            ${scene.choices.map((ch, idx) => `
-              <button class="scroll-choice-btn" style="padding:14px 20px; font-size:14.5px;" onclick="window.narrativeEngine.chooseSceneOption(${idx})" onmouseenter="window.audioManager?.play('hover')">
-                <span class="scroll-ribbon">◈</span> ${ch.text}
-              </button>
-            `).join('')}
+          <!-- ILLUSTRATION -->
+          <img 
+            class="story-scene-image" 
+            src="${typeof window.getImageUrl === 'function' ? window.getImageUrl(illustration) : illustration}" 
+            data-orig-src="${illustration}" 
+            onerror="window.handleImageError(this, 'background')" 
+            alt="Cena narrativa">
+
+          <!-- PARCHMENT TEXT -->
+          <div class="story-narrative-text">
+            ${this._formatNarrativeText(text)}
+          </div>
+
+          <!-- FOOTER -->
+          <div class="story-narrative-footer">
+            <div style="font-size:11px; color:#a38f6a;">Crônica Principal • Capítulo ${chap.id ? chap.id.split('_')[1] : '1'}</div>
+            <div class="footer-icons">
+              <span title="Inventário">🎒</span>
+              <span title="Troféus">🏆</span>
+              <span title="Diálogo">💬</span>
+              <span title="Opções">⚔️</span>
+            </div>
           </div>
         </div>
 
-        <!-- MODO SANDBOX LIVRE DIRETAMENTE NA NARRATIVA -->
-        <div class="ornate-card mt-4 text-center" style="background:rgba(0,0,0,0.4);">
-          <p style="font-size:13px; opacity:0.8;">Deseja pausar a narrativa central e explorar Aethelgard livremente nas outras abas (Mapa, Alquimia, Guildas)?</p>
-          <button class="action-btn small primary mt-2" onclick="window.ui.changeTab('map')">🗺️ Ir para o Mapa e Exploração Sandbox</button>
+        <!-- CHOICES -->
+        <div class="story-choices-mobile" style="margin-top:10px;">
+          ${scene.choices.map((ch, idx) => `
+            <button class="mobile-choice-btn" onclick="window.narrativeEngine.chooseSceneOption(${idx})">
+              <span class="choice-icon">◈</span> 
+              <span>${ch.text}</span>
+            </button>
+          `).join('')}
         </div>
-      </div>
-    `;
+      `;
+    }
 
     container.innerHTML = html;
   }
+
+  // Helper: Format narrative text
+  _formatNarrativeText(rawText) {
+    if (!rawText) return `<p>Você se encontra em um lugar antigo e misterioso...</p>`;
+
+    const paragraphs = rawText.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean);
+
+    return paragraphs.map(paragraph => {
+      if (paragraph.startsWith('"') || paragraph.startsWith('“') || 
+          paragraph.includes('"') || paragraph.includes('“')) {
+        return `<p class="dialogue">${paragraph}</p>`;
+      }
+      return `<p>${paragraph}</p>`;
+    }).join('');
+  }
 }
 
-    window.storyRenderer = new StoryRenderer();
-    if (typeof window !== "undefined" && window.ui) {
-      window.ui.renderStoryScene = () => window.storyRenderer.renderStoryScene();
-    }
+// Register globally
+window.storyRenderer = new StoryRenderer();
+
+if (typeof window !== "undefined" && window.ui) {
+  window.ui.renderStoryScene = () => window.storyRenderer.renderStoryScene();
+}
+
+window.renderStoryScene = () => window.storyRenderer.renderStoryScene();
