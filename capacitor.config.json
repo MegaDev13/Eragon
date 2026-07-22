@@ -1,7 +1,8 @@
 {
   "appId": "com.aethelgard.rpg",
   "appName": "Crônica de Aethelgard",
-  "webDir": "www",
+  "webDir": ".",
+  "bundledWebRuntime": false,
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 2000,
