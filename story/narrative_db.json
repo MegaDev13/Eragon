@@ -1,0 +1,522 @@
+{
+  "chapters": [
+    {
+      "id": "chap_1_prologue",
+      "title": "Capítulo 1: O Despertar nas Cinzas Prateadas",
+      "subtitle": "Onde o destino de um cavaleiro e um dragão é forjado entre as ruínas do passado.",
+      "scenes": [
+        {
+          "id": "scene_1_1",
+          "title": "O Sussurro do Obelisco",
+          "locationId": "loc_vale_cinzas",
+          "illustration": "assets/backgrounds/ash_valley.jpg",
+          "npcPortrait": null,
+          "text": "O vento uiva através das fendas de basalto no Vale das Cinzas Prateadas. Você acorda sentindo o cheiro de ozônio e fumaça fria. Ao seu lado, a bolsa de couro contendo o ovo do dragão que você jurou proteger vibra com calor suave. A alguns metros, um obelisco rúnico fragmentado emana uma luz ciano intermitente, como se chamasse pelo seu nome.\n\nNo horizonte, o som de cascos de cavalo e ferro tilintando ecoa: uma patrulha de batedores se aproxima da estrada principal. Você precisa decidir como dar seus primeiros passos nas terras implacáveis de Aethelgard.",
+          "choices": [
+            {
+              "text": "Aproximar-se do obelisco e tocar as runas com a mão nua para absorver seu conhecimento ancestral (+100 XP, +2 Afinidade Mágica, +15 Corrupção)",
+              "effects": {
+                "xp": 100,
+                "attrMod": { "key": "afinidadeMagica", "delta": 2 },
+                "corruption": 15,
+                "hidden": { "curiosidade": 20, "coragem": 10 },
+                "flags": { "flag_tocou_obelisco_inicial": true }
+              },
+              "nextScene": "scene_1_2_arcane"
+            },
+            {
+              "text": "Esconder a bolsa com o ovo sob seu manto e sacar sua arma, preparando-se para emboscar a patrulha que se aproxima (+Furtividade, +Espólio)",
+              "effects": {
+                "xp": 80,
+                "attrMod": { "key": "furtividade", "delta": 2 },
+                "hidden": { "crueldade": 10, "impulsividade": 15 },
+                "flags": { "flag_emboscou_patrulha_inicial": true }
+              },
+              "nextScene": "scene_1_2_ambush"
+            },
+            {
+              "text": "Ajoelhar-se junto às cinzas e aquecer o ovo em seu peito, priorizando a segurança do filhote sobre qualquer outra coisa (+25 Vínculo Draconiano, +Altruísmo)",
+              "effects": {
+                "xp": 90,
+                "dragonBond": 25,
+                "hidden": { "altruismo": 25, "compaixão": 20 },
+                "flags": { "flag_priorizou_filhote": true }
+              },
+              "nextScene": "scene_1_2_bond"
+            }
+          ]
+        },
+        {
+          "id": "scene_1_2_arcane",
+          "title": "O Eco de Aethel-Khaz",
+          "locationId": "loc_vale_cinzas",
+          "illustration": "assets/backgrounds/ash_valley.jpg",
+          "npcPortrait": "assets/portraits/thalor.jpg",
+          "text": "Assim que seus dedos tocam a pedra fria, uma torrente de visões invade sua mente: exércitos anões marchando, dragões cobrindo o céu e a queda dos reis antigos. Quando você abre os olhos, um velho feiticeiro de manto azul está parado diante de você, apoiado em um cajado rúnico. É o Arquimago Thalor, Grão-Mestre de Valen.\n\n\"Sua alma resistiu ao toque das runas esquecidas sem se despedaçar,\" murmura Thalor, avaliando seu olhar. \"O Círculo Arcano precisa de guerreiros que compreendam o fardo da magia. Para onde você marcha, viajante?\"",
+          "choices": [
+            {
+              "text": "\"Marcho para Eldoria para oferecer minha lâmina à Rainha Lyra e trazer ordem a este reino.\" (+Reputação com Eldor e Valen)",
+              "effects": {
+                "xp": 120,
+                "gold": 60,
+                "hidden": { "honra": 15, "lealdade": 15 },
+                "rep": { "reino_eldor": 15, "guild_valen": 15 },
+                "flags": { "flag_conheceu_thalor": true }
+              },
+              "nextScene": "scene_1_3_road"
+            },
+            {
+              "text": "\"Busco apenas segredos e ouro. Se o seu Círculo paga bem, podemos negociar.\" (+150 Ouro, +Ganância)",
+              "effects": {
+                "xp": 100,
+                "gold": 150,
+                "hidden": { "ganancia": 25, "ambicao": 15 },
+                "rep": { "guild_valen": 5 },
+                "flags": { "flag_conheceu_thalor": true }
+              },
+              "nextScene": "scene_1_3_road"
+            }
+          ]
+        },
+        {
+          "id": "scene_1_2_ambush",
+          "title": "A Patrulha da Lâmina de Ferro",
+          "locationId": "loc_vale_cinzas",
+          "illustration": "assets/creatures/mercenary_raiders.jpg",
+          "npcPortrait": "assets/portraits/vespera.jpg",
+          "text": "Você se oculta atrás das pilhas de obsidiana quando três cavaleiros com estandartes da Ordem de Ferro surgem na estrada. Eles revistam carroças abandonadas em busca de fugitivos rebeldes. Ao notarem sua movimentação, o líder da patrulha saca uma espada pesada.\n\n\"Parado aí, viajante das cinzas! Renda suas armas ou enfrente o julgamento do ferro!\"",
+          "choices": [
+            {
+              "text": "Sacar sua arma e enfrentar o Capitão da Patrulha em combate tático agora mesmo!",
+              "effects": {
+                "xp": 150,
+                "rep": { "guild_ferro": -15 },
+                "combatTrigger": "mercenary_raiders",
+                "flags": { "flag_lutuou_patrulha": true }
+              },
+              "nextScene": "scene_1_3_road"
+            },
+            {
+              "text": "Exibir o emblema de sua origem e negociar pacificamente sua passagem usando Carisma e Liderança",
+              "effects": {
+                "xp": 130,
+                "gold": 50,
+                "hidden": { "honra": 10, "moralidade": 10 },
+                "rep": { "guild_ferro": 15, "reino_eldor": 10 },
+                "flags": { "flag_negociou_patrulha": true }
+              },
+              "nextScene": "scene_1_3_road"
+            }
+          ]
+        },
+        {
+          "id": "scene_1_2_bond",
+          "title": "O Eclodir da Escama",
+          "locationId": "loc_vale_cinzas",
+          "illustration": "assets/dragons/ignis_aurum.jpg",
+          "npcPortrait": null,
+          "text": "O calor do seu peito é o catalisador final. A casca espessa do ovo racha com um estalido metálico. Um pequeno filhote de dragão emerge, sacudindo as cinzas das asas úmidas. Ele fixa os olhos brilhantes em você, emitindo um suave ronronar que ressoa diretamente em sua mente: o início da telepatia draconiana.\n\nVocê sente sua energia vital se entrelaçar com a dele. Agora vocês são um só diante dos perigos de Aethelgard.",
+          "choices": [
+            {
+              "text": "Alimentar o filhote com sua ração e jurar proteção eterna (+35 Vínculo, +10 Humor do Dragão)",
+              "effects": {
+                "items": { "ration_food": -1 },
+                "dragonBond": 35,
+                "dragonMood": 20,
+                "xp": 150,
+                "hidden": { "altruismo": 20, "empatia": 25 },
+                "flags": { "flag_dragao_nascido_braços": true }
+              },
+              "nextScene": "scene_1_3_road"
+            }
+          ]
+        },
+        {
+          "id": "scene_1_3_road",
+          "title": "A Encruzilhada para Eldoria",
+          "locationId": "loc_vale_cinzas",
+          "illustration": "assets/backgrounds/eldoria_city.jpg",
+          "npcPortrait": "assets/portraits/alden.jpg",
+          "text": "Com os primeiros perigos superados, você avança até o grande marco de pedra no limite do Vale das Cinzas. Diante de você se estendem as estradas para a Capital de Eldoria e para os portos ocidentais de Valen.\n\nUma pesada caravana de grãos comandada pelo mestre mercador Alden está parada no acostamento, com uma roda quebrada. Alden acena para você ansiosamente.\n\n\"Guerreiro! As estradas estão infestadas de saqueadores e minha carga alimenta metade da capital. Se me escoltar até os portões de Eldoria, pagarei em ouro puro e lhe darei passe livre nos bazares!\"",
+          "choices": [
+            {
+              "text": "Aceitar a missão de escoltar Alden até a capital Eldoria (+100 Ouro, +Reputação Áurea e Real)",
+              "effects": {
+                "gold": 100,
+                "xp": 180,
+                "hidden": { "honra": 20, "lealdade": 15 },
+                "rep": { "guild_aurea": 25, "reino_eldor": 20 },
+                "flags": { "flag_escoltou_alden": true, "flag_mercador_alden_faliu": false }
+              },
+              "nextScene": "scene_2_1_eldoria_gates"
+            },
+            {
+              "text": "Aproveitar a roda quebrada para exigir 300 moedas de ouro antecipadas ou deixá-lo à própria sorte (+300 Ouro, -Honra)",
+              "effects": {
+                "gold": 300,
+                "xp": 120,
+                "hidden": { "ganancia": 35, "crueldade": 10, "honra": -25 },
+                "rep": { "guild_aurea": -20 },
+                "flags": { "flag_extorquiu_alden": true }
+              },
+              "nextScene": "scene_2_1_eldoria_gates"
+            },
+            {
+              "text": "Seguir viagem sozinho pelo mapa livre, sem amarras com guildas ou mercadores (Exploração Sandbox Livre)",
+              "effects": {
+                "xp": 100,
+                "hidden": { "curiosidade": 15 }
+              },
+              "nextScene": "sandbox_free_explore"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chap_2_eldoria",
+      "title": "Capítulo 2: Sob a Coroa de Prata em Eldoria",
+      "subtitle": "As muralhas de pedra protegem contra bestas, mas não contra traições no palácio.",
+      "scenes": [
+        {
+          "id": "scene_2_1_eldoria_gates",
+          "title": "Os Portões de Pedra",
+          "locationId": "loc_eldoria",
+          "illustration": "assets/backgrounds/eldoria_city.jpg",
+          "npcPortrait": "assets/portraits/vespera.jpg",
+          "text": "Você cruza os imponentes portões duplos de ferro de Eldoria. As ruas fervilham com cidadãos preocupados: panfletos colados nas paredes denunciam a escassez iminente e chamam o povo para uma revolta camponesa liderada pelo rebelde Vane.\n\nA Capitã Vespera, comandante da Guarda Real, intercepta seus passos na praça central. Ela reconhece o emblema em sua armadura e a presença mística do seu dragão.\n\n\"A Rainha Lyra convocou conselho extraordinário no Palácio Real,\" diz Vespera, com voz firme. \"O Império de Solgard está movimentando legiões na fronteira e o povo murmura revolução. A coroa precisa saber de que lado a sua lâmina lutará.\"",
+          "choices": [
+            {
+              "text": "Acompanhar Vespera até a sala do Trono para jurar fidelidade à Rainha Lyra e defender a estabilidade do reino",
+              "effects": {
+                "xp": 200,
+                "hidden": { "lealdade": 25, "honra": 20 },
+                "rep": { "reino_eldor": 30, "guild_ferro": 20 },
+                "flags": { "flag_aliado_rainha_lyra": true, "flag_rei_confia": true }
+              },
+              "nextScene": "scene_2_2_royal_court"
+            },
+            {
+              "text": "Recusar a convocação real e descer aos becos do mercado para procurar os líderes da revolução camponesa (+Revolta)",
+              "effects": {
+                "xp": 200,
+                "hidden": { "altruismo": 25, "ambicao": 20, "lealdade": -15 },
+                "rep": { "reino_eldor": -25, "guild_corvo": 25 },
+                "flags": { "flag_revolta_camponesa": true, "flag_aliado_rebeldes": true }
+              },
+              "nextScene": "scene_2_2_slums"
+            },
+            {
+              "text": "Entrar na Taverna do Corvo e explorar o mercado e as missões procedurais no seu próprio ritmo (Ir para Sandbox Livre)",
+              "effects": {
+                "xp": 100
+              },
+              "nextScene": "sandbox_free_explore"
+            }
+          ]
+        },
+        {
+          "id": "scene_2_2_royal_court",
+          "title": "A Sala do Trono de Prata",
+          "locationId": "loc_eldoria",
+          "illustration": "assets/backgrounds/eldoria_city.jpg",
+          "npcPortrait": "assets/portraits/lyra.jpg",
+          "text": "O salão real é iluminado por grandes lustres de ferro e vitrais coloridos. A Rainha Lyra observa o mapa continental estendido sobre a mesa real. Ao vê-lo entrar, seus olhos expressam alívio misturado à severidade de uma governante em tempos de crise.\n\n\"Cavaleiro das Cinzas,\" diz a Rainha Lyra, inclinando a cabeça. \"Os espiões de Solgard infiltraram nossas guildas comerciais e tentam nos deixar sem alimentos. Se você eliminar o acampamento dos mercenários na Floresta de Lúmen e proteger nossas rotas, nós lhe concederemos o título de Barão e terras no norte.\"",
+          "choices": [
+            {
+              "text": "Aceitar a missão real de limpar a Floresta de Lúmen dos mercenários de Solgard (+500 Ouro, +Reputação Máxima)",
+              "effects": {
+                "gold": 500,
+                "xp": 300,
+                "hidden": { "honra": 30, "lealdade": 25 },
+                "rep": { "reino_eldor": 50, "imperio_solgard": -40 },
+                "flags": { "flag_missao_real_aceita": true }
+              },
+              "nextScene": "scene_3_1_desert_march"
+            },
+            {
+              "text": "Pedir tempo para explorar Aethelgard antes de comprometer sua lâmina em uma guerra imperial",
+              "effects": {
+                "xp": 150
+              },
+              "nextScene": "sandbox_free_explore"
+            }
+          ]
+        },
+        {
+          "id": "scene_2_2_slums",
+          "title": "O Esconderijo Subterrâneo",
+          "locationId": "loc_eldoria",
+          "illustration": "assets/backgrounds/eldoria_city.jpg",
+          "npcPortrait": "assets/portraits/kaelen.jpg",
+          "text": "Você desce pelos bueiros de pedra sob o porto velho de Eldoria. Em um porão úmido iluminado por tochas, Kaelen da Lâmina Sombria e o líder camponês Vane planejam a tomada dos celeiros reais.\n\n\"A Rainha Lyra prefere alimentar seus cavalos de guerra a dar pão aos camponeses,\" sussurra Kaelen com um sorriso frio. \"Se você nos ajudar a abrir o portão oeste à meia-noite, dividiremos todo o tesouro real e formaremos uma Aethelgard verdadeiramente livre.\"",
+          "choices": [
+            {
+              "text": "Selar o pacto com Kaelen e Vane para derrubar a nobreza e iniciar a revolução (+1000 Ouro no saque, +Caos)",
+              "effects": {
+                "gold": 1000,
+                "xp": 350,
+                "hidden": { "ambicao": 35, "altruismo": 20, "honra": -25 },
+                "rep": { "reino_eldor": -60, "guild_corvo": 50 },
+                "flags": { "flag_revolta_camponesa": true, "flag_golpe_planejado": true }
+              },
+              "nextScene": "scene_3_1_desert_march"
+            },
+            {
+              "text": "Trair Kaelen no último minuto e alertar a Guarda Real em troca de anistia e 600 moedas de ouro",
+              "effects": {
+                "gold": 600,
+                "xp": 250,
+                "hidden": { "honra": -15, "ganancia": 25 },
+                "rep": { "reino_eldor": 40, "guild_corvo": -80 },
+                "flags": { "flag_traiu_kaelen": true }
+              },
+              "nextScene": "scene_3_1_desert_march"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chap_3_solgard",
+      "title": "Capítulo 3: O Eclipse de Solgard e as Torres de Pólvora",
+      "subtitle": "No deserto de obsidiana, engrenagens e canhões testam a força dos feitiços e escamas.",
+      "scenes": [
+        {
+          "id": "scene_3_1_desert_march",
+          "title": "A Marcha pelas Areias de Obsidiana",
+          "locationId": "loc_deserto_solgard",
+          "illustration": "assets/backgrounds/solgard_desert.jpg",
+          "npcPortrait": null,
+          "text": "O calor do Deserto de Solgard faz a areia negra de obsidiana cintilar como vidro moído. Seu dragão abre as asas, aproveitando as correntes térmicas para planar acima das dunas. No horizonte, a Cidadela de Solgard surge como uma montanha de bronze polido, com chaminés despejando fumaça acinzentada nas nuvens.\n\nAs torres de pólvora alquímica comandadas pela Engenheira-Chefe Zorah estão operando dia e noite, construindo bestas mecânicas e o temido Titã de Ferro para marchar rumo ao norte. Você sente que a destruição ou controle dessas torres definirá o resultado de qualquer guerra iminente.",
+          "choices": [
+            {
+              "text": "Infiltrar-se nas Torres de Pólvora de Solgard para sabotar os canhões alquímicos antes da invasão (+400 XP, -Armas de Solgard)",
+              "effects": {
+                "xp": 400,
+                "hidden": { "coragem": 25, "lealdade": 20 },
+                "rep": { "reino_eldor": 40, "imperio_solgard": -60 },
+                "flags": { "flag_sabotou_torres_solgard": true }
+              },
+              "nextScene": "scene_3_2_zorah_lab"
+            },
+            {
+              "text": "Procurar a comitiva do Imperador Kaelen VII para oferecer seus serviços e o poder do seu dragão em troca do generalato",
+              "effects": {
+                "gold": 800,
+                "xp": 350,
+                "hidden": { "ambicao": 35, "honra": -10 },
+                "rep": { "imperio_solgard": 50, "reino_eldor": -70 },
+                "flags": { "flag_general_solgard": true }
+              },
+              "nextScene": "scene_3_2_imperial_throne"
+            },
+            {
+              "text": "Procurar as tendas nômades da Horda de Khaz-Dûm nas bordas do deserto para aliar-se ao Khã Vorak",
+              "effects": {
+                "xp": 320,
+                "hidden": { "coragem": 20, "curiosidade": 20 },
+                "rep": { "horda_khaz": 35, "imperio_solgard": -30 },
+                "flags": { "flag_aliado_horda_khaz": true }
+              },
+              "nextScene": "scene_3_2_khan_tents"
+            }
+          ]
+        },
+        {
+          "id": "scene_3_2_zorah_lab",
+          "title": "A Forja Alquímica de Zorah",
+          "locationId": "loc_cidade_solgard",
+          "illustration": "assets/creatures/iron_titan.jpg",
+          "npcPortrait": null,
+          "text": "Você invade o coração industrial de Solgard. Engrenagens colossais giram acima de poços de óleo e pólvora-negra. Diante do protótipo inativo do Titã de Ferro, a Mestre Alquimista Zorah inspeciona manómetros de pressão.\n\nEla escuta seus passos e vira-se com uma chave inglesa na mão. \"Se você veio explodir minha obra-prima com magia primitiva, perderá o tempo. Mas se entender o valor do aço-dragão, posso instalar canhões rúnicos na carapaça do seu dragão que dobrarão seu poder destrutivo!\"",
+          "choices": [
+            {
+              "text": "Explodir o reservatório de pólvora com uma Bola de Fogo e fugir voando nas costas do dragão (+Caos total em Solgard)",
+              "effects": {
+                "xp": 450,
+                "hidden": { "impulsividade": 25, "crueldade": 15 },
+                "rep": { "imperio_solgard": -80, "reino_eldor": 50 },
+                "flags": { "flag_tita_ferro_destruido": true }
+              },
+              "nextScene": "scene_4_1_khaz_abyss"
+            },
+            {
+              "text": "Aceitar o upgrade de armadura alquímica para o seu dragão (+Manopla de Titã, +30 Dano do Dragão, -Reputação Druídica)",
+              "effects": {
+                "xp": 400,
+                "dragonBond": 20,
+                "items": { "a_legendary_titan_plate": 1 },
+                "hidden": { "curiosidade": 30, "ganancia": 15 },
+                "rep": { "imperio_solgard": 30 },
+                "flags": { "flag_dragao_armadura_alquimica": true }
+              },
+              "nextScene": "scene_4_1_khaz_abyss"
+            }
+          ]
+        },
+        {
+          "id": "scene_3_2_imperial_throne",
+          "title": "O Pacto da Pólvora com Kaelen VII",
+          "locationId": "loc_cidade_solgard",
+          "illustration": "assets/backgrounds/solgard_desert.jpg",
+          "npcPortrait": null,
+          "text": "O Imperador Kaelen VII senta-se em um trono de bronze cercado por legionários e alquimistas. Ele olha para você e para o dragão com pura ambição imperial.\n\n\"O feudalismo de Eldor é uma relíquia morta,\" proclama o Imperador. \"Junte sua ferocidade e seu dragão às minhas legiões de pólvora. Conquistaremos Aethel-Khaz, decifraremos os obeliscos e reinaremos sobre todas as províncias como deuses da nova era.\"",
+          "choices": [
+            {
+              "text": "Selar o pacto de sangue e ferro com o Imperador (+Título de Grão-General de Solgard, +1200 Ouro)",
+              "effects": {
+                "gold": 1200,
+                "xp": 500,
+                "hidden": { "ambicao": 40, "honra": -15 },
+                "rep": { "imperio_solgard": 70, "reino_eldor": -90 },
+                "flags": { "flag_grao_general_solgard": true }
+              },
+              "nextScene": "scene_4_1_khaz_abyss"
+            }
+          ]
+        },
+        {
+          "id": "scene_3_2_khan_tents",
+          "title": "O Juramento do Khã Vorak",
+          "locationId": "loc_ruinas_khaz",
+          "illustration": "assets/creatures/mercenary_raiders.jpg",
+          "npcPortrait": null,
+          "text": "Nas tendas de couro nos desfiladeiros escuros, o Khã Vorak o Esmaga-Pedras bebe hidromel em um chifre de touro. Seus guerreiros observam seu dragão com profundo respeito selvagem.\n\n\"Os reis feudais e os alquimistas imperiais querem nos acorrentar com impostos e canhões!\" ruge Vorak. \"Se você beber deste chifre e lutar ao nosso lado nas ruínas de Aethel-Khaz, a Horda inteira marchará sob o seu comando quando a batalha final começar!\"",
+          "choices": [
+            {
+              "text": "Beber o hidromel do Khã e jurar aliança com a Horda Nômade livre (+Reputação com Khaz, +Machado dos Anões)",
+              "effects": {
+                "xp": 450,
+                "items": { "w_heroic_dwarven_hammer": 1 },
+                "hidden": { "coragem": 30, "lealdade": 25 },
+                "rep": { "horda_khaz": 60, "reino_eldor": -30, "imperio_solgard": -60 },
+                "flags": { "flag_irmao_sangue_vorak": true }
+              },
+              "nextScene": "scene_4_1_khaz_abyss"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chap_4_khaz",
+      "title": "Capítulo 4: O Abismo de Aethel-Khaz e as Sete Chaves",
+      "subtitle": "Nas entranhas da terra, a Magia de Sangue e as runas sagradas disputam a alma do mundo.",
+      "scenes": [
+        {
+          "id": "scene_4_1_khaz_abyss",
+          "title": "O Portão das Sete Fechaduras Rúnicas",
+          "locationId": "loc_ruinas_khaz",
+          "illustration": "assets/backgrounds/aethel_khaz.jpg",
+          "npcPortrait": "assets/portraits/thalor.jpg",
+          "text": "Você desce quilômetros nas profundezas de Aethel-Khaz. A temperatura sobe conforme rios de magma vermelho iluminam gigantescas estátuas de reis anões há muito esquecidos. No centro do abismo ergue-se o Grande Portão das Sete Fechaduras, onde o obelisco primordial repousa em silêncio.\n\nO Arquimago Thalor já está ali, flutuando com seus feitiços de proteção de Valen, enquanto do lado oposto, emergindo da névoa roxa, surge Lady Morgana da Corte Sombria com seus feiticeiros de sangue.\n\n\"Não deixe Thalor selar a fonte arcana!\" grita Morgana, com veias de sangue brilhando nas mãos. \"As Sete Chaves nos darão imortalidade eterna e o poder de remodelar as estrelas!\"\n\nThalor ergue seu cajado. \"Se esse portão for aberto sem purificação, a Peste Sombria engolirá Aethelgard. Você deve escolher, cavaleiro!\"",
+          "choices": [
+            {
+              "text": "Apoiar Thalor e o Círculo de Valen, combatendo Lady Morgana para selar o obelisco para sempre (+Honra e Pureza Arcana)",
+              "effects": {
+                "xp": 550,
+                "hidden": { "honra": 35, "moralidade": 30, "altruismo": 20 },
+                "rep": { "guild_valen": 70 },
+                "combatTrigger": "renegade_sorcerer",
+                "flags": { "flag_obelisco_selado_valen": true }
+              },
+              "nextScene": "scene_5_1_summit"
+            },
+            {
+              "text": "Aliar-se a Lady Morgana, absorvendo a Magia de Sangue primordial para se tornar imortal (+30 Corrupção, +Pacto Proibido)",
+              "effects": {
+                "xp": 600,
+                "corruption": 30,
+                "hidden": { "ambicao": 45, "crueldade": 25 },
+                "flags": { "flag_imortal_magia_sangue": true, "flag_usou_magia_proibida": true }
+              },
+              "nextScene": "scene_5_1_summit"
+            },
+            {
+              "text": "Empunhar o poder do seu Dragão para estilhaçar as Sete Fechaduras e libertar toda a magia para a natureza selvagem (+Vínculo 100%)",
+              "effects": {
+                "xp": 650,
+                "dragonBond": 35,
+                "hidden": { "curiosidade": 40, "coragem": 30 },
+                "flags": { "flag_magia_libertada_mundo": true }
+              },
+              "nextScene": "scene_5_1_summit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chap_5_council",
+      "title": "Capítulo 5: O Concílio dos Picos Nevados e A Apoteose",
+      "subtitle": "No Santuário Flutuante sob a Lua de Sangue, o destino final das cinzas é selado.",
+      "scenes": [
+        {
+          "id": "scene_5_1_summit",
+          "title": "O Grande Concílio de Aethelgard",
+          "locationId": "loc_santuario_flutuante",
+          "illustration": "assets/backgrounds/dragon_peaks.jpg",
+          "npcPortrait": "assets/portraits/orin.jpg",
+          "text": "As nuvens se abrem nos Picos Nevados dos Dragões, revelando o Santuário Flutuante de Aether suspenso por cristais gravitacionais. Sob o clarão avermelhado da Lua de Sangue que se aproxima do eclipse, todos os maiores soberanos de Aethelgard se reuniram em trégua sagrada.\n\nA Rainha Lyra, o Imperador Kaelen VII, a Oráculo Seraphina, o Grão-Duque Roderick e o Khã Vorak estão ao redor da mesa redonda de mármore. Seu dragão, agora crescido em uma imponente fera titânica cujas asas escurecem o céu, pousa suavemente atrás de você.\n\nO silêncio cai sobre o salão. Todos sabem que o guerreiro que sobreviveu ao obelisco, navegou pela corrupção, dominou as guildas e domou o dragão primordial tem em suas mãos o poder absoluto para ditar a nova era do continente.\n\nO Ancião Druida Orin dá um passo à frente com o bastão sagrado. \"Cavaleiro das Cinzas... a palavra final sobre o destino de Aethelgard pertence a você. Qual será a sua crônica para os próximos mil anos?\"",
+          "choices": [
+            {
+              "text": "👑 PROCLAMAR-SE IMPERADOR DE AETHELGARD: Unificar todos os reinos sob sua coroa, lâmina e o rugido do dragão titânico (Final Imperador)",
+              "effects": {
+                "xp": 1000,
+                "hidden": { "ambicao": 50, "lideranca": 40 },
+                "flags": { "flag_final_imperador_supremo": true }
+              },
+              "nextScene": "epilogue_trigger"
+            },
+            {
+              "text": "🛡️ FUNDAR A CONFEDERAÇÃO DAS CIDADES LIVRES: Abolir as coroas e instaurar um conselho onde camponeses, magos e mercadores governam em paz (Final Liberdade)",
+              "effects": {
+                "xp": 1000,
+                "hidden": { "altruismo": 50, "moralidade": 40 },
+                "flags": { "flag_final_republica_livre": true }
+              },
+              "nextScene": "epilogue_trigger"
+            },
+            {
+              "text": "🐉 ASCENSÃO À APOTEOSE DRACONIANA: Abandonar as disputas humanas e voar com seu dragão para o cosmos, tornando-se o Deus Guardião dos Céus (Final Dragão Supremo)",
+              "requirements": { "dragon": true },
+              "effects": {
+                "xp": 1200,
+                "dragonBond": 50,
+                "hidden": { "curiosidade": 50, "empatia": 50 },
+                "flags": { "flag_final_deus_draconiano": true }
+              },
+              "nextScene": "epilogue_trigger"
+            },
+            {
+              "text": "🔥 O CATACLISMO DE SANGUE: Usar o obelisco e a corrupção para subjugar todos os reis como seus servos imortais na escuridão eterna (Final Tirano Sombrio)",
+              "effects": {
+                "xp": 1000,
+                "corruption": 50,
+                "hidden": { "crueldade": 50, "ganancia": 50 },
+                "flags": { "flag_final_tirano_sombrio": true }
+              },
+              "nextScene": "epilogue_trigger"
+            }
+          ]
+        },
+        {
+          "id": "epilogue_trigger",
+          "title": "O Epílogo das Cinzas",
+          "locationId": "loc_santuario_flutuante",
+          "illustration": "assets/backgrounds/title_bg.jpg",
+          "npcPortrait": null,
+          "text": "As decisões foram tomadas e os ecos de suas escolhas reverberam por cada floresta, cidade e deserto das Terras das Cinzas. O mundo nunca mais será o mesmo.\n\nSua jornada foi registrada nos pergaminhos eternos dos grão-mestres de Aethelgard. Você pode conferir sua crônica detalhada agora mesmo, exportar seu arquivo de save histórico em JSON ou continuar vivendo nas terras em modo sandbox aberto para concluir todas as conquistas do bestiário!",
+          "choices": [
+            {
+              "text": "👑 ABRIR O EPÍLOGO HISTÓRICO FINAL E VER O DESFECHO DA SUA CRÔNICA",
+              "effects": { "xp": 500 },
+              "nextScene": "trigger_endings_manager_now"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

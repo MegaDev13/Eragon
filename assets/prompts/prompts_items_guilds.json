@@ -1,0 +1,56 @@
+{
+  "project": "Crônica de Aethelgard: O Destino das Cinzas",
+  "art_style_master_guidelines": "AAA RPG inventory icon and guild emblem concept art, intricate metallic filigree, glowing runic details, dark velvet/stone background, high realism.",
+  "items": [
+    {
+      "id": "item_longsword",
+      "name": "Espada Longa Real de Eldor",
+      "filename": "assets/items/longsword.jpg",
+      "composition": "Ornate medieval longsword resting on dark aged leather. Polished steel blade with central fuller, crossguard inlaid with royal crimson enamel and silver filigree, wire-wrapped leather grip."
+    },
+    {
+      "id": "item_runic_vest",
+      "name": "Peitoral Rúnico de Valen",
+      "filename": "assets/items/runic_vest.jpg",
+      "composition": "Intricate mage armor chestpiece crafted from reinforced dark leather and polished steel plates set with glowing blue Aether crystals along the collar and sternum."
+    },
+    {
+      "id": "item_dragon_elixir",
+      "name": "Elixir Draconiano Ancestral",
+      "filename": "assets/items/dragon_elixir.jpg",
+      "composition": "An antique crystal flask stoppered with wax and gold wire, filled with swirling, bioluminescent golden-orange liquid that emits small glowing sparks inside the glass."
+    }
+  ],
+  "guilds": [
+    {
+      "id": "crest_ferro",
+      "name": "A Ordem dos Lâminas de Ferro",
+      "filename": "assets/guilds/crest_ferro.jpg",
+      "composition": "Ornate metallic guild crest: Two crossed heavy broadswords over a battered iron anvil surrounded by a steel laurel wreath on a dark charcoal background."
+    },
+    {
+      "id": "crest_valen",
+      "name": "O Círculo Arcano de Valen",
+      "filename": "assets/guilds/crest_valen.jpg",
+      "composition": "Ornate arcane crest: A glowing sapphire-blue eye inside an astrolabe ring of silver runes and orbital spheres on a deep indigo velvet background."
+    },
+    {
+      "id": "crest_corvo",
+      "name": "A Irmandade do Corvo Sombrio",
+      "filename": "assets/guilds/crest_corvo.jpg",
+      "composition": "Ornate shadow crest: A sleek obsidian raven skull holding a poisoned silver dagger in its beak, surrounded by dark shadow mist on pitch black."
+    },
+    {
+      "id": "crest_aurea",
+      "name": "O Sindicato Áureo das Rotas",
+      "filename": "assets/guilds/crest_aurea.jpg",
+      "composition": "Ornate merchant crest: A golden balance scale holding a diamond and a bar of gold bullion, framed by wheat sheaves and coins on rich burgundy."
+    },
+    {
+      "id": "crest_escama",
+      "name": "O Pacto das Asas de Escama",
+      "filename": "assets/guilds/crest_escama.jpg",
+      "composition": "Ornate dragon tamer crest: A majestic golden dragon wing wrapping around a silver sword, surrounded by glowing celestial stars on alpine white-blue."
+    }
+  ]
+}

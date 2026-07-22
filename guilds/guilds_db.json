@@ -1,0 +1,97 @@
+{
+  "guilds": [
+    {
+      "id": "guild_ferro",
+      "name": "A Ordem dos Lâminas de Ferro",
+      "category": "mercenários",
+      "hierarchy": ["Recruta", "Membro de Lâmina", "Oficial de Ferro", "Conselheiro de Guerra", "Grão-Mestre da Forja"],
+      "currentRankIndex": 0,
+      "reputation": 10,
+      "headquarters": "loc_cidadela_ferro",
+      "enemies": ["guild_corvo"],
+      "exclusiveShop": [
+        { "id": "a_iron_plate", "price": 120, "reqRank": 1 },
+        { "id": "w_greataxe", "price": 80, "reqRank": 0 },
+        { "id": "mat_iron_ingot", "price": 12, "reqRank": 0 }
+      ],
+      "companion": { "id": "comp_borin", "name": "Borin o Ferreiro", "bonus": "+30% durabilidade de armas em combate" },
+      "canElectLeader": true,
+      "canBetray": true,
+      "description": "Ordem militar veterana focada em honra de contrato, aço pesado e defesa das fronteiras do norte."
+    },
+    {
+      "id": "guild_valen",
+      "name": "O Círculo Arcano de Valen",
+      "category": "magos",
+      "hierarchy": ["Iniciante Arcano", "Adepto dos Pergaminhos", "Mestre das Escolas", "Arquimago do Terceiro Círculo", "Grão-Mestre de Valen"],
+      "currentRankIndex": 0,
+      "reputation": 5,
+      "headquarters": "loc_porto_valen",
+      "enemies": ["guild_ferro"],
+      "exclusiveShop": [
+        { "id": "a_runic_vest", "price": 300, "reqRank": 2 },
+        { "id": "potion_willpower", "price": 20, "reqRank": 0 },
+        { "id": "mat_obsidian_crystal", "price": 35, "reqRank": 1 }
+      ],
+      "companion": { "id": "comp_thalor", "name": "Aprendiz Lyros", "bonus": "-15% custo de mana nas feitiçarias" },
+      "canElectLeader": true,
+      "canBetray": true,
+      "description": "Guardiões do conhecimento arcano milenar. Não toleram o uso descontrolado da Magia de Sangue."
+    },
+    {
+      "id": "guild_corvo",
+      "name": "A Irmandade do Corvo Sombrio",
+      "category": "ladrões e assassinos",
+      "hierarchy": ["Sombra Nova", "Olho Noturno", "Lâmina Oculta", "Mestre dos Sussurros", "O Rei dos Esgotos"],
+      "currentRankIndex": 0,
+      "reputation": 0,
+      "headquarters": "loc_porto_valen",
+      "enemies": ["guild_ferro", "guild_valen"],
+      "exclusiveShop": [
+        { "id": "a_raven_cloak", "price": 180, "reqRank": 1 },
+        { "id": "w_dagger", "price": 90, "reqRank": 0 }
+      ],
+      "companion": { "id": "comp_kaelen", "name": "Sombra Vane", "bonus": "+25% furtividade e roubo nas estradas" },
+      "canElectLeader": false,
+      "canBetray": true,
+      "description": "Sindicato subterrâneo que negocia segredos, assassinatos por encomenda e contrabando pelas rotas portuárias."
+    },
+    {
+      "id": "guild_aurea",
+      "name": "O Sindicato Áureo das Rotas",
+      "category": "comerciantes",
+      "hierarchy": ["Caixeiro-Viajante", "Mestre de Caravana", "Barão da Rota", "Conselheiro Áureo", "O Grão-Moeda"],
+      "currentRankIndex": 0,
+      "reputation": 15,
+      "headquarters": "loc_oasís_ouro",
+      "enemies": ["guild_corvo"],
+      "exclusiveShop": [
+        { "id": "potion_health", "price": 18, "reqRank": 0 },
+        { "id": "ration_food", "price": 3, "reqRank": 0 },
+        { "id": "dragon_elixir", "price": 80, "reqRank": 2 }
+      ],
+      "companion": { "id": "comp_alden", "name": "Guarda de Caravana", "bonus": "+35% de ouro em recompensas e vendas" },
+      "canElectLeader": true,
+      "canBetray": true,
+      "description": "O verdadeiro poder financeiro do continente. Quem controla as carroças de grãos e ouro, controla os reis."
+    },
+    {
+      "id": "guild_escama",
+      "name": "O Pacto das Asas de Escama",
+      "category": "domadores de dragão",
+      "hierarchy": ["Aspirante dos Ventos", "Cavaleiro do Sopro", "Vigilante das Nuvens", "Mestre das Escamas", "O Cavaleiro Ancestral"],
+      "currentRankIndex": 0,
+      "reputation": 20,
+      "headquarters": "loc_santuario_flutuante",
+      "enemies": [],
+      "exclusiveShop": [
+        { "id": "dragon_elixir", "price": 60, "reqRank": 0 },
+        { "id": "w_spear", "price": 110, "reqRank": 1 }
+      ],
+      "companion": { "id": "comp_dragon_scout", "name": "Vigilante Aéreo", "bonus": "+40% de visão do mapa e bônus em batalhas de dragão" },
+      "canElectLeader": true,
+      "canBetray": true,
+      "description": "Antiga ordem sagrada dedicada à proteção dos dragões e à paz mística entre humanos e as feras aladas."
+    }
+  ]
+}

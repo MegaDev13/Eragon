@@ -1,0 +1,76 @@
+{
+  "project": "Crônica de Aethelgard: O Destino das Cinzas",
+  "art_style_master_guidelines": "Semi-realistic digital oil painting portrait, AAA RPG character concept art, intense facial expression, highly detailed clothing and armor textures, dramatic chiaroscuro lighting, solid dark textured background, NO anime, NO cartoon, NO pixel art.",
+  "portraits": [
+    {
+      "id": "portrait_alden",
+      "name": "Alden o Mercador",
+      "filename": "assets/portraits/alden.jpg",
+      "resolution": "2048x2048",
+      "aspect_ratio": "1:1",
+      "composition": "Close-up portrait of a shrewd 50-year-old master merchant. He has a trimmed grey beard, sharp calculating hazel eyes, and a slight wry smile. He wears a luxurious burgundy velvet doublet trimmed with gold embroidery and a heavy golden merchant guild medallion chain around his neck.",
+      "lighting": "Warm side lighting highlighting the rich velvet textures and gold jewelry against a dark tavern interior.",
+      "color_palette": ["Burgundy velvet (#881337)", "Gold bullion (#eab308)", "Warm flesh tones", "Dark oak brown (#2c1810)"]
+    },
+    {
+      "id": "portrait_vespera",
+      "name": "Capitã Vespera",
+      "filename": "assets/portraits/vespera.jpg",
+      "resolution": "2048x2048",
+      "aspect_ratio": "1:1",
+      "composition": "Portrait of a fierce 32-year-old female commander of the Royal Guard. She has piercing steel-blue eyes, a small honor scar across her left cheekbone, and dark hair pulled back into a battle braid. She wears polished heavy plate armor adorned with the silver crest of Eldor and a crimson cape shoulder drape.",
+      "lighting": "Cool dramatic top lighting catching the gleam of polished steel armor and contrasting with warm facial highlights.",
+      "color_palette": ["Polished steel (#94a3b8)", "Royal crimson (#991b1b)", "Steel blue (#38bdf8)", "Charcoal background (#111318)"]
+    },
+    {
+      "id": "portrait_thalor",
+      "name": "Arquimago Thalor",
+      "filename": "assets/portraits/thalor.jpg",
+      "resolution": "2048x2048",
+      "aspect_ratio": "1:1",
+      "composition": "Portrait of a venerable 140-year-old Grand Archmage. Long flowing silver-white hair and beard, intense glowing sapphire-blue eyes reflecting ancient wisdom. He wears intricate midnight-blue silk robes embroidered with glowing astral runes and a high collar with silver clasps.",
+      "lighting": "Magical blue rim lighting emanating from his runes reflecting onto his aged, dignified face.",
+      "color_palette": ["Midnight blue (#1e1b4b)", "Arcane sapphire glow (#3b82f6)", "Silver white (#f8fafc)", "Aged parchment (#fef3c7)"]
+    },
+    {
+      "id": "portrait_lyra",
+      "name": "Rainha Lyra de Eldor",
+      "filename": "assets/portraits/lyra.jpg",
+      "resolution": "2048x2048",
+      "aspect_ratio": "1:1",
+      "composition": "Portrait of a regal 28-year-old Queen under immense pressure. Regal, determined posture, striking emerald eyes, and auburn hair styled with a delicate silver crown. She wears a high-collared emerald and silver brocade gown with fine filigree details.",
+      "lighting": "Soft royal court diffused lighting with subtle golden highlights reflecting from her crown.",
+      "color_palette": ["Regal emerald (#065f46)", "Silver filigree (#e2e8f0)", "Auburn copper (#9a3412)", "Royal velvet (#4c1d95)"]
+    },
+    {
+      "id": "portrait_borin",
+      "name": "Borin o Ferreiro",
+      "filename": "assets/portraits/borin.jpg",
+      "resolution": "2048x2048",
+      "aspect_ratio": "1:1",
+      "composition": "Portrait of a brawny, rugged 45-year-old master runesmith. Thick braided dark beard cinched with brass rings, soot-stained cheeks, and fierce fiery eyes. He wears a heavy leather blacksmith apron over muscular forearms, with glowing forge light reflecting off his skin.",
+      "lighting": "Intense bottom-up orange and amber forge fire glow illuminating his rugged features and leather apron.",
+      "color_palette": ["Forge amber (#ea580c)", "Leather brown (#57301c)", "Soot black (#18181b)", "Brass ring gold (#ca8a04)"]
+    },
+    {
+      "id": "portrait_kaelen",
+      "name": "Kaelen da Lâmina Sombria",
+      "filename": "assets/portraits/kaelen.jpg",
+      "resolution": "2048x2048",
+      "aspect_ratio": "1:1",
+      "composition": "Portrait of a secretive 35-year-old spymaster and shadow thief leader. Sharp jawline, dark obsidian eyes partially obscured by the deep hood of a charcoal leather cowl. A dark scarf covers the lower half of his neck, with faint shadow daggers embroidered on the fabric.",
+      "lighting": "High contrast chiaroscuro with half his face in deep indigo shadow and only one eye gleaming.",
+      "color_palette": ["Obsidian charcoal (#111318)", "Shadow violet (#312e81)", "Deep leather grey (#334155)", "Faint steel silver (#94a3b8)"]
+    },
+    {
+      "id": "portrait_orin",
+      "name": "Ancião Druida Orin",
+      "filename": "assets/portraits/orin.jpg",
+      "resolution": "2048x2048",
+      "aspect_ratio": "1:1",
+      "composition": "Portrait of an ancient 90-year-old druid guardian. Weathered face like oak bark, kind moss-green eyes, and white beard intertwined with small living forest vines and glowing teal leaves. He wears coarse woven burlap robes decorated with wooden runes and deer antlers.",
+      "lighting": "Soft bioluminescent forest green glow casting a serene, peaceful light over his ancient face.",
+      "color_palette": ["Forest bark (#2c1810)", "Bioluminescent teal (#14b8a6)", "Moss green (#166534)", "Earth brown (#78350f)"]
+    }
+  ]
+}

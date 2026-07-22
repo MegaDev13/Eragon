@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crônica de Aethelgard: O Destino das Cinzas</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#151820">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/image_loader.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- CANVAS DE PARTÍCULAS ATMOSFÉRICAS (FOGUEIRAS, CINZAS, NÉVOA) -->
+  <canvas id="atmosphere-particles" class="atmosphere-canvas"></canvas>
+
+  <!-- TELA PRINCIPAL (HOME SCREEN / MAIN MENU) -->
+  <div id="home-screen" class="home-screen active">
+    <div class="home-brand">
+      <h1 class="home-title">Crônica de Aethelgard</h1>
+      <div class="home-subtitle">O Destino das Cinzas</div>
+    </div>
+
+    <div class="home-menu-container">
+      <div class="home-menu-buttons">
+        <button id="btn-home-new" class="home-btn primary">⚔️ Novo Jogo</button>
+        <button id="btn-home-continue" class="home-btn">📜 Continuar Campanha</button>
+        <button id="btn-home-load" class="home-btn">💾 Carregar Save</button>
+        <button id="btn-home-lore" class="home-btn">🐉 Bestiário & Enciclopédia</button>
+        <button id="btn-home-credits" class="home-btn">✨ Créditos & Conquistas</button>
+      </div>
+    </div>
+
+    <div class="home-footer">
+      <span>Versão 1.0.42 (Offline Engine)</span>
+      <span>Design Medieval Fantástico AAA • Arena.ai</span>
+    </div>
+  </div>
+
+  <!-- TELA DE PERSONALIZAÇÃO E CRIAÇÃO DO PERSONAGEM -->
+  <div id="creation-screen" class="home-screen" style="overflow-y:auto; padding:30px 40px;">
+    <div id="creation-content" style="max-width:1000px; margin:0 auto; width:100%;"></div>
+  </div>
+
+  <!-- ESTRUTURA DO JOGO ATIVO (GAME SHELL) -->
+  <div id="game-shell" class="game-shell">
+    <!-- CABEÇALHO SUPERIOR ORNAMENTADO -->
+    <header class="app-header">
+      <div class="hdr-left">
+        <button id="btn-mobile-drawer" class="mobile-drawer-toggle" aria-label="Abrir Menu">☰</button>
+        <h1 class="game-title">Crônica de Aethelgard</h1>
+        <span class="hdr-version">v1.0.42</span>
+      </div>
+
+      <div class="hdr-center">
+        <div class="vital-box">
+          <div class="vital-top"><span id="hdr-level">Nível 1</span> <span id="hdr-hp">100/100</span></div>
+          <div class="vital-bar"><div id="hdr-hp-bar" class="vital-fill hp" style="width: 100%"></div></div>
+        </div>
+
+        <div class="vital-box">
+          <div class="vital-top"><span>Vontade/Mana</span> <span id="hdr-will">100/100</span></div>
+          <div class="vital-bar"><div id="hdr-will-bar" class="vital-fill will" style="width: 100%"></div></div>
+        </div>
+
+        <div class="vital-box">
+          <div class="vital-top"><span>Fadiga Mágica</span> <span id="hdr-fatigue">0%</span></div>
+          <div class="vital-bar"><div id="hdr-fatigue-bar" class="vital-fill fatigue" style="width: 0%"></div></div>
+        </div>
+      </div>
+
+      <div class="hdr-right">
+        <div class="time-box">
+          <span id="hdr-date">Dia 1, 1042</span> | 
+          <span id="hdr-weather" title="Céu Limpo">⛅ Sol</span> | 
+          <span id="hdr-moon">🌙 Lua</span>
+        </div>
+        <span id="hdr-gold" class="badge species-badge">250 ouro</span>
+        <span id="hdr-location" class="badge">📍 Eldoria</span>
+        <button class="hdr-btn" id="btn-quick-camp">⛺ Acampar</button>
+        <button class="hdr-btn" id="btn-music-mute">🎵 Música: On</button>
+        <button class="hdr-btn" id="btn-mute">🔊 Áudio</button>
+        <button class="hdr-btn" id="btn-to-home">🏠 Menu</button>
+      </div>
+    </header>
+
+    <!-- CORPO E NAVEGAÇÃO LATERAL -->
+    <div class="app-body">
+      <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+      <nav class="sidebar" id="app-sidebar">
+        <div class="mobile-sidebar-header">
+          <span>📜 Menu da Crônica</span>
+          <button id="btn-close-sidebar" class="mobile-close-btn">✕</button>
+        </div>
+        <div class="nav-title">Jornada e Mundo</div>
+        <button class="nav-btn active" data-tab="story">📖 Crônica Principal</button>
+        <button class="nav-btn" data-tab="map">🗺️ Mapa e Exploração</button>
+        <button class="nav-btn" data-tab="quests">📜 Missões e Dilemas</button>
+        <button class="nav-btn" data-tab="kingdoms">👑 Reinos e Geopolítica</button>
+        <button class="nav-btn" data-tab="party">👥 Party e Sinergia</button>
+        <button class="nav-btn" data-tab="romance">💖 Romance e Residências</button>
+        <button class="nav-btn" data-tab="guilds">🛡️ Guildas e Companheiros</button>
+
+        <div class="nav-title">Cavaleiro e Feras</div>
+        <button class="nav-btn" data-tab="character">👤 Personagem e Atributos</button>
+        <button class="nav-btn" data-tab="inventory">🎒 Inventário e Armas</button>
+        <button class="nav-btn" data-tab="dragon">🐉 Santuário do Dragão</button>
+        <button class="nav-btn" data-tab="magic">⚡ Livro de Magias (12 Escolas)</button>
+        <button class="nav-btn" data-tab="skills">✨ Árvores de Habilidades</button>
+
+        <div class="nav-title">Economia e Sistema</div>
+        <button class="nav-btn" data-tab="market">🧪 Alquimia, Forja e Mercado</button>
+        <button class="nav-btn" data-tab="lore">📖 Bestiário e Enciclopédia</button>
+        <button class="nav-btn" data-tab="audit">⚙️ Auditor de Flags</button>
+        <button class="nav-btn" data-tab="save">💾 Salvar, Exportar e Epílogo</button>
+      </nav>
+
+      <!-- ÁREA DE CONTEÚDO PRINCIPAL -->
+      <main class="content-area">
+        <section id="view-story" class="panel-view active"><div id="story-container"></div></section>
+        <section id="view-map" class="panel-view"><div id="map-container"></div></section>
+        <section id="view-character" class="panel-view"><div id="character-container"></div></section>
+        <section id="view-inventory" class="panel-view"><div id="inventory-container"></div></section>
+        <section id="view-dragon" class="panel-view"><div id="dragon-container"></div></section>
+        <section id="view-magic" class="panel-view"><div id="magic-container"></div></section>
+        <section id="view-skills" class="panel-view"><div id="skills-container"></div></section>
+        <section id="view-kingdoms" class="panel-view"><div id="kingdoms-container"></div></section>
+        <section id="view-party" class="panel-view"><div id="party-container"></div></section>
+        <section id="view-romance" class="panel-view"><div id="romance-container"></div></section>
+        <section id="view-guilds" class="panel-view"><div id="guilds-container"></div></section>
+        <section id="view-market" class="panel-view"><div id="market-container"></div></section>
+        <section id="view-quests" class="panel-view"><div id="quests-container"></div></section>
+        <section id="view-lore" class="panel-view"><div id="lore-container"></div></section>
+        <section id="view-audit" class="panel-view"><div id="audit-container"></div></section>
+        <section id="view-save" class="panel-view"><div id="save-container"></div></section>
+      </main>
+
+      <!-- BARRA DE NAVEGAÇÃO INFERIOR PARA DISPOSITIVOS MÓVEIS -->
+      <nav class="mobile-bottom-nav">
+        <button class="bottom-nav-btn active" data-tab="story">
+          <span class="bnav-icon">📖</span>
+          <span class="bnav-label">Crônica</span>
+        </button>
+        <button class="bottom-nav-btn" data-tab="map">
+          <span class="bnav-icon">🗺️</span>
+          <span class="bnav-label">Mapa</span>
+        </button>
+        <button class="bottom-nav-btn" data-tab="character">
+          <span class="bnav-icon">👤</span>
+          <span class="bnav-label">Cavaleiro</span>
+        </button>
+        <button class="bottom-nav-btn" data-tab="inventory">
+          <span class="bnav-icon">🎒</span>
+          <span class="bnav-label">Mochila</span>
+        </button>
+        <button class="bottom-nav-btn" id="btn-mobile-more">
+          <span class="bnav-icon">☰</span>
+          <span class="bnav-label">Menu</span>
+        </button>
+      </nav>
+    </div>
+  </div>
+
+  <!-- OVERLAY DE COMBATE TÁTICO AAA -->
+  <div id="combat-overlay" class="combat-overlay">
+    <canvas id="combat-vfx-canvas" class="combat-vfx-canvas"></canvas>
+    <div class="combat-arena">
+      <div class="arena-header">
+        <h2>⚔️ COMBATE TÁTICO BASEADO EM ESCOLHAS</h2>
+        <button class="action-btn small danger" onclick="window.combatManager.endCombat(false, true)">🏃 Tentar Fuga / Recuar</button>
+      </div>
+
+      <div class="enemy-display">
+        <div class="q-top">
+          <span id="cmb-enemy-name" class="enemy-name">Inimigo</span>
+          <span id="cmb-enemy-hp" class="badge danger-level">100 / 100 HP</span>
+        </div>
+        <div class="progress-bar my-2"><div id="cmb-enemy-hp-bar" class="progress-fill hp-color" style="width: 100%"></div></div>
+        <p id="cmb-enemy-desc" class="mt-1">Descrição do adversário.</p>
+        <small id="cmb-enemy-morale" class="mt-2 d-block">Moral: 100% | Defesa: 20</small>
+      </div>
+
+      <h4 class="mt-3">Diário de Batalha (Rodada e Sincronia):</h4>
+      <div id="cmb-log-box" class="cmb-log-box mt-1"></div>
+
+      <h4 class="mt-3">Escolha sua Ação Tática para esta Rodada:</h4>
+      <div class="tactical-actions-grid mt-2">
+        <button class="scroll-choice-btn" onclick="window.combatManager.executePlayerTurn('attack_standard')"><span class="scroll-ribbon">⚔️</span> Ataque Padrão com Arma</button>
+        <button class="scroll-choice-btn" onclick="window.combatManager.executePlayerTurn('attack_heavy')"><span class="scroll-ribbon">💥</span> Golpe Pesado Quebra-Escudo</button>
+        <button class="scroll-choice-btn" onclick="window.combatManager.executePlayerTurn('attack_defensive')"><span class="scroll-ribbon">🛡️</span> Postura Defensiva (+Defesa)</button>
+        <button class="scroll-choice-btn" onclick="window.combatManager.executePlayerTurn('command_dragon')"><span class="scroll-ribbon">🐉</span> Comandar Sopro do Dragão</button>
+        <button class="scroll-choice-btn" onclick="window.combatManager.executePlayerTurn('companion_skill', window.partyManager?.activePartyIds[0] || 'comp_borin')"><span class="scroll-ribbon">⚔️</span> Comando: Companheiro 1</button>
+        <button class="scroll-choice-btn" onclick="window.combatManager.executePlayerTurn('companion_skill', window.partyManager?.activePartyIds[1] || 'comp_vespera')"><span class="scroll-ribbon">🛡️</span> Comando: Companheiro 2</button>
+        <button class="scroll-choice-btn" onclick="window.combatManager.executePlayerTurn('cast_spell', 'spell_fireball')"><span class="scroll-ribbon">🔥</span> Conjurar Bola de Fogo Rúnica</button>
+        <button class="scroll-choice-btn" onclick="window.combatManager.executePlayerTurn('cast_spell', 'spell_solar_heal')"><span class="scroll-ribbon">✨</span> Conjurar Toque de Cura Solar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE EVENTO NARRATIVO PROCEDURAL -->
+  <div id="modal-event" class="modal-overlay">
+    <div class="modal-box">
+      <h3 id="ev-title">Título do Evento</h3>
+      <p id="ev-desc" class="mt-2">Descrição do evento narrativo.</p>
+      <div id="ev-choices" class="ev-choices-box"></div>
+    </div>
+  </div>
+
+  <!-- MODAL DE ALERTA GERAL / EPÍLOGO / CRÉDITOS -->
+  <div id="modal-alert" class="modal-overlay">
+    <div class="modal-box">
+      <h3 id="alert-title">Alerta do Mundo</h3>
+      <div id="alert-body" class="mt-2"></div>
+      <div class="mt-4 text-right">
+        <button id="alert-confirm-btn" class="action-btn primary">Entendido</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTAINER DE TOASTS -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- SCRIPTS MODULARES DO JOGO -->
+  <script src="assets/data_loader.js"></script>
+  <script src="flags/flags_manager.js"></script>
+  <script src="engine/attributes.js"></script>
+  <script src="engine/hidden_attributes.js"></script>
+  <script src="world/calendar.js"></script>
+  <script src="world/delayed_consequences.js"></script>
+  <script src="world/map_manager.js"></script>
+  <script src="world/kingdoms.js"></script>
+  <script src="world/npcs.js"></script>
+  <script src="dragons/dragon_manager.js"></script>
+  <script src="magic/magic_manager.js"></script>
+  <script src="combat/weapons_manager.js"></script>
+  <script src="items/crafting_manager.js"></script>
+  <script src="skills/skills_manager.js"></script>
+  <script src="guilds/guilds_manager.js"></script>
+  <script src="economy/economy_manager.js"></script>
+  <script src="quests/quest_manager.js"></script>
+  <script src="events/events_engine.js"></script>
+  <script src="combat/combat_manager.js"></script>
+  <script src="story/narrative_engine.js"></script>
+  <script src="story/endings_manager.js"></script>
+  <script src="save/save_manager.js"></script>
+  <script src="audio/audio_manager.js"></script>
+  <script src="world/companions_manager.js"></script>
+  <script src="world/party_manager.js"></script>
+  <script src="creatures/bestiary_manager.js"></script>
+  <script src="combat/combat_vfx.js"></script>
+  <script src="ui/ui_icons.js"></script>
+  <script src="ui/ui_lore.js"></script>
+  <script src="ui/ui_creation.js"></script>
+  <script src="ui/ui_story.js"></script>
+  <script src="ui/ui_romance.js"></script>
+  <script src="ui/ui_party.js"></script>
+  <script src="ui/ui.js"></script>
+  <script src="engine/core.js"></script>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      window.Game.initGame();
+      if ("serviceWorker" in navigator && location.protocol !== "file:") {
+        navigator.serviceWorker.register("sw.js").then(reg => {
+          console.log("[PWA ServiceWorker] Registrado com sucesso com escopo:", reg.scope);
+        }).catch(err => {
+          console.warn("[PWA ServiceWorker] Erro ao registrar:", err);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

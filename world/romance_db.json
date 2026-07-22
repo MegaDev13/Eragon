@@ -1,0 +1,470 @@
+{
+  "residences": [
+    {
+      "id": "res_eldor_manor",
+      "name": "Mansão Real dos Vales de Eldoria",
+      "kingdomId": "reino_eldor",
+      "price": 2500,
+      "desc": "Uma propriedade aristocrática com jardins empedrados e lareira de ferro perto do Palácio da Rainha Lyra.",
+      "perk": "+40 HP e +30 Vontade regenerados a cada repouso de casal.",
+      "unlocked": false
+    },
+    {
+      "id": "res_aramis_penthouse",
+      "name": "Palácio das Especiarias e Ouro de Aramis",
+      "kingdomId": "sultanato_aramis",
+      "price": 4000,
+      "desc": "Cobertura suntuosa com cúpula dourada, pátio com fontes e vista para os bazares oceânicos.",
+      "perk": "Gera +35 moedas de ouro diárias de renda passiva para o casal.",
+      "unlocked": false
+    },
+    {
+      "id": "res_lumen_cabin",
+      "name": "Chalé Élfico Simbiótico da Floresta de Lúmen",
+      "kingdomId": "confederacao_valdrak",
+      "price": 1800,
+      "desc": "Um lar místico tecido entre as raízes e musgos fosforescentes das árvores milenares.",
+      "perk": "Cura instantaneamente doenças do dragão e zera a fadiga mágica ao dormir.",
+      "unlocked": false
+    },
+    {
+      "id": "res_valdrak_spire",
+      "name": "Fortaleza Rúnica nos Picos Nevados de Val-Drak",
+      "kingdomId": "confederacao_valdrak",
+      "price": 3000,
+      "desc": "Santuário nas alturas com poleiro aéreo para seu dragão e observatório astronômico.",
+      "perk": "+25% de bônus de dano com todas as magias e voo sem custo de fadiga.",
+      "unlocked": false
+    },
+    {
+      "id": "res_aethel_sanctuary",
+      "name": "Mosteiro de Mármore e Ouro de Aethel-Lúmen",
+      "kingdomId": "teocracia_aethel",
+      "price": 2800,
+      "desc": "Residência sacra iluminada por espelhos solares ininterruptos que afastam qualquer traço de magia escura.",
+      "perk": "Limpa 100% da corrupção arcana do cavaleiro ao repousar e concede +30 Defesa Mágica.",
+      "unlocked": false
+    },
+    {
+      "id": "res_vaelor_manor",
+      "name": "Castelo Marítimo do Grão-Ducado de Vaelor",
+      "kingdomId": "grao_ducado_vaelor",
+      "price": 3200,
+      "desc": "Fortaleza costeira voltada para as ondas de ferro, com cais privativo e armaria reforçada.",
+      "perk": "Reparos gratuitos para todas as armas equipadas e +35 Defesa Física Base.",
+      "unlocked": false
+    },
+    {
+      "id": "res_khaz_lodge",
+      "name": "Salão Escavado no Abismo de Khaz-Dûm",
+      "kingdomId": "horda_khaz",
+      "price": 2000,
+      "desc": "Caverna nobre entalhada no granito maciço com fogueira central de meteorito e troféus de feras legendárias.",
+      "perk": "+40% de dano com armas pesadas e imunidade a frio/exaustão de nevasca.",
+      "unlocked": false
+    }
+  ],
+  "npcs": [
+    {
+      "id": "rom_lyra",
+      "name": "Rainha Lyra de Eldor",
+      "title": "Soberana do Trono de Prata",
+      "kingdomId": "reino_eldor",
+      "gender": "feminine",
+      "orientation": "pansexual",
+      "portrait": "assets/portraits/lyra.jpg",
+      "profession": "Rainha e Governante",
+      "approval": 10,
+      "status": "Conhecido",
+      "favoriteGifts": ["item_rose_bouquet", "item_poetry_book", "item_engagement_ring"],
+      "dislikedGifts": ["mat_iron_ingot", "ration_food"],
+      "dialogues": [
+        { "reqApproval": 30, "text": "Cavaleiro... a solidão do trono consome até a alma mais forte. Sua presença me traz uma paz que pergaminhos de lei jamais trouxeram." },
+        { "reqApproval": 60, "text": "Quando olho nos seus olhos, não vejo apenas a espada que defende meu reino, vejo a pessoa com quem desejo compartilhar meu destino." },
+        { "reqApproval": 80, "text": "Aceito seu anel rúnico de noivado com todo o meu coração! Que Eldor saiba que a Rainha encontrou seu cavaleiro eterno." }
+      ],
+      "weddingVows": "Diante dos vitrais sagrados da Catedral de Prata em Eldoria, a Rainha Lyra coloca sua coroa de lado por um momento e segura suas mãos: 'Eu prometo amar, governar e lutar ao seu lado até que as cinzas virem estrelas.'"
+    },
+    {
+      "id": "rom_vespera",
+      "name": "Capitã Vespera",
+      "title": "Comandante da Lâmina de Ferro",
+      "kingdomId": "reino_eldor",
+      "gender": "feminine",
+      "orientation": "pansexual",
+      "portrait": "assets/portraits/vespera.jpg",
+      "profession": "Militar e Cavaleira",
+      "approval": 15,
+      "status": "Amizade",
+      "favoriteGifts": ["w_dagger", "item_engagement_ring", "mat_iron_ingot"],
+      "dislikedGifts": ["item_poetry_book"],
+      "dialogues": [
+        { "reqApproval": 30, "text": "Guerreiros não costumam falar de sentimentos, mas quando lutamos costas com costas na emboscada, senti meu coração bater mais forte que o choque de escudos." },
+        { "reqApproval": 60, "text": "Você ganhou minha confiança e meu afeto. Quero que você seja minha dupla em combate e no amor." },
+        { "reqApproval": 80, "text": "Um anel de noivado de aço e prata! Eu o usarei com mais orgulho do que qualquer condecoração real." }
+      ],
+      "weddingVows": "Sob as trombetas da Guarda Real no pátio de Eldoria, Vespera ergue sua espada cruzada com a sua: 'Que nossa união seja inabalável como o ferro e cortante contra todos os nossos inimigos!'"
+    },
+    {
+      "id": "rom_alden",
+      "name": "Alden o Mercador",
+      "title": "Barão Áureo das Rotas",
+      "kingdomId": "reino_eldor",
+      "gender": "masculine",
+      "orientation": "pansexual",
+      "portrait": "assets/portraits/alden.jpg",
+      "profession": "Comerciante e Diplomata",
+      "approval": 5,
+      "status": "Conhecido",
+      "favoriteGifts": ["item_golden_necklace", "item_rare_perfume", "item_engagement_ring"],
+      "dislikedGifts": ["ration_food", "mat_lumen_herb"],
+      "dialogues": [
+        { "reqApproval": 30, "text": "Já negociei especiarias raras e minérios imperiais, mas o seu carisma é o único tesouro que não consigo avaliar em moedas." },
+        { "reqApproval": 60, "text": "Esqueça os contratos comerciais. Quero selar uma parceria romântica e duradoura exclusiva com você." },
+        { "reqApproval": 80, "text": "Esse anel rúnico é uma obra-prima! Nosso noivado fará as guildas áureas inteiras celebrarem em banquetes!" }
+      ],
+      "weddingVows": "No bazar suntuoso de Eldoria regado a vinho especiado, Alden sela os votos: 'Minha fortuna, minhas rotas e meu amor pertencem a você agora e para sempre.'"
+    },
+    {
+      "id": "rom_thalor",
+      "name": "Arquimago Thalor",
+      "title": "Grão-Mestre de Valen",
+      "kingdomId": "confederacao_valdrak",
+      "gender": "masculine",
+      "orientation": "asexual_romantic",
+      "portrait": "assets/portraits/thalor.jpg",
+      "profession": "Estudioso e Arcanista",
+      "approval": 10,
+      "status": "Amizade",
+      "favoriteGifts": ["relic_time_tome", "item_poetry_book", "item_engagement_ring"],
+      "dislikedGifts": ["w_greataxe", "potion_health"],
+      "dialogues": [
+        { "reqApproval": 30, "text": "Passei mais de um século entre tomos antigos, mas nossa conexão intelectual e romântica transcende qualquer equação mística." },
+        { "reqApproval": 60, "text": "Sua alma ressoa em perfeita harmonia astral com a minha. Quero que caminhemos juntos pela eternidade do tempo." },
+        { "reqApproval": 80, "text": "Um anel de promessa rúnica... Aceito com reverência e amor devoto." }
+      ],
+      "weddingVows": "No topo da Torre de Magia de Valen sob a luz de estrelas cadentes, Thalor declama feitiços celestiais: 'Nosso laço é selado no próprio tecido do tempo.'"
+    },
+    {
+      "id": "rom_borin",
+      "name": "Borin o Ferreiro",
+      "title": "Forjador de Aço-Dragão",
+      "kingdomId": "reino_eldor",
+      "gender": "masculine",
+      "orientation": "masculine_preference",
+      "portrait": "assets/portraits/borin.jpg",
+      "profession": "Mestre Ferreiro",
+      "approval": 20,
+      "status": "Amizade",
+      "favoriteGifts": ["mat_iron_ingot", "mat_obsidian_crystal", "item_engagement_ring"],
+      "dislikedGifts": ["item_poetry_book", "item_rose_bouquet"],
+      "dialogues": [
+        { "reqApproval": 30, "text": "Hahaha! Você tem braços fortes e honra firme! Gosto da sua companhia na forja mais do que de qualquer cerveja anã." },
+        { "reqApproval": 60, "text": "Meu coração bate como meu martelo na bigorna quando você está perto. Vamos namorar de verdade, guerreiro!" },
+        { "reqApproval": 80, "text": "Por Aethel! Você me trouxe uma aliança rúnica! Sou o ferreiro mais feliz de toda Aethelgard!" }
+      ],
+      "weddingVows": "Em meio às faíscas quentes da Cidadela de Ferro, Borin abraça você: 'Fundidos no fogo e no aço, ninguém jamais nos separará!'"
+    },
+    {
+      "id": "rom_kaelen",
+      "name": "Kaelen da Lâmina Sombria",
+      "title": "Rei dos Esgotos e Espião",
+      "kingdomId": "reino_eldor",
+      "gender": "masculine",
+      "orientation": "pansexual",
+      "portrait": "assets/portraits/kaelen.jpg",
+      "profession": "Ladrão e Espião-Chefe",
+      "approval": 0,
+      "status": "Conhecido",
+      "favoriteGifts": ["w_dagger", "item_rare_perfume", "item_engagement_ring"],
+      "dislikedGifts": ["a_iron_plate", "item_poetry_book"],
+      "dialogues": [
+        { "reqApproval": 30, "text": "Sempre vivi nas sombras desconfiando de todos, mas você é o único para quem revelei meu rosto e meus segredos." },
+        { "reqApproval": 60, "text": "Mesmo em um mundo de traições, você é meu porto seguro. Quero você ao meu lado como meu par no crime e no amor." },
+        { "reqApproval": 80, "text": "Um anel de noivado para uma sombra como eu? Você roubou meu coração em definitivo." }
+      ],
+      "weddingVows": "Nos telhados noturnos do Porto de Valen sob a luz da lua, Kaelen sussurra: 'Minhas lâminas e minha lealdade oculta são suas pela eternidade.'"
+    },
+    {
+      "id": "rom_orin",
+      "name": "Ancião Druida Orin",
+      "title": "Guardião da Floresta de Lúmen",
+      "kingdomId": "confederacao_valdrak",
+      "gender": "masculine",
+      "orientation": "pansexual",
+      "portrait": "assets/portraits/orin.jpg",
+      "profession": "Sacerdote Druídico",
+      "approval": 15,
+      "status": "Amizade",
+      "favoriteGifts": ["mat_lumen_herb", "potion_antidote", "item_engagement_ring"],
+      "dislikedGifts": ["mat_iron_ingot", "mat_obsidian_crystal"],
+      "dialogues": [
+        { "reqApproval": 30, "text": "As árvores de Lúmen florescem mais rápido quando você caminha ao meu lado. Sua energia vital me rejuvenesce." },
+        { "reqApproval": 60, "text": "Nossas almas estão unidas como raízes milenares no solo sagrado. Seja meu companheiro na seiva e na vida." },
+        { "reqApproval": 80, "text": "Um anel abençoado! Que os espíritos da floresta celebrem nosso noivado sagrado!" }
+      ],
+      "weddingVows": "Diante da Árvore-Coração de Lúmen, Orin envolve as mãos de vocês com musgo brilhante: 'Crescemos juntos em harmonia com a terra e o céu.'"
+    },
+    {
+      "id": "rom_seraphina",
+      "name": "Oráculo Seraphina",
+      "title": "Alta Sacerdotisa de Aethel-Lúmen",
+      "kingdomId": "teocracia_aethel",
+      "gender": "feminine",
+      "orientation": "pansexual",
+      "portrait": "assets/portraits/lyra.jpg",
+      "profession": "Oráculo e Inquisidora",
+      "approval": 0,
+      "status": "Conhecido",
+      "favoriteGifts": ["item_rose_bouquet", "item_golden_necklace", "item_engagement_ring"],
+      "dislikedGifts": ["w_dagger", "potion_willpower"],
+      "dialogues": [
+        { "reqApproval": 30, "text": "Eu costumava olhar apenas para a luz divina do sol, mas agora meus olhos procuram por você em cada oração." },
+        { "reqApproval": 60, "text": "Sua honra e coragem purificaram minhas incertezas. Quero que compartilhemos nossa fé e afeto dia e noite." },
+        { "reqApproval": 80, "text": "Este anel de noivado é uma bênção celestial! Serei sua devota noiva e parceira sagrada." }
+      ],
+      "weddingVows": "No Mosteiro Solar de Aethel-Lúmen com feixes de luz cruzando o altar, Seraphina sela os votos: 'A luz do sol e o amor da minha alma abençoam nossa união!'"
+    },
+    {
+      "id": "rom_roderick",
+      "name": "Grão-Duque Roderick",
+      "title": "Soberano dos Fardos do Oeste",
+      "kingdomId": "grao_ducado_vaelor",
+      "gender": "masculine",
+      "orientation": "feminine_preference",
+      "portrait": "assets/portraits/alden.jpg",
+      "profession": "Almirante e Duque Feudal",
+      "approval": 10,
+      "status": "Conhecido",
+      "favoriteGifts": ["w_longsword", "item_golden_necklace", "item_engagement_ring"],
+      "dislikedGifts": ["ration_food", "mat_lumen_herb"],
+      "dialogues": [
+        { "reqApproval": 30, "text": "Comando centenas de navios de guerra, mas é a sua graça e coragem que comandam o leme do meu coração." },
+        { "reqApproval": 60, "text": "Quero que governe o Grão-Ducado ao meu lado. Você é a musa e a força que Vaelor sempre precisou." },
+        { "reqApproval": 80, "text": "Aceito sua aliança com honra marcial! Nosso noivado será saudado por salvas de canhão oceânicas!" }
+      ],
+      "weddingVows": "A bordo da nau-capitânia no cais de Vaelor com gaivotas voando, Roderick sela o matrimônio: 'Nenhum mar agitado jamais separará nosso amor.'"
+    },
+    {
+      "id": "rom_vorak",
+      "name": "Khã Vorak o Esmaga-Pedras",
+      "title": "Senhor da Horda Nômade de Khaz",
+      "kingdomId": "horda_khaz",
+      "gender": "masculine",
+      "orientation": "pansexual",
+      "portrait": "assets/portraits/borin.jpg",
+      "profession": "Chefe Guerreiro Nômade",
+      "approval": 0,
+      "status": "Conhecido",
+      "favoriteGifts": ["w_greataxe", "item_engagement_ring", "mat_iron_ingot"],
+      "dislikedGifts": ["item_poetry_book", "item_rare_perfume"],
+      "dialogues": [
+        { "reqApproval": 30, "text": "Rrrr! Você ruge como uma fera e luta com ferocidade! Gosto mais de você do que dos meus melhores corcéis!" },
+        { "reqApproval": 60, "text": "Você conquistou o respeito da Horda e a fúria do meu coração. Seja meu par de batalha e amor!" },
+        { "reqApproval": 80, "text": "Um anel de ferro e ouro! Você é oficialmente noivo do Khã! Que os clãs tremam!" }
+      ],
+      "weddingVows": "Em meio a fogueiras gigantescas nos cânions de Khaz-Dûm com tambores ressoando, Vorak ergue seu machado: 'Nossa força unida dominará as cinzas!'"
+    },
+    {
+      "id": "rom_vane",
+      "name": "General Vane o Revolucionário",
+      "title": "Líder dos Camponeses Livres",
+      "kingdomId": "reino_eldor",
+      "gender": "masculine",
+      "orientation": "pansexual",
+      "portrait": "assets/portraits/kaelen.jpg",
+      "profession": "Ex-General e Revolucionário",
+      "approval": 10,
+      "status": "Conhecido",
+      "favoriteGifts": ["ration_food", "item_poetry_book", "item_engagement_ring"],
+      "dislikedGifts": ["item_golden_necklace"],
+      "dialogues": [
+        { "reqApproval": 30, "text": "Sempre lutei pela liberdade dos oprimidos, mas quando estou com você, sinto a liberdade do verdadeiro afeto." },
+        { "reqApproval": 60, "text": "Você é minha inspiração para construir uma Aethelgard justa. Vamos caminhar juntos no amor e na revolução." },
+        { "reqApproval": 80, "text": "Esse anel rúnico... Aceito! Que nosso noivado seja o símbolo da esperança do povo livre!" }
+      ],
+      "weddingVows": "Na praça das aldeias camponesas com flores sendo jogadas pelo povo, Vane declara: 'Lado a lado, construímos uma vida e um mundo sem correntes.'"
+    },
+    {
+      "id": "rom_harun",
+      "name": "Sultão Harun Al-Dajir",
+      "title": "Soberano de Aramis",
+      "kingdomId": "sultanato_aramis",
+      "gender": "masculine",
+      "orientation": "pansexual",
+      "portrait": "assets/portraits/alden.jpg",
+      "profession": "Sultão e Grão-Comerciante",
+      "approval": 5,
+      "status": "Conhecido",
+      "favoriteGifts": ["item_golden_necklace", "item_rare_perfume", "item_engagement_ring"],
+      "dislikedGifts": ["ration_food", "mat_lumen_herb"],
+      "dialogues": [
+        { "reqApproval": 30, "text": "Possuo palácios com cúpulas de ouro e joias do mundo todo, mas seu sorriso é a joia mais rara de Aramis." },
+        { "reqApproval": 60, "text": "Quero você como o amor supremo do Sultanato. Tudo o que possuo está aos seus pés." },
+        { "reqApproval": 80, "text": "Uma aliança sagrada! Nosso noivado será comemorado com 40 dias de festivais em todo o deserto!" }
+      ],
+      "weddingVows": "Sob cúpulas de ouro e tapeçarias de seda no Palácio de Aramis, Harun beija sua mão: 'Você é o meu tesouro eterno e meu par real.'"
+    },
+    {
+      "id": "rom_morgana",
+      "name": "Lady Morgana da Corte Sombria",
+      "title": "Mestra da Magia de Sangue",
+      "kingdomId": "grao_ducado_vaelor",
+      "gender": "feminine",
+      "orientation": "pansexual",
+      "portrait": "assets/portraits/vespera.jpg",
+      "profession": "Arquimaga e Feiticeira de Sangue",
+      "approval": 0,
+      "status": "Conhecido",
+      "favoriteGifts": ["potion_willpower", "item_rare_perfume", "item_engagement_ring"],
+      "dislikedGifts": ["item_rose_bouquet"],
+      "dialogues": [
+        { "reqApproval": 30, "text": "O sangue que flui em nossas veias canta a mesma melodia escura. Você me intriga como nenhum outro feiticeiro." },
+        { "reqApproval": 60, "text": "Abandone os covardes do mundo. Quero você como meu consorte e amor na eternidade do abismo." },
+        { "reqApproval": 80, "text": "Um anel de promessa rúnica! Nosso noivado sela um pacto imortal que nem a morte quebrará!" }
+      ],
+      "weddingVows": "No Pântano das Almas iluminado por velas púrpuras, Morgana sela o matrimônio: 'Nossa união de sangue e alma imperará pelas eras.'"
+    },
+    {
+      "id": "rom_zorah",
+      "name": "Mestre Alquimista Zorah",
+      "title": "Engenheira-Chefe das Torres de Solgard",
+      "kingdomId": "imperio_solgard",
+      "gender": "feminine",
+      "orientation": "pansexual",
+      "portrait": "assets/portraits/lyra.jpg",
+      "profession": "Alquimista e Engenheira",
+      "approval": 10,
+      "status": "Conhecido",
+      "favoriteGifts": ["mat_iron_ingot", "mat_obsidian_crystal", "item_engagement_ring"],
+      "dislikedGifts": ["item_poetry_book"],
+      "dialogues": [
+        { "reqApproval": 30, "text": "Minhas engrenagens funcionam com precisão matemática, mas você faz meu coração disparar como uma caldeira sob pressão!" },
+        { "reqApproval": 60, "text": "Você é a centelha perfeita para minha vida. Quero namorar e projetar o futuro ao seu lado!" },
+        { "reqApproval": 80, "text": "Uma aliança de noivado perfeitamente usinada! Você é meu par ideal na oficina e no amor!" }
+      ],
+      "weddingVows": "Na Grande Oficina de Solgard com faíscas mecânicas celebrando, Zorah declara: 'Nossas vidas agora giram na mesma engrenagem perfeita!'"
+    },
+
+    {
+      "id": "rom_elara",
+      "name": "Lady Elara do Vale",
+      "title": "Nobre Estudiosa e Curandeira",
+      "kingdomId": "reino_eldor",
+      "gender": "feminine",
+      "orientation": "pansexual",
+      "portrait": "assets/portraits/lyra.jpg",
+      "profession": "Curandeira e Nobre",
+      "approval": 15,
+      "status": "Conhecido",
+      "favoriteGifts": ["item_rose_bouquet", "item_poetry_book", "item_engagement_ring"],
+      "dislikedGifts": ["w_dagger", "w_greataxe"],
+      "dialogues": [
+        { "reqApproval": 30, "text": "Cuido dos feridos que chegam de Khaz, mas você é quem cura as feridas do meu espírito." },
+        { "reqApproval": 60, "text": "Quero dedicar minha vida a cuidar de você e compartilhar nosso amor todos os dias." },
+        { "reqApproval": 80, "text": "Sim! Mil vezes sim! Usarei este anel com toda a devoção do meu ser." }
+      ],
+      "weddingVows": "Nos jardins prateados do Vale, Elara sorri delicadamente: 'Que nossa paz e afeto sejam um santuário inabalável.'"
+    },
+    {
+      "id": "rom_darius",
+      "name": "Cavaleiro Darius da Guarda Solar",
+      "title": "Paladino de Aethel-Lúmen",
+      "kingdomId": "teocracia_aethel",
+      "gender": "masculine",
+      "orientation": "pansexual",
+      "portrait": "assets/portraits/vespera.jpg",
+      "profession": "Paladino Solar",
+      "approval": 10,
+      "status": "Conhecido",
+      "favoriteGifts": ["w_longsword", "item_engagement_ring", "potion_health"],
+      "dislikedGifts": ["potion_willpower"],
+      "dialogues": [
+        { "reqApproval": 30, "text": "Minha espada jurou proteger a luz divina, mas meu escudo sempre se erguerá primeiro para proteger você." },
+        { "reqApproval": 60, "text": "Sua nobreza me conquistou completamente. Quero cortejá-lo com toda a honra de um paladino." },
+        { "reqApproval": 80, "text": "Este anel rúnico sela nosso noivado abençoado! Você é minha luz e meu amor." }
+      ],
+      "weddingVows": "Diante do altar solar de Aethel, Darius ergue o escudo: 'Juro proteção, honra e amor devoto por toda a eternidade.'"
+    },
+    {
+      "id": "rom_sylas",
+      "name": "Mestre Sylas dos Ventos",
+      "title": "Domador de Dragões de Val-Drak",
+      "kingdomId": "confederacao_valdrak",
+      "gender": "masculine",
+      "orientation": "pansexual",
+      "portrait": "assets/portraits/thalor.jpg",
+      "profession": "Domador de Dragão Aéreo",
+      "approval": 20,
+      "status": "Amizade",
+      "favoriteGifts": ["dragon_elixir", "item_rare_perfume", "item_engagement_ring"],
+      "dislikedGifts": ["mat_iron_ingot"],
+      "dialogues": [
+        { "reqApproval": 30, "text": "Nossos dragões voam juntos em perfeita sincronia e eu sinto a mesma harmonia no meu coração por você." },
+        { "reqApproval": 60, "text": "Voar com você é a maior liberdade que conheço. Seja meu namorado entre os picos nevados!" },
+        { "reqApproval": 80, "text": "Uma aliança celestial! Nosso noivado será celebrado com um voo rasante sobre as nuvens!" }
+      ],
+      "weddingVows": "Nas alturas do Santuário Flutuante sob o rugido dos dragões, Sylas sela os votos: 'Nossos corações cortam os céus unidos para sempre.'"
+    },
+    {
+      "id": "rom_isolda",
+      "name": "Almirante Isolda da Frota Galeão",
+      "title": "Comandante Naval do Oeste",
+      "kingdomId": "grao_ducado_vaelor",
+      "gender": "feminine",
+      "orientation": "pansexual",
+      "portrait": "assets/portraits/vespera.jpg",
+      "profession": "Almirante Naval",
+      "approval": 15,
+      "status": "Conhecido",
+      "favoriteGifts": ["item_golden_necklace", "item_engagement_ring", "w_longsword"],
+      "dislikedGifts": ["item_poetry_book"],
+      "dialogues": [
+        { "reqApproval": 30, "text": "Naveguei por tempestades ferozes, mas nenhuma me balançou tanto quanto o seu olhar desafiador." },
+        { "reqApproval": 60, "text": "Você é minha âncora e minha bússola. Vamos navegar juntos nesta jornada romântica." },
+        { "reqApproval": 80, "text": "Um anel digno de uma almirante! Nosso noivado sela a mais forte aliança naval e romântica do oceano!" }
+      ],
+      "weddingVows": "No convés de comando com sinos tocando em Vaelor, Isolda jura: 'Você é o porto onde minha alma descansa e impera.'"
+    },
+    {
+      "id": "rom_azra",
+      "name": "Xamã Azra da Horda de Khaz",
+      "title": "Sábia das Feras do Abismo",
+      "kingdomId": "horda_khaz",
+      "gender": "feminine",
+      "orientation": "pansexual",
+      "portrait": "assets/portraits/orin.jpg",
+      "profession": "Xamã e Espiritualista",
+      "approval": 10,
+      "status": "Conhecido",
+      "favoriteGifts": ["potion_antidote", "item_engagement_ring", "mat_lumen_herb"],
+      "dislikedGifts": ["a_iron_plate"],
+      "dialogues": [
+        { "reqApproval": 30, "text": "Os espíritos das cinzas sussurraram seu nome nas minhas meditações. Você traz calor às noites frias de Khaz." },
+        { "reqApproval": 60, "text": "Sua coragem e espírito selaram nosso destino. Quero amar e proteger sua alma nos cânions." },
+        { "reqApproval": 80, "text": "Um anel de juramento rúnico! Que os ancestrais abençoem nosso noivado para todo o sempre!" }
+      ],
+      "weddingVows": "Na caverna sagrada da Horda com incenso de ervas queimando, Azra jura: 'Nossos espíritos correm livres e eternamente abraçados.'"
+    },
+    {
+      "id": "rom_tarek",
+      "name": "Tarek o Caixeiro Áureo",
+      "title": "Negociante de Joias de Aramis",
+      "kingdomId": "sultanato_aramis",
+      "gender": "masculine",
+      "orientation": "pansexual",
+      "portrait": "assets/portraits/alden.jpg",
+      "profession": "Ourives e Comerciante",
+      "approval": 10,
+      "status": "Conhecido",
+      "favoriteGifts": ["item_rare_perfume", "item_golden_necklace", "item_engagement_ring"],
+      "dislikedGifts": ["ration_food"],
+      "dialogues": [
+        { "reqApproval": 30, "text": "Lapidei diademas e cristais para príncipes, mas nenhuma joia brilha tanto quanto a sua generosidade." },
+        { "reqApproval": 60, "text": "Quero compartilhar meu ouro, minhas rotas e meu coração apaixonado com você todos os dias." },
+        { "reqApproval": 80, "text": "Uma aliança magnífica! Nosso noivado fará os bazares de Aramis transbordarem de celebração!" }
+      ],
+      "weddingVows": "Nos jardins suspensos do oásis em Aramis, Tarek sorri: 'Você é a joia mais preciosa da minha vida.'"
+    }
+  ]
+}

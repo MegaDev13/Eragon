@@ -1,0 +1,68 @@
+{
+  "events": [
+    {
+      "id": "event_solgard_embassy",
+      "title": "O Embaixador do Imperador Kaelen",
+      "description": "Uma comitiva imperial de Solgard intercepta seu caminho perto da fronteira. O embaixador entrega um pergaminho selado: o Imperador Kaelen VII deseja comprar sua lealdade e do seu dragão na iminente guerra contra a Rainha Lyra.",
+      "requirements": {
+        "flag_guerra_eldor_solgard": false
+      },
+      "choices": [
+        {
+          "text": "Assinar o pacto imperial com Solgard (+500 Ouro, +Armadura de Ferro, mas tornará Eldor inimigo total)",
+          "effects": {
+            "gold": 500,
+            "items": { "a_iron_plate": 1 },
+            "hidden": { "ambicao": 25, "lealdade": -15 },
+            "flags": { "flag_aliado_solgard": true, "flag_rei_confia": false },
+            "rep": { "imperio_solgard": 40, "reino_eldor": -60 }
+          },
+          "consequence": { "delayDays": 25, "title": "A Invasão de Solgard com seu Estandarte", "desc": "As tropas de Solgard cruzaram a fronteira exibindo seu estandarte e ouro. Eldor prepara suas defesas para o combate." }
+        },
+        {
+          "text": "Rasgar o pergaminho e declarar lealdade à Rainha Lyra e a Aethelgard livre (+Honra, +Reputação de Eldor)",
+          "effects": {
+            "xp": 100,
+            "hidden": { "honra": 25, "lealdade": 25 },
+            "flags": { "flag_aliado_eldor": true, "flag_rei_confia": true },
+            "rep": { "reino_eldor": 40, "imperio_solgard": -50 }
+          }
+        },
+        {
+          "text": "Vender as informações do ataque imperial aos dois lados para lucrar no caos (+350 Ouro, +Ganância extremada)",
+          "effects": {
+            "gold": 350,
+            "hidden": { "ganancia": 35, "honra": -30 },
+            "flags": { "flag_agente_duplo": true }
+          }
+        }
+      ]
+    },
+    {
+      "id": "event_guild_tax",
+      "title": "O Decreto de Impostos do Palácio",
+      "description": "O cobrador real de impostos exige que todas as guildas comerciais paguem um tributo emergencial de 40% em barras de ouro para sustentar a cavalaria de fronteira.",
+      "requirements": {
+        "flag_impostos_altos": true
+      },
+      "choices": [
+        {
+          "text": "Apoiar o imposto da Rainha para fortalecer o exército real (+Reputação Real, -Reputação das Guildas)",
+          "effects": {
+            "hidden": { "lealdade": 10 },
+            "flags": { "flag_exerito_reforçado": true },
+            "rep": { "reino_eldor": 25, "guild_aurea": -30 }
+          }
+        },
+        {
+          "text": "Ajudar os mercadores a ocultar os cofres de ouro nos esgotos do Porto (+200 Ouro de propina, +Reputação Áurea)",
+          "effects": {
+            "gold": 200,
+            "hidden": { "ganancia": 15, "honra": -15 },
+            "rep": { "guild_aurea": 35, "reino_eldor": -25 }
+          }
+        }
+      ]
+    }
+  ]
+}

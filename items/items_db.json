@@ -1,0 +1,415 @@
+{
+  "weapons": [
+    {
+      "id": "w_longsword",
+      "name": "Espada Longa Real de Eldor",
+      "style": "Espada Longa",
+      "peso": 3.5,
+      "alcance": "Médio",
+      "velocidade": 65,
+      "dano": 35,
+      "durabilidade": { "current": 80, "max": 80 },
+      "qualidade": "Refinada",
+      "raridade": "Incomum",
+      "description": "Uma lâmina perfeitamente equilibrada para combates de cavaleiros na linha de frente."
+    },
+    {
+      "id": "w_twin_blades",
+      "name": "Duas Espadas da Tempestade do Sul",
+      "style": "Duas Espadas",
+      "peso": 2.8,
+      "alcance": "Curto-Médio",
+      "velocidade": 90,
+      "dano": 32,
+      "durabilidade": { "current": 70, "max": 70 },
+      "qualidade": "Refinada",
+      "raridade": "Incomum",
+      "description": "O par ideal para quem valoriza velocidade e ataques consecutivos sobre defesa."
+    },
+    {
+      "id": "w_katana",
+      "name": "Katana da Lua de Prata",
+      "style": "Katana",
+      "peso": 2.2,
+      "alcance": "Médio",
+      "velocidade": 85,
+      "dano": 40,
+      "durabilidade": { "current": 60, "max": 60 },
+      "qualidade": "Obra-Prima",
+      "raridade": "Raro",
+      "description": "Lâmina curva extremamente afiada, capaz de causar sangramento crítico com um único golpe preciso."
+    },
+    {
+      "id": "w_greataxe",
+      "name": "Machado de Batalha do Quebra-Escudo",
+      "style": "Machado",
+      "peso": 7.0,
+      "alcance": "Médio",
+      "velocidade": 40,
+      "dano": 55,
+      "durabilidade": { "current": 100, "max": 100 },
+      "qualidade": "Comum",
+      "raridade": "Comum",
+      "description": "Sua massa de ferro pesado estilhaça escudos pesados e carapaças minerais de um só golpe."
+    },
+    {
+      "id": "w_warhammer",
+      "name": "Martelo de Titã de Basalto",
+      "style": "Martelo",
+      "peso": 8.5,
+      "alcance": "Curto",
+      "velocidade": 35,
+      "dano": 65,
+      "durabilidade": { "current": 120, "max": 120 },
+      "qualidade": "Refinada",
+      "raridade": "Raro",
+      "description": "Arma contundente brutal. Causa atordoamento automático em alvos pesados."
+    },
+    {
+      "id": "w_spear",
+      "name": "Lança da Alvorada de Solgard",
+      "style": "Lança",
+      "peso": 4.0,
+      "alcance": "Longo",
+      "velocidade": 75,
+      "dano": 38,
+      "durabilidade": { "current": 75, "max": 75 },
+      "qualidade": "Refinada",
+      "raridade": "Incomum",
+      "description": "Permite atacar a uma distância segura, mantendo feras e cavaleiros inimigos afastados."
+    },
+    {
+      "id": "w_dagger",
+      "name": "Adaga Sombria do Corvo",
+      "style": "Adaga",
+      "peso": 0.8,
+      "alcance": "Curto",
+      "velocidade": 100,
+      "dano": 25,
+      "durabilidade": { "current": 50, "max": 50 },
+      "qualidade": "Obra-Prima",
+      "raridade": "Raro",
+      "description": "Leve e letal quando usada a partir da furtividade (+150% de dano em ataques surpresa)."
+    },
+    {
+      "id": "w_shield",
+      "name": "Escudo de Lâmina de Ferro e Bronze",
+      "style": "Escudo",
+      "peso": 6.0,
+      "alcance": "Defensivo",
+      "velocidade": 50,
+      "dano": 15,
+      "durabilidade": { "current": 150, "max": 150 },
+      "qualidade": "Refinada",
+      "raridade": "Incomum",
+      "description": "Absorve até 40 de dano físico por rodada em postura defensiva."
+    },
+    {
+      "id": "w_bow",
+      "name": "Arco Longo de Madeira de Lúmen",
+      "style": "Arco",
+      "peso": 2.0,
+      "alcance": "Extremo",
+      "velocidade": 70,
+      "dano": 36,
+      "durabilidade": { "current": 65, "max": 65 },
+      "qualidade": "Refinada",
+      "raridade": "Incomum",
+      "description": "Feito dos galhos flexíveis de Lúmen. Exige alta Precisão e Destreza."
+    },
+    {
+      "id": "w_crossbow",
+      "name": "Besta Alquímica Imperatória",
+      "style": "Besta",
+      "peso": 4.5,
+      "alcance": "Extremo",
+      "velocidade": 55,
+      "dano": 48,
+      "durabilidade": { "current": 85, "max": 85 },
+      "qualidade": "Obra-Prima",
+      "raridade": "Épico",
+      "description": "Dispara setas perfurantes com força mecânica constante, ignorando metade da armadura inimiga."
+    },
+    {
+      "id": "w_legendary_eclipse",
+      "name": "Lâmina do Eclipse Rúnico de Aethel-Khaz",
+      "style": "Espada Longa",
+      "peso": 3.0,
+      "alcance": "Médio-Longo",
+      "velocidade": 85,
+      "dano": 88,
+      "durabilidade": { "current": 300, "max": 300 },
+      "qualidade": "Lenda Divina",
+      "raridade": "Lenda",
+      "uniqueProc": "Dano de Fogo-Negro + Regeneração de Vontade",
+      "description": "A mítica espada forjada no núcleo vulcânico de Aethel-Khaz antes da Grande Ruptura. Sua lâmina negra absorve a luz solar e libera cortes arcanos devastadores."
+    },
+    {
+      "id": "w_heroic_dragon_spear",
+      "name": "Lança de Escamas Incandescentes de Ignis",
+      "style": "Lança",
+      "peso": 3.8,
+      "alcance": "Longo",
+      "velocidade": 92,
+      "dano": 76,
+      "durabilidade": { "current": 250, "max": 250 },
+      "qualidade": "Obra-Prima",
+      "raridade": "Épico",
+      "uniqueProc": "Perfuração de Armadura 100%",
+      "description": "Lança sagrada entalhada em osso de dragão titânico e encimada com uma ponta de obsidiana aquecida pelo sopro draconiano."
+    },
+    {
+      "id": "w_heroic_dwarven_hammer",
+      "name": "Martelo Quebra-Montanhas dos Anões Ancestrais",
+      "style": "Martelo",
+      "peso": 10.5,
+      "alcance": "Curto",
+      "velocidade": 45,
+      "dano": 96,
+      "durabilidade": { "current": 400, "max": 400 },
+      "qualidade": "Lenda Divina",
+      "raridade": "Lenda",
+      "uniqueProc": "Terremoto Sísmico em Todos os Inimigos",
+      "description": "Uma marreta colossal feita de meteorito puro. Cada impacto ressoa no chão como um trovão tectônico que atordoa exércitos inteiros."
+    },
+    {
+      "id": "w_unique_raven_scythe",
+      "name": "Foice Sombria do Rei dos Esgotos",
+      "style": "Machado",
+      "peso": 4.2,
+      "alcance": "Médio",
+      "velocidade": 95,
+      "dano": 72,
+      "durabilidade": { "current": 200, "max": 200 },
+      "qualidade": "Obra-Prima",
+      "raridade": "Épico",
+      "uniqueProc": "Veneno Hemorrágico Contínuo (+30 Dano/Turno)",
+      "description": "A arma secreta do líder máximo da Irmandade do Corvo. Sua lâmina curva escorre veneno de loto negro que nunca seca."
+    }
+  ],
+  "armors": [
+    {
+      "id": "a_iron_plate",
+      "name": "Armadura Pesada da Ordem de Ferro",
+      "type": "armadura",
+      "peso": 18.0,
+      "defense": 35,
+      "magicDefense": 10,
+      "qualidade": "Refinada",
+      "raridade": "Incomum",
+      "description": "Placas espessas de aço e ferro reforçado."
+    },
+    {
+      "id": "a_raven_cloak",
+      "name": "Manto Sombrio da Irmandade do Corvo",
+      "type": "armadura",
+      "peso": 3.0,
+      "defense": 15,
+      "magicDefense": 25,
+      "stealthBonus": 25,
+      "qualidade": "Obra-Prima",
+      "raridade": "Raro",
+      "description": "Tecido escuro que absorve o som dos passos e aumenta a furtividade nas sombras."
+    },
+    {
+      "id": "a_runic_vest",
+      "name": "Peitoral Rúnico de Valen",
+      "type": "armadura",
+      "peso": 8.0,
+      "defense": 22,
+      "magicDefense": 45,
+      "willBonus": 30,
+      "qualidade": "Lenda",
+      "raridade": "Épico",
+      "description": "Cravejado com cristais azuis de Aether. Reduz o custo e a fadiga das conjurações mágicas."
+    },
+    {
+      "id": "a_legendary_titan_plate",
+      "name": "Manopla e Armadura do Dragão-Titã de Solgard",
+      "type": "armadura",
+      "peso": 22.0,
+      "defense": 68,
+      "magicDefense": 40,
+      "qualidade": "Lenda Divina",
+      "raridade": "Lenda",
+      "description": "Placas espessas forjadas a partir da carapaça indestrutível de um Dragão de Basalto fundida com bronze imperial. Concede invulnerabilidade a fogo e atordoamento."
+    },
+    {
+      "id": "a_unique_queen_mantle",
+      "name": "Coroa e Manto de Prata Sombria de Eldor",
+      "type": "armadura",
+      "peso": 4.5,
+      "defense": 30,
+      "magicDefense": 65,
+      "willBonus": 60,
+      "qualidade": "Lenda Divina",
+      "raridade": "Lenda",
+      "description": "O manto ancestral dos primeiros reis feudais de Aethelgard. Fios de prata tecidos com magia de proteção celestial que purificam feitiços sombrios."
+    },
+    {
+      "id": "a_druidic_living_bark",
+      "name": "Carapaça de Seiva Viva de Lúmen",
+      "type": "armadura",
+      "peso": 9.0,
+      "defense": 42,
+      "magicDefense": 50,
+      "healTurnBonus": 18,
+      "qualidade": "Obra-Prima",
+      "raridade": "Épico",
+      "description": "Armadura simbiótica que cresce e se regenera em torno do corpo do guerreiro, cicatrizando feridas e cortes automaticamente."
+    }
+  ],
+  "items": [
+    {
+      "id": "ration_food",
+      "name": "Ração de Acampamento e Viagem",
+      "type": "consumivel",
+      "peso": 0.5,
+      "price": 5,
+      "description": "Alimento em conserva essencial para viajar entre regiões sem sofrer fome e dano por exaustão."
+    },
+    {
+      "id": "potion_health",
+      "name": "Poção de Cura Rápida",
+      "type": "consumivel",
+      "peso": 0.3,
+      "price": 25,
+      "healAmount": 60,
+      "description": "Elixir vermelho que estanca sangramentos e restaura 60 de HP instantaneamente."
+    },
+    {
+      "id": "potion_willpower",
+      "name": "Poção de Vontade Arcana (Mana)",
+      "type": "consumivel",
+      "peso": 0.3,
+      "price": 30,
+      "willAmount": 50,
+      "fatigueRelief": 20,
+      "description": "Restaura 50 de Vontade/Mana e reduz em 20% a Fadiga Mágica acumulada."
+    },
+    {
+      "id": "potion_antidote",
+      "name": "Antídoto Druídico de Lúmen",
+      "type": "consumivel",
+      "peso": 0.2,
+      "price": 20,
+      "cureDisease": true,
+      "description": "Purifica venenos e cura febres de escama em dragões ou cavaleiros."
+    },
+    {
+      "id": "dragon_elixir",
+      "name": "Elixir Draconiano Ancestral",
+      "type": "consumivel",
+      "peso": 1.0,
+      "price": 100,
+      "description": "Rara iguaria alquímica que sacia totalmente a fome do seu dragão e aumenta significativamente o vínculo com o cavaleiro."
+    },
+    {
+      "id": "potion_heroic_rebirth",
+      "name": "Elixir do Renascimento do Terceiro Círculo",
+      "type": "consumivel",
+      "peso": 0.5,
+      "price": 350,
+      "healAmount": 250,
+      "willAmount": 200,
+      "fatigueRelief": 100,
+      "description": "Poderoso elixir dourado-celeste que restaura 100% de HP e Vontade, limpando totalmente a fadiga mágica e febres."
+    },
+    {
+      "id": "mat_iron_ingot",
+      "name": "Barra de Aço-Ferro Refinado",
+      "type": "material",
+      "peso": 2.0,
+      "price": 15,
+      "description": "Material fundamental utilizado na forja de armas, armaduras e reparos de lâminas desgastadas."
+    },
+    {
+      "id": "mat_obsidian_crystal",
+      "name": "Cristal Rúnico de Obsidiana",
+      "type": "material",
+      "peso": 0.5,
+      "price": 45,
+      "description": "Gema extraída de Aethel-Khaz utilizada para encantar armas e fabricar artefatos mágicos."
+    },
+    {
+      "id": "mat_lumen_herb",
+      "name": "Erva Fosforescente de Lúmen",
+      "type": "material",
+      "peso": 0.1,
+      "price": 10,
+      "description": "Erva medicinal utilizada por alquimistas para preparar poções e antídotos."
+    },
+    {
+      "id": "relic_ring_nine_souls",
+      "name": "Anel das Nove Almas de Valen",
+      "type": "artefato",
+      "peso": 0.1,
+      "price": 1200,
+      "passiveBonus": "Reduz o custo de todas as feitiçarias em 35% e concede +15 em Afinidade Mágica.",
+      "description": "Anel de platina escura cravejado com uma gema que pulsa com as almas dos antigos grão-mestres arcanos."
+    },
+    {
+      "id": "relic_time_tome",
+      "name": "Tomo do Tempo Dilatado de Aether",
+      "type": "artefato",
+      "peso": 2.5,
+      "price": 2000,
+      "passiveBonus": "Permite conjurar magias temporais sem custo de fadiga e concede +20 de Iniciativa em combate.",
+      "description": "Grimório com páginas de ouro flexível gravadas com os segredos celestiais da quarta dimensão."
+    },
+    {
+      "id": "item_engagement_ring",
+      "name": "Anel de Noivado Rúnico de Prata e Ouro",
+      "type": "presente_romantico",
+      "peso": 0.1,
+      "price": 500,
+      "romanceBoost": 35,
+      "description": "Anel entalhado com juramentos de fidelidade eterna, exigido para pedir a mão de qualquer NPC nobre ou guerreiro em noivado."
+    },
+    {
+      "id": "item_wedding_ring",
+      "name": "Aliança Sagrada de Casamento de Aethelgard",
+      "type": "presente_romantico",
+      "peso": 0.1,
+      "price": 1000,
+      "romanceBoost": 50,
+      "description": "Par de alianças abençoadas pelos oráculos celestiais para selar o matrimônio sagrado entre o cavaleiro e seu cônjuge."
+    },
+    {
+      "id": "item_rose_bouquet",
+      "name": "Buquê de Rosas Fosforescentes de Lúmen",
+      "type": "presente_romantico",
+      "peso": 0.3,
+      "price": 40,
+      "romanceBoost": 15,
+      "description": "Flores raras que brilham suavemente no escuro com aroma adocicado, adoradas por magos, damas e guerreiros românticos."
+    },
+    {
+      "id": "item_golden_necklace",
+      "name": "Colar Áureo do Sultanato de Aramis",
+      "type": "presente_romantico",
+      "peso": 0.4,
+      "price": 250,
+      "romanceBoost": 22,
+      "description": "Jóia suntuosa entalhada com ouro purificado de Aramis, perfeita para impressionar a nobreza real e mercadores."
+    },
+    {
+      "id": "item_rare_perfume",
+      "name": "Perfume Especiado das Ilhas de Névoa",
+      "type": "presente_romantico",
+      "peso": 0.2,
+      "price": 80,
+      "romanceBoost": 18,
+      "description": "Frasco de essência exótica e afrodisíaca que desperta memórias de viagens marítimas e flertes apaixonados."
+    },
+    {
+      "id": "item_poetry_book",
+      "name": "Coletânea de Poemas Poéticos dos Reis Antigos",
+      "type": "presente_romantico",
+      "peso": 0.6,
+      "price": 60,
+      "romanceBoost": 16,
+      "description": "Pergaminhos encadernados com baladas de amor e heroísmo medieval, ideais para cortejar intelectuais e sacerdotisas."
+    }
+  ]
+}

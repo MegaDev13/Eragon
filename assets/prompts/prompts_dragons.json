@@ -1,0 +1,56 @@
+{
+  "project": "Crônica de Aethelgard: O Destino das Cinzas",
+  "art_style_master_guidelines": "Hyper-detailed majestic fantasy dragon illustration, digital oil painting, intricate scale texture, cinematic volumetric lighting, dynamic pose against dramatic atmospheric backdrop, AAA RPG quality.",
+  "dragons": [
+    {
+      "id": "dragon_ignis",
+      "name": "Ignis Aurum - O Dragão de Fogo Dourado",
+      "filename": "assets/dragons/ignis_aurum.jpg",
+      "resolution": "2048x2048",
+      "aspect_ratio": "1:1",
+      "composition": "Full body illustration of a majestic golden fire dragon perched atop a jagged volcanic peak. Its scales gleam like molten gold and polished bronze, with fiery heat radiating from between its heavy plates. Its wings spread wide, catching the sunlight, while embers and flames curl from its nostrils.",
+      "lighting": "Intense golden hour sunlight combined with internal molten orange glow from its chest and throat.",
+      "color_palette": ["Molten gold (#facc15)", "Burnished bronze (#b45309)", "Ember orange (#ea580c)", "Volcanic charcoal (#18181b)"]
+    },
+    {
+      "id": "dragon_zephyr",
+      "name": "Zephyr Caeruleum - O Dragão da Tempestade e Ar",
+      "filename": "assets/dragons/zephyr_caeruleum.jpg",
+      "resolution": "2048x2048",
+      "aspect_ratio": "1:1",
+      "composition": "Illustration of a sleek, aerodynamic storm dragon gliding high through dark thunderclouds. Its scales are brilliant cerulean blue and silver, with elongated swept-back horns and electrical arcs crackling across its wings and tail.",
+      "lighting": "Dramatic lightning flash illuminating the dragon against dark indigo storm clouds, casting sharp blue highlights.",
+      "color_palette": ["Cerulean storm blue (#0284c7)", "Lightning cyan (#38bdf8)", "Silver white (#f8fafc)", "Thundercloud indigo (#1e1b4b)"]
+    },
+    {
+      "id": "dragon_terra",
+      "name": "Terra Basalt - O Dragão de Cristal do Abismo",
+      "filename": "assets/dragons/terra_basalt.jpg",
+      "resolution": "2048x2048",
+      "aspect_ratio": "1:1",
+      "composition": "Illustration of a colossal, heavily armored earth dragon emerging from a subterranean crystal cavern. Its body is composed of interlocking basalt rock plates and sharp jagged purple and amber obsidian crystals growing from its spine.",
+      "lighting": "Subterranean crystal glow casting violet and amber luminescence across dark, rugged volcanic rock.",
+      "color_palette": ["Basalt rock grey (#334155)", "Amethyst violet (#7c3aed)", "Obsidian black (#0f172a)", "Crystal amber (#f59e0b)"]
+    },
+    {
+      "id": "dragon_umbra",
+      "name": "Umbra Noctis - O Dragão das Sombras Primordiais",
+      "filename": "assets/dragons/umbra_noctis.jpg",
+      "resolution": "2048x2048",
+      "aspect_ratio": "1:1",
+      "composition": "Illustration of a sinister, sinuous shadow dragon shrouded in dark swirling mist. Its matte black scales absorb ambient light, while glowing crimson eyes and dark purple runic energy vein across its membranous wings.",
+      "lighting": "Eerie dark fantasy lighting where the dragon emerges from shadow, illuminated only by its crimson gaze and purple runic aura.",
+      "color_palette": ["Shadow black (#09090b)", "Runic violet (#4c1d95)", "Crimson eye glow (#dc2626)", "Abyssal indigo (#1e1b4b)"]
+    },
+    {
+      "id": "dragon_sylva",
+      "name": "Sylva Viridis - O Dragão da Natureza Ancestral",
+      "filename": "assets/dragons/sylva_viridis.jpg",
+      "resolution": "2048x2048",
+      "aspect_ratio": "1:1",
+      "composition": "Illustration of a serene, ancient forest dragon resting among millenary druidic trees. Its scales resemble aged tree bark covered in lush emerald moss, glowing teal leaves, and small blooming forest flowers along its tail and horns.",
+      "lighting": "Soft dappled sunlight filtering through forest canopy mixed with gentle bioluminescent teal moss glow.",
+      "color_palette": ["Forest bark (#2c1810)", "Emerald moss (#10b981)", "Bioluminescent teal (#14b8a6)", "Sunlight amber (#facc15)"]
+    }
+  ]
+}

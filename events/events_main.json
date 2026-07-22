@@ -1,0 +1,207 @@
+{
+  "events": [
+    {
+      "id": "event_204",
+      "title": "O Convite do Círculo Arcano",
+      "description": "Um emisário de manto azul do Círculo Arcano de Valen aproxima-se com cautela. Ele observa a afinidade mística em seus olhos e a imponência do dragão ao seu lado.",
+      "requirements": {
+        "flag_honra": { "min": 10 },
+        "guild": "guild_valen",
+        "dragon": true
+      },
+      "choices": [
+        {
+          "text": "Aceitar a missão de escolta arcana aos Picos Nevados (+50 Ouro, +2 Honra, +5 Reputação de Guilda)",
+          "effects": {
+            "gold": 50,
+            "hidden": { "honra": 2, "lealdade": 3 },
+            "rep": { "guild_valen": 5 },
+            "flags": { "flag_aliado_valen_norte": true }
+          }
+        },
+        {
+          "text": "Exigir o triplo do pagamento em ouro antes de selar qualquer acordo (+150 Ouro, +5 Ganância, -5 Reputação de Guilda)",
+          "effects": {
+            "gold": 150,
+            "hidden": { "ganancia": 5, "honra": -2 },
+            "rep": { "guild_valen": -5 }
+          }
+        }
+      ]
+    },
+    {
+      "id": "event_burn_village",
+      "title": "A Aldeia em Chamas de Lúmen",
+      "description": "No horizonte, colunas de fumaça preta sobem aos céus. Uma companhia de mercenários renegados está incendiando uma pequena aldeia agrícola para extorquir suprimentos.",
+      "requirements": {
+        "flag_cidade_queimada": false
+      },
+      "choices": [
+        {
+          "text": "Atacar os mercenários com seu dragão e espada para salvar as famílias (+100 XP, +15 Altruísmo, mas arrisca graves ferimentos em combate)",
+          "effects": {
+            "xp": 100,
+            "hidden": { "altruismo": 15, "compaixão": 15, "coragem": 10 },
+            "flags": { "flag_salvou_aldeia_lumen": true },
+            "rep": { "reino_eldor": 15, "guild_ferro": -10 },
+            "combatTrigger": "mercenary_raiders"
+          },
+          "consequence": { "delayDays": 12, "title": "A Colheita Farta de Lúmen", "desc": "Os camponeses que você salvou enviaram carroças com rações de comida como agradecimento até o seu acampamento." }
+        },
+        {
+          "text": "Saquear as casas abandonadas enquanto os mercenários estão distraídos (+180 Ouro, +Rações, mas a aldeia queimará até as cinzas)",
+          "effects": {
+            "gold": 180,
+            "items": { "ration_food": 6 },
+            "hidden": { "ganancia": 20, "crueldade": 15, "honra": -20 },
+            "flags": { "flag_cidade_queimada": true }
+          },
+          "consequence": { "delayDays": 20, "title": "A Praga dos Refugiados", "desc": "Os sobreviventes da aldeia queimada migraram para Eldoria, espalhando doenças e aumentando o desespero social." }
+        },
+        {
+          "text": "Ignorar o conflito e seguir adiante sem se envolver (Nenhum risco, mas os aldeões serão dizimados)",
+          "effects": {
+            "hidden": { "crueldade": 5, "altruismo": -10 },
+            "flags": { "flag_cidade_queimada": true }
+          }
+        }
+      ]
+    },
+    {
+      "id": "event_plague_caravan",
+      "title": "A Caravana dos Enfermos",
+      "description": "Você encontra uma caravana de mercadores de Valen parada na estrada. Os cavalos morreram de febre e os viajantes tossem sangue negro: a temida Peste Sombria.",
+      "requirements": {
+        "flag_peste_valen": false
+      },
+      "choices": [
+        {
+          "text": "Oferecer seus antídotos e magia solar para purificar os enfermos (+120 XP, +Reputação em Valen, -2 Antídotos)",
+          "reqItems": { "potion_antidote": 2 },
+          "effects": {
+            "xp": 120,
+            "items": { "potion_antidote": -2 },
+            "hidden": { "compaixão": 20, "altruismo": 15 },
+            "flags": { "flag_peste_valen": false, "flag_curou_caravana": true },
+            "rep": { "guild_valen": 25 }
+          }
+        },
+        {
+          "text": "Queimar as carroças à distância para garantir que a epidemia não chegue à capital Eldoria (+Segurança para milhares, -Crueldade aparente)",
+          "effects": {
+            "xp": 80,
+            "hidden": { "crueldade": 10, "impulsividade": 5 },
+            "flags": { "flag_peste_valen": false, "flag_queimou_enfermos": true },
+            "rep": { "reino_eldor": 10, "guild_valen": -30 }
+          },
+          "consequence": { "delayDays": 30, "title": "Eldoria a Salvo da Peste", "desc": "Embora seu método tenha sido brutal, os médicos da corte confirmaram que sua intervenção evitou a Peste Sombria de dizimar a capital." }
+        },
+        {
+          "text": "Sair correndo antes de inalar o miasma (-Coragem, a peste avançará para o sul)",
+          "effects": {
+            "hidden": { "coragem": -10 },
+            "flags": { "flag_peste_valen": true }
+          },
+          "consequence": { "delayDays": 15, "title": "A Peste de Valen Alastra-se", "desc": "O porto de Valen e as vilas vizinhas foram colocadas em quarentena forçada pela Peste Sombria." }
+        }
+      ]
+    },
+    {
+      "id": "event_orphan_thief",
+      "title": "O Ladrão Órfão dos Portões de Ferro",
+      "description": "Uma criança magra com roupas remendadas tenta cortar sua bolsa de moedas enquanto você caminha pelo mercado. Ao ser pego, o garoto chora, dizendo que sua irmã está morrendo de fome na favela de Eldoria.",
+      "requirements": {
+        "location": "loc_eldoria"
+      },
+      "choices": [
+        {
+          "text": "Dar 35 moedas de ouro e duas rações ao garoto (+Altruísmo, +Compaixão, +Reputação no Povo)",
+          "effects": {
+            "gold": -35,
+            "items": { "ration_food": -2 },
+            "hidden": { "altruismo": 18, "compaixão": 20 },
+            "flags": { "flag_salvou_ladrão_orfao": true },
+            "rep": { "reino_eldor": 5 }
+          },
+          "consequence": { "delayDays": 18, "title": "Os Olhos da Rua em Eldoria", "desc": "O garoto que você ajudou tornou-se líder dos órfãos espiões. Ele te entrega um bilhete avisando de uma emboscada na capital antes mesmo dos guardas saberem." }
+        },
+        {
+          "text": "Entregar o garoto para a Guarda Real de Eldor para ser julgado pelas leis do reino (+Honra da Lei, -Compaixão)",
+          "effects": {
+            "hidden": { "honra": 10, "compaixão": -15 },
+            "rep": { "reino_eldor": 10, "guild_corvo": -15 }
+          }
+        },
+        {
+          "text": "Quebrar o dedo da criança e jogá-la na lama como lição (+Crueldade extremada, +Medo no Povo)",
+          "effects": {
+            "hidden": { "crueldade": 25, "coragem": -5 },
+            "flags": { "flag_medo": 15 },
+            "rep": { "reino_eldor": -10 }
+          }
+        }
+      ]
+    },
+    {
+      "id": "event_broken_bridge_toll",
+      "title": "A Ponte Partida do Norte",
+      "description": "O único acesso às montanhas está bloqueado por mercenários da Lâmina de Ferro. Eles cobram um pedágio abusivo de 120 ouro para autorizar a travessia, afirmando ordens do palácio.",
+      "requirements": {
+        "flag_ponte_norte_destruida": false
+      },
+      "choices": [
+        {
+          "text": "Pagar o pedágio de 120 moedas de ouro para evitar derramamento de sangue (-120 Ouro, +Reputação Lâmina de Ferro)",
+          "effects": {
+            "gold": -120,
+            "rep": { "guild_ferro": 10 }
+          }
+        },
+        {
+          "text": "Desafiar o capitão mercenário em combate tático (+150 XP, +Espólio de Ferro, -Reputação Lâmina de Ferro)",
+          "effects": {
+            "xp": 150,
+            "rep": { "guild_ferro": -20 },
+            "combatTrigger": "mercenary_raiders"
+          }
+        },
+        {
+          "text": "Comandar seu dragão para dar um rugido sismico no céu, aterrorizando os soldados a liberarem a passagem grátis",
+          "requirements": { "dragon": true },
+          "effects": {
+            "xp": 80,
+            "dragonMood": 10,
+            "hidden": { "coragem": 15, "orgulho": 10 }
+          }
+        }
+      ]
+    },
+    {
+      "id": "event_shrine_of_blades",
+      "title": "O Santuário das Lâminas Perdidas",
+      "description": "Em um cruzamento silencioso, centenas de espadas enferrujadas estão fincadas na terra em homenagem aos cavaleiros caídos na Guerra de Khaz. Uma espada em especial ainda brilha com inscrições rúnicas prateadas.",
+      "requirements": {
+        "location": "loc_vale_cinzas"
+      },
+      "choices": [
+        {
+          "text": "Retirar a espada brilhante da terra para forjá-la em sua própria arma (+Espada Longa Real, +Ganância, -Honra dos Mortos)",
+          "effects": {
+            "items": { "w_longsword": 1 },
+            "hidden": { "ganancia": 15, "honra": -20 },
+            "flags": { "flag_profanou_santuario_laminas": true }
+          }
+        },
+        {
+          "text": "Ajoelhar-se em oração pelos guerreiros mortos e deixar 20 moedas de ouro como oferenda (+Honra, +Vontade máxima)",
+          "effects": {
+            "gold": -20,
+            "willpower": 50,
+            "hidden": { "honra": 20, "moralidade": 15 },
+            "flags": { "flag_honrou_cavaleiros_caidos": true }
+          }
+        }
+      ]
+    }
+  ]
+}
